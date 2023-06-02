@@ -12,6 +12,7 @@ public class Barricade : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
         // player가 충돌하면 지나가지지않는다.
         // monster가 충돌하면 지나가지지않는다.
+        //
         // 또다른 방법
         // player와 monster를 gameobject tag를 붙여서
         // gameobject tag가 붙은 gameobject는 충돌할 경우 지나가지지않는다.

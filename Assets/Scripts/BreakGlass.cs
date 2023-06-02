@@ -14,5 +14,6 @@ public class BreakGlass : MonoBehaviour
         // player의 속도가 1만큼 느려진다.
         // monster의 피가 1만큼 깎인다.
         // monster의 속도가 1만큼 느려진다.
+        // player가 출혈 상태이상에 걸린다.
     }
 }
