@@ -12,6 +12,7 @@ public class WireFence : MonoBehaviour
         _capsuleCollider = GetComponent<CapsuleCollider>();
         // player의 피가 1만큼 깎인다.
         // player의 속도가 1만큼 느려진다.
+        // player는 출혈 UI가 생긴다.
         // monster의 피가 1만큼 깎인다.
         // monster의 속도가 1만큼 느려진다.
     }
