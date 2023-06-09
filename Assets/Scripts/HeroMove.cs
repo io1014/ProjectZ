@@ -18,8 +18,6 @@ public class HeroMove : MonoBehaviour
     {
         RunAndWalk();
         StaminaRecovery();
-        Debug.Log(_stamina);
-        
     }
 
     void RunAndWalk()
