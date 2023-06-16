@@ -6,7 +6,7 @@ public class MonsterMove : MonoBehaviour
 {
     [SerializeField] Transform _Hero;
     Transform _Monster;
-    float _speed = 1;
+    [SerializeField] float _speed ;
 
     private void Start()
     {
