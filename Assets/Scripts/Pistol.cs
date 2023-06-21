@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class Pistol : MonoBehaviour
 {
-    // 무기의 정보를 담을 클래스
-    int _sound;
-    int _maxRange;
-    int _reload;
-    public void PistolInfo()
+    // 무기의 속성과 동작을 관리하는 스크립트
+    string _name = "Pistol";        // 무기이름
+    float _weight = 1.5f;           // 무게
+    bool _equippedOneHand = true;   // 장착 여부
+    int _durability = 10;           // 내구도
+    int _maxDurability = 10;        // 최대 내구도
+    int _attackDamage = 1;          // 공격력
+    float _range = 6;               // 사정거리
+    float _reload = 1.5f;           // 재장전 시간
+    float _bulletSpeed = 100f;      // 탄 속도
+
+    GameObject _bulletPrefab;
+
+    void Shoot()
     {
-        //한손으로 장착이 가능하다.
-        //사용할 때 소리가 n만큼 난다.
-        _sound = 0;
-        //최대사거리가 n만큼 있다.
-        _maxRange = 0;
-        //재장전 할 때 시간이 n만큼 걸린다.
-        _reload = 0;
-        //n종류의 탄약만 사용이 가능하다.
-        //몬스터에게 발사한 탄약이 닿을 경우 몬스터의 피가 n만큼 깎인다.
-        //발사속도 n을 가진다.
-        
+        GameObject bullet = Instantiate(_bulletPrefab);                               // 탄환 생성
+        bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 속도
     }
 }
 
