@@ -8,20 +8,70 @@ public class Pistol : MonoBehaviour
     string _name = "Pistol";        // 무기이름
     float _weight = 1.5f;           // 무게
     bool _equippedOneHand = true;   // 장착 여부
-    int _durability = 10;           // 내구도
-    int _maxDurability = 10;        // 최대 내구도
     int _attackDamage = 1;          // 공격력
-    float _range = 6;               // 사정거리
-    float _reload = 1.5f;           // 재장전 시간
+    float _range = 3f;              // 사정거리
+    float _reloadTime = 1.5f;       // 재장전 시간
     float _bulletSpeed = 100f;      // 탄 속도
+    bool _isReloading = false;      // 재장전 여부
+    int _magAmmo = 30;              // 탄환 수
 
-    GameObject _bulletPrefab;
+
+    [SerializeField] GameObject _bulletPrefab;
+
 
     void Shoot()
     {
+        if (_isReloading)
+        {
+            // 재장전 중일 때 발사할 수 없음
+            Debug.Log(" 재장전 중, 발사할 수 없습니다. ");
+            return;
+        }
+
+        if (_magAmmo <= 0)
+        {
+            // 탄환 수가 0이면 재장전
+            Reload();
+        }
+
         GameObject bullet = Instantiate(_bulletPrefab);                               // 탄환 생성
         bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 속도
+        bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도
+        bullet.transform.position = transform.position;                               // 탄환에 Pistol의 위치를 할당
+        _magAmmo--;                                                                   // 탄환 감소
+    }
+    void Reload()
+    {
+        // 재장전 하는 중
+        if (_isReloading || _magAmmo == 30)
+        {
+            Debug.Log(" 이미 장전되어있습니다. ");
+            return;
+        }
+
+        _isReloading = true;
+        Debug.Log(" 재장전 중... ");
+
+        Invoke("FinishReloading", _reloadTime);
+    }
+    void FinishReloading()
+    {
+        // 탄환이 재장전 됨
+        _magAmmo = 30;
+        _isReloading = false;
+        Debug.Log(" 재장전 완료! ");
+    }
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
     }
 }
 
