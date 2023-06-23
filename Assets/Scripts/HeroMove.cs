@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HeroMove : MonoBehaviour
 {
-    float rotX = 0f;
     float rotY = 0f;
 
     private void FixedUpdate()
@@ -14,8 +13,7 @@ public class HeroMove : MonoBehaviour
     }
     private void Update()
     {
-        rotX = Input.GetAxis("Mouse Y");
-        rotY = Input.GetAxis("Mouse X");
+        rotY -= Input.GetAxis("Mouse X");
         Rotate();
     }
     void moving()
@@ -29,7 +27,7 @@ public class HeroMove : MonoBehaviour
 
     void Rotate()
     {
-        transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+        transform.rotation = Quaternion.Euler(0, rotY, 0);
     }
 
    

@@ -58,7 +58,6 @@ public class HeroStats : MonoBehaviour
     public void Damage(float damage)
     {
         _currentHP -=  damage;
-
     }
 }
 

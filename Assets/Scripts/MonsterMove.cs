@@ -15,7 +15,7 @@ public class MonsterMove : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.2f)
+        if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.1f)
         {
             follow();
         }
@@ -31,6 +31,11 @@ public class MonsterMove : MonoBehaviour
     public void Init(Transform hero)
     {
         _Hero = hero;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        other.GetComponent<HeroStats>().Damage(damage);
     }
 
 
