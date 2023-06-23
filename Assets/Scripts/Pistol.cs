@@ -7,17 +7,16 @@ public class Pistol : MonoBehaviour
     // 무기의 속성과 동작을 관리하는 스크립트
     string _name = "Pistol";        // 무기이름
     float _weight = 1.5f;           // 무게
-    bool _equipped = false;         // 장착 여부
     int _attackDamage = 1;          // 공격력
     float _range = 3f;              // 사정거리
     float _reloadTime = 1.5f;       // 재장전 시간
     float _bulletSpeed = 100f;      // 탄 속도
     bool _isReloading = false;      // 재장전 여부
     int _magAmmo = 30;              // 탄환 수
+    public bool _equipped = false;         // 장착 여부
 
 
     [SerializeField] GameObject _bulletPrefab;
-    HeroStats _hero;
 
     private void Update()
     {
@@ -73,13 +72,12 @@ public class Pistol : MonoBehaviour
         _isReloading = false;
         Debug.Log(" 재장전 완료! ");
     }
-    public void Equipped()
+    void equipped()
     {
-        if(!_equipped)
+        if(_equipped)
         {
             GameObject Pistol = Instantiate(gameObject);
-            GameObject HeroArm = _hero.gameObject;
-            HeroArm = GameObject.Find("Right");
+            _equipped = false;
         }
     }
 }

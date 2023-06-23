@@ -11,14 +11,19 @@ public class GetItem : MonoBehaviour
     float _itemRadius = 10;
     private void Start()
     {
-        ItemObj itm1 = new ItemObj(sprites[0],"피스톨",EItemType.Pistol);
-        items.Add(itm1);
-        ItemObj itm2 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
-        ItemObj itm3 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
+        //ItemObj itm1 = new ItemObj(sprites[0],"피스톨",EItemType.Pistol);
+        //items.Add(itm1);
+        //ItemObj itm2 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
+        //ItemObj itm3 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
     }
     void Update()
     {
         // 특정 거리 안에 있는 모든 아이템 목록을 리턴할 수 있는 함수
+        if(Input.GetMouseButtonDown(0))
+        {
+            ItemObj itm1 = new ItemObj(null, "피스톨", EItemType.Pistol);
+            itm1.Equip();
+        }
     }
     public List<GameObject> FindItem()
     {
@@ -67,10 +72,15 @@ public class ItemObj
         // 피스토링면 캐릭터의 손에 피스톨을 만들어 붙인다.
         if(_eType == EItemType.Pistol)
         {
-            //캐릭터 손에 피스톨을 만ㄷ르어서 붙인다.
-            _pistol._equipped = true;
-            GameObject HeroArm = _player.gameObject;
-            HeroArm = GameObject.Find("Right");
+            //캐릭터 손에 피스톨을 만들어서 붙인다.
+            //_pistol._equipped = true;
+            //GameObject HeroArm = _player.gameObject;
+            GameObject HeroArm = GameObject.Find("Right");
+            // 일단 피스톨게임오브젝트 필요함//
+            //Component.Instantiate();
+
+            // 피스톨을 heroArm아래에 붙임
+            //피스톨의 transform.SetParent(heroarm.transform);
         }
         else if(_eType == EItemType.Juice)
         {
