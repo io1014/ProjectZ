@@ -7,7 +7,7 @@ public class Pistol : MonoBehaviour
     // 무기의 속성과 동작을 관리하는 스크립트
     string _name = "Pistol";        // 무기이름
     float _weight = 1.5f;           // 무게
-    bool _equippedOneHand = true;   // 장착 여부
+    bool _equipped = false;         // 장착 여부
     int _attackDamage = 1;          // 공격력
     float _range = 3f;              // 사정거리
     float _reloadTime = 1.5f;       // 재장전 시간
@@ -17,21 +17,32 @@ public class Pistol : MonoBehaviour
 
 
     [SerializeField] GameObject _bulletPrefab;
+    HeroStats _hero;
 
-
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
+    }
     void Shoot()
     {
+        if (_magAmmo <= 0 &&  _isReloading == false)
+        {
+            // 탄환 수가 0이면 재장전
+            Reload();
+        }
+
         if (_isReloading)
         {
             // 재장전 중일 때 발사할 수 없음
             Debug.Log(" 재장전 중, 발사할 수 없습니다. ");
             return;
-        }
-
-        if (_magAmmo <= 0)
-        {
-            // 탄환 수가 0이면 재장전
-            Reload();
         }
 
         GameObject bullet = Instantiate(_bulletPrefab);                               // 탄환 생성
@@ -62,15 +73,13 @@ public class Pistol : MonoBehaviour
         _isReloading = false;
         Debug.Log(" 재장전 완료! ");
     }
-    private void Update()
+    public void Equipped()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(!_equipped)
         {
-            Shoot();
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Reload();
+            GameObject Pistol = Instantiate(gameObject);
+            GameObject HeroArm = _hero.gameObject;
+            HeroArm = GameObject.Find("Right");
         }
     }
 }
