@@ -5,12 +5,13 @@ using UnityEngine;
 public class HeroStats : MonoBehaviour
 {
     float _stamina = 100;
-    float _speed = 2;
-    float HP = 100;
+    int _speed = 2;
+    float _currentHP = 100;
     void Update()
     {
         RunAndWalk();
         StaminaRecovery();
+        Debug.Log(_currentHP);
     }
     void RunAndWalk()
     {
@@ -45,12 +46,20 @@ public class HeroStats : MonoBehaviour
         if (_stamina < 100)
             _stamina += 0.1f * Time.deltaTime;
     }
-    void setspeed(float speed)
+    void setspeed(int speed)
     {
         _speed = speed;
     }
-    public float getspeed()
+   public int getspeed()
     {
         return _speed;
     }
+
+    public void Damage(float damage)
+    {
+        _currentHP -=  damage;
+
+    }
 }
+
+

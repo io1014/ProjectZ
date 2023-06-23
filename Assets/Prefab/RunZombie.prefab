@@ -113,3 +113,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Hero: {fileID: 0}
   _speed: 2
+  damage: 5

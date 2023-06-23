@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class HeroMove : MonoBehaviour
 {
+    float rotX = 0f;
+    float rotY = 0f;
 
-    float _speed = 2;
-    float _stamina = 100;
     private void FixedUpdate()
     {
-        //¿µ¿õ ¿òÁ÷ÀÓ
+        moving();
+  
+    }
+    private void Update()
+    {
+        rotX = Input.GetAxis("Mouse Y");
+        rotY = Input.GetAxis("Mouse X");
+        Rotate();
+    }
+    void moving()
+    {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(x, 0,y) *Time.deltaTime *GetComponent<HeroStats>().getspeed());
+        Vector3 newVelocity = transform.forward * y * GetComponent<HeroStats>().getspeed();
+        newVelocity += transform.right * x * GetComponent<HeroStats>().getspeed();
+        GetComponent<Rigidbody>().velocity = newVelocity;
     }
- }
+
+    void Rotate()
+    {
+        transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+    }
+
+   
+}

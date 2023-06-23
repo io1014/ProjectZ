@@ -7,6 +7,7 @@ public class MonsterMove : MonoBehaviour
     [SerializeField] Transform _Hero;
     Transform _Monster;
     [SerializeField] float _speed ;
+    [SerializeField] float damage ;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class MonsterMove : MonoBehaviour
         {
             follow();
         }
+       
     }
 
     void follow()
@@ -30,7 +32,6 @@ public class MonsterMove : MonoBehaviour
     {
         _Hero = hero;
     }
-
 
 
 }
