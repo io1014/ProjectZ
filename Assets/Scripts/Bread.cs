@@ -7,15 +7,21 @@ public class Bread : MonoBehaviour
 {
     GameObject _bread;
     [SerializeField] Image _player;
+
     private void Start()
     {
-        _bread = GetComponent<GameObject>();
+        _bread = gameObject;
     }
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        /*if(// 인벤토리에서 빵을 '먹기' 버튼을 누르면)
+        if(other.CompareTag("Player"))
         {
-            bread가 없어지고 player의 체력이 1만큼 채워진다.
-        }*/
+            HeroStats Player = other.GetComponent<HeroStats>();
+            if(Player != null)
+            {
+                //Player.IncreaseHealth(1) // 플레이어의 정보가 있는 스크립트에 인자를 줘서 피를 채움
+                Destroy(_bread);
+            }
+        }
     }
 }
