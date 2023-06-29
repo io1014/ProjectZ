@@ -1,10 +1,10 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GetItem : MonoBehaviour
 {
-    [SerializeField]
-    Sprite[] sprites;
+    [SerializeField] Sprite[] sprites;
     List<ItemObj> items = new List<ItemObj>();
     HeroStats _player;
     List<GameObject> _itemList = new List<GameObject>();
@@ -21,8 +21,8 @@ public class GetItem : MonoBehaviour
         // 특정 거리 안에 있는 모든 아이템 목록을 리턴할 수 있는 함수
         if(Input.GetMouseButtonDown(0))
         {
-            ItemObj itm1 = new ItemObj(null, "피스톨", EItemType.Pistol);
-            itm1.Equip();
+            //ItemObj itm1 = new ItemObj(/*null,*/ "Pistol", EItemType.Pistol);
+            //itm1.Equip();
         }
     }
     public List<GameObject> FindItem()
@@ -55,37 +55,35 @@ public class GetItem : MonoBehaviour
 
 public class ItemObj
 {
-    public Sprite _sprite;
+    //public Sprite _sprite;
     public string _name;
     public EItemType _eType;
-    HeroStats _player;
-    Pistol _pistol;
-    public ItemObj(Sprite spr, string name, EItemType etype)
+    public Pistol _pistol;
+    public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
-        _sprite = spr;
+        //_sprite = spr;
         _name = name;
         _eType = etype;
     }
+    public void Stack(Pistol pistol)
+    {
+        _pistol = pistol;
+    }
     public void Equip()
     {
-        // 자기 종류가 
-        // 피스토링면 캐릭터의 손에 피스톨을 만들어 붙인다.
-        if(_eType == EItemType.Pistol)
-        {
-            //캐릭터 손에 피스톨을 만들어서 붙인다.
-            //_pistol._equipped = true;
-            //GameObject HeroArm = _player.gameObject;
-            GameObject HeroArm = GameObject.Find("Right");
-            // 일단 피스톨게임오브젝트 필요함//
-            //Component.Instantiate();
-
-            // 피스톨을 heroArm아래에 붙임
-            //피스톨의 transform.SetParent(heroarm.transform);
-        }
-        else if(_eType == EItemType.Juice)
-        {
-            //플레이어 갈증을 감소시킨다.
-        }
+        // 자기 종류가 피스톨이면 캐릭터의 손에 피스톨을 만들어 붙인다.
+        //if (_eType == EItemType.Pistol)
+        //{
+        //캐릭터 손에 피스톨을 만들어서 붙인다.
+        //_pistol = pistol.GetComponent<Pistol>();
+        GameObject heroHand = GameObject.Find("Right");
+        _pistol.transform.SetParent(heroHand.transform);
+        _pistol.equipped();
+        //}
+        //else if (_eType == EItemType.Juice)
+        //{
+            //    //플레이어 갈증을 감소시킨다.
+        //}
     }
 }
 

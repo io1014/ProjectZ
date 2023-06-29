@@ -5,24 +5,26 @@ using UnityEngine;
 public class Pistol : MonoBehaviour
 {
     // 무기의 속성과 동작을 관리하는 스크립트
-    string _name = "Pistol";        // 무기이름
-    float _weight = 1.5f;           // 무게
-    int _attackDamage = 1;          // 공격력
-    float _range = 3f;              // 사정거리
-    float _reloadTime = 1.5f;       // 재장전 시간
-    float _bulletSpeed = 100f;      // 탄 속도
-    bool _isReloading = false;      // 재장전 여부
-    int _magAmmo = 30;              // 탄환 수
-    public bool _equipped = false;         // 장착 여부
-
+    string _name = "Pistol";         // 무기이름
+    float _weight = 1.5f;            // 무게
+    int _attackDamage = 1;           // 공격력
+    float _range = 3f;               // 사정거리
+    float _reloadTime = 1.5f;        // 재장전 시간
+    float _bulletSpeed = 50f;        // 탄 속도
+    bool _isReloading = false;       // 재장전 여부
+    int _magAmmo = 30;               // 탄환 수
+    public bool _isEquipped = false; // 장착 여부
+    ItemObj _itemInfo;               // 아이템 정보
 
     [SerializeField] GameObject _bulletPrefab;
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Shoot();
+            if(_isEquipped)
+            {
+                Shoot();
+            }
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -31,7 +33,7 @@ public class Pistol : MonoBehaviour
     }
     void Shoot()
     {
-        if (_magAmmo <= 0 &&  _isReloading == false)
+        if (_magAmmo <= 0 && _isReloading == false)
         {
             // 탄환 수가 0이면 재장전
             Reload();
@@ -72,22 +74,11 @@ public class Pistol : MonoBehaviour
         _isReloading = false;
         Debug.Log(" 재장전 완료! ");
     }
-    void equipped()
+    public void equipped()
     {
-        if(_equipped)
+        if (!_isEquipped)
         {
-            GameObject Pistol = Instantiate(gameObject);
-            _equipped = false;
+            _isEquipped = true;
         }
     }
 }
-
-//public class BowData
-//{
-//    // Sprite  asset resource
-//    // string
-//    // distance
-//    // damage
-//    // 내구도
-//    // 
-//}
