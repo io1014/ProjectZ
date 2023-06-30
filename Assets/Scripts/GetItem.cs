@@ -59,36 +59,35 @@ public class ItemObj
     public string _name;
     public EItemType _eType;
     public Pistol _pistol;
+    public Bread _bread;
     public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
         //_sprite = spr;
         _name = name;
         _eType = etype;
     }
-    public void Stack(Pistol pistol)
+    public void SetPistol(Pistol pistol)
     {
         _pistol = pistol;
+    }
+    public void SetBread(Bread bread)
+    {
+        _bread = bread;
     }
     public void Equip()
     {
         // 자기 종류가 피스톨이면 캐릭터의 손에 피스톨을 만들어 붙인다.
-        //if (_eType == EItemType.Pistol)
-        //{
-        //캐릭터 손에 피스톨을 만들어서 붙인다.
-        //_pistol = pistol.GetComponent<Pistol>();
-        GameObject heroHand = GameObject.Find("Right");
-        _pistol.transform.SetParent(heroHand.transform);
-        _pistol.transform.localPosition = Vector3.zero;
-        _pistol.equipped();
-        //}
-        //else if (_eType == EItemType.Juice)
-        //{
-            //    //플레이어 갈증을 감소시킨다.
-        //}
+            GameObject heroHand = GameObject.Find("Right");
+            _pistol.transform.SetParent(heroHand.transform);
+            _pistol.transform.localPosition = Vector3.zero;
+            _pistol.equipped();
     }
-    void RemoveInventory()
+    public void Eating()
     {
-
+            GameObject heroHand = GameObject.Find("Right");
+            _bread.transform.SetParent(heroHand.transform);
+            _bread.transform.localPosition = Vector3.zero;
+            _bread.Eat();
     }
 }
 
@@ -96,6 +95,6 @@ public enum EItemType
 {
     // 0~ 10 무기
     Pistol,
-    // 11 ~ 20 음료
-    Juice,
+    // 11 ~ 20 음식
+    Bread,
 }

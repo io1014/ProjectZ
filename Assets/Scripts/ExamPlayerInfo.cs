@@ -4,24 +4,100 @@ using UnityEngine;
 
 public class ExamPlayerInfo : MonoBehaviour
 {
-    ItemObj _itemObj;
     [SerializeField] GameObject _pistolPrefab;
+    [SerializeField] GameObject _breadPrefab;
     GameObject _pistol;
+    GameObject _bread;
+
+    float _stamina = 100;
+    int _speed = 2;
+    float _currentHP = 100;
+    ItemObj _itemObj;
     private void Start()
     {
         _itemObj = new ItemObj(/*null,*/ "Pistol", EItemType.Pistol);
+        _itemObj = new ItemObj(/*null,*/ "Bread", EItemType.Bread);
     }
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && _pistol == null)
+        //RunAndWalk();
+        //StaminaRecovery();
+        //Debug.Log(_currentHP);
+        if (Input.GetMouseButtonDown(0))
+        {
+            CreatPistol();
+        }
+    }
+    void CreatPistol()
+    {
+        if(_pistol == null)
         {
             _pistol = Instantiate(_pistolPrefab);
             Pistol pistolComponont = _pistol.GetComponent<Pistol>();
-            if (pistolComponont != null)
+            if(_pistol != null)
             {
-                _itemObj.Stack(pistolComponont);
+                _itemObj.SetPistol(pistolComponont);
                 _itemObj.Equip();
             }
         }
+    }
+    void CreatBread()
+    {
+        if(_bread == null)
+        {
+            _bread = Instantiate(_breadPrefab);
+            Bread breadComponont = _bread.GetComponent<Bread>();
+            if(breadComponont != null)
+            {
+                _itemObj.SetBread(breadComponont);
+            }
+            _itemObj.Eating();
+        }
+    }
+    void RunAndWalk()
+    {
+        //달리기
+        if (Input.GetKey(KeyCode.LeftControl) && _stamina > 0)
+        {
+            _speed = 5;
+
+            _stamina -= 30 * Time.deltaTime;
+        }
+        if (_stamina < 0)
+        {
+            _speed = 2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            _speed = 2;
+        }
+        //느리게 걷기
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _speed = 1;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _speed = 2;
+        }
+    }
+    void StaminaRecovery()
+    {
+        //스태미너 자연회복
+        if (_stamina < 100)
+            _stamina += 0.1f * Time.deltaTime;
+    }
+    void setspeed(int speed)
+    {
+        _speed = speed;
+    }
+    public int getspeed()
+    {
+        return _speed;
+    }
+
+    public void Damage(float damage)
+    {
+        _currentHP -= damage;
     }
 }
