@@ -30,5 +30,6 @@ public class HeroMove : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, rotY, 0);
     }
 
+
    
 }

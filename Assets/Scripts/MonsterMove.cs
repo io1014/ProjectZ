@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterMove : MonoBehaviour
 {
     [SerializeField] Transform _Hero;
     Transform _Monster;
-    [SerializeField] float _speed ;
-    [SerializeField] float damage ;
+    [SerializeField] float _speed;
+    [SerializeField] float damage;
+    public int _health = 10;
 
     private void Start()
     {
@@ -19,7 +21,7 @@ public class MonsterMove : MonoBehaviour
         {
             follow();
         }
-       
+
     }
 
     void follow()
@@ -33,10 +35,17 @@ public class MonsterMove : MonoBehaviour
         _Hero = hero;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void GetDamage(int damage)
     {
-        other.GetComponent<HeroStats>().Damage(damage);
+        _health -= damage;
+        if (_health < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
+   
 
+    
+  
 }
