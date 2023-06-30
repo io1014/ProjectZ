@@ -48,7 +48,7 @@ public class GetItem : MonoBehaviour
     }
     public void RemoveInventory()
     {
-
+        
     }
 }
 
@@ -78,12 +78,17 @@ public class ItemObj
         //_pistol = pistol.GetComponent<Pistol>();
         GameObject heroHand = GameObject.Find("Right");
         _pistol.transform.SetParent(heroHand.transform);
+        _pistol.transform.localPosition = Vector3.zero;
         _pistol.equipped();
         //}
         //else if (_eType == EItemType.Juice)
         //{
             //    //플레이어 갈증을 감소시킨다.
         //}
+    }
+    void RemoveInventory()
+    {
+
     }
 }
 

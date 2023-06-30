@@ -15,8 +15,8 @@ public class ExamPlayerInfo : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && _pistol == null)
         {
-            Pistol pistolComponont = GetComponent<Pistol>();
             _pistol = Instantiate(_pistolPrefab);
+            Pistol pistolComponont = _pistol.GetComponent<Pistol>();
             if (pistolComponont != null)
             {
                 _itemObj.Stack(pistolComponont);

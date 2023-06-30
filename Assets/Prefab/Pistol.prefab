@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3775779534423005000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.79, y: 0, z: 1.03}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a588e50a728524e8a9ca1e4a46db64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isEquipped: 0
   _bulletPrefab: {fileID: 2362623311672334638, guid: b4e2160bec4f5b743a00ce965776b838, type: 3}
-  _pistolPrefab: {fileID: 3775779534423005000}
