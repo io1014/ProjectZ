@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
     [SerializeField] Transform Hero;
     void Update()
     {
-      Vector3 a = new Vector3(Hero.transform.position.x, 10f, Hero.transform.position.z);
-      transform.position = a;
+        //rotX -= Input.GetAxis("Mouse Y");
+        //rotY += Input.GetAxis("Mouse X");
+
+        //transform.rotation = Quaternion.Euler(rotX, rotY, 0);
+        //transform.position = Hero.position;
+
+      transform.position = Hero.transform.position;
 
     }
 }

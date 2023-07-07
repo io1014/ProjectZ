@@ -60,6 +60,7 @@ public class ItemObj
     public EItemType _eType;
     public Pistol _pistol;
     public Bread _bread;
+    public WireFence _wireFence;
     public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
         //_sprite = spr;
@@ -73,6 +74,10 @@ public class ItemObj
     public void SetBread(Bread bread)
     {
         _bread = bread;
+    }
+    public void SetWirfence(WireFence wireFence)
+    {
+        _wireFence = wireFence;
     }
     public void Equip()
     {
@@ -93,8 +98,10 @@ public class ItemObj
 
 public enum EItemType
 {
-    // 0~ 10 무기
+    // 0 ~ 10 무기
     Pistol,
     // 11 ~ 20 음식
     Bread,
+    // 21 ~ 30 장애물
+    WireFence,
 }

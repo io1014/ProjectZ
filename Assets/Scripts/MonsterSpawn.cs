@@ -6,10 +6,13 @@ public class MonsterSpawn : MonoBehaviour
 {
     [SerializeField] Transform _hero;
     [SerializeField] GameObject[] Monster;
+    [SerializeField] Transform[] spawnPoints;
     List<GameObject> _monsterList = new List<GameObject>();
     float spawnCount = 50;
     float time = 0.2f, spawntime;
+
     
+     
 
     Vector3 _patrolTarget;
 
@@ -32,7 +35,7 @@ public class MonsterSpawn : MonoBehaviour
 
     void Update()
     {
-        setRandomPosition();
+        //setRandomPosition();
         spawntime -= Time.deltaTime;
         spawn();
         //Move();
@@ -57,7 +60,8 @@ public class MonsterSpawn : MonoBehaviour
         if (spawnCount > 0 & spawnCount <= 50 && spawntime < 0)
         {
             GameObject temp = Instantiate(Monster[Random.Range(0,Monster.Length)]);
-            temp.transform.position = transform.position;
+            temp.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+            temp.transform.position += new Vector3(Random.Range(-10,10f), 0, Random.Range(-10,10f));
             temp.GetComponent<MonsterMove>().Init(_hero);
             _monsterList.Add(temp);
             spawnCount--;
