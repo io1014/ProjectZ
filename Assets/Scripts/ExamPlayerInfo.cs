@@ -6,17 +6,21 @@ public class ExamPlayerInfo : MonoBehaviour
 {
     [SerializeField] GameObject _pistolPrefab;
     [SerializeField] GameObject _breadPrefab;
+    [SerializeField] GameObject _bandPrefab;
     GameObject _pistol;
     GameObject _bread;
+    GameObject _band;
 
     float _stamina = 100;
-    int _speed = 2;
+    float _speed = 5;
     float _currentHP = 100;
+    float _maxHP = 100;
     ItemObj _itemObj;
     private void Start()
     {
         _itemObj = new ItemObj(/*null,*/ "Pistol", EItemType.Pistol);
         _itemObj = new ItemObj(/*null,*/ "Bread", EItemType.Bread);
+        _itemObj = new ItemObj(/*null,*/ "WireFence", EItemType.WireFence);
     }
     void Update()
     {
@@ -25,16 +29,16 @@ public class ExamPlayerInfo : MonoBehaviour
         //Debug.Log(_currentHP);
         if (Input.GetMouseButtonDown(0))
         {
-            CreatPistol();
+            CreatBread();
         }
     }
     void CreatPistol()
     {
-        if(_pistol == null)
+        if (_pistol == null)
         {
             _pistol = Instantiate(_pistolPrefab);
             Pistol pistolComponont = _pistol.GetComponent<Pistol>();
-            if(_pistol != null)
+            if (_pistol != null)
             {
                 _itemObj.SetPistol(pistolComponont);
                 _itemObj.Equip();
@@ -43,15 +47,25 @@ public class ExamPlayerInfo : MonoBehaviour
     }
     void CreatBread()
     {
-        if(_bread == null)
+        // HP가 100 이상일경우 인벤토리에서 '먹기' 라는 동작이 활성화 되지 않게 할 것
+        if (_bread == null)
         {
             _bread = Instantiate(_breadPrefab);
             Bread breadComponont = _bread.GetComponent<Bread>();
-            if(breadComponont != null)
+            if (breadComponont != null)
             {
                 _itemObj.SetBread(breadComponont);
             }
             _itemObj.Eating();
+        }
+    }
+    void CreatBand()
+    {
+        if (_band == null)
+        {
+            _band = Instantiate(_bandPrefab);
+            Bandage breadComponont = _band.GetComponent<Bandage>();
+            // 붕대 감는 것 구현
         }
     }
     void RunAndWalk()
@@ -87,11 +101,11 @@ public class ExamPlayerInfo : MonoBehaviour
         if (_stamina < 100)
             _stamina += 0.1f * Time.deltaTime;
     }
-    void setspeed(int speed)
+    public void setspeed(float speed)
     {
         _speed = speed;
     }
-    public int getspeed()
+    public float getspeed()
     {
         return _speed;
     }
@@ -99,5 +113,18 @@ public class ExamPlayerInfo : MonoBehaviour
     public void Damage(float damage)
     {
         _currentHP -= damage;
+        if (_currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void IncHp(float incHp)
+    {
+        _currentHP += incHp;
+        if(_currentHP >= 100)
+        {
+            _currentHP = 100;
+        }
+        Debug.Log(_currentHP);
     }
 }
