@@ -73,31 +73,31 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
-/Assets/Triangularity
-/Assets/POLYGON city pack
-/Assets/CubexCube - Free City Pack I
-/Assets/Paulisia_S
-/Assets/CubexCube - Free City Pack I.meta
-/Assets/Paulisia_S.meta
-/Assets/POLYGON city pack.meta
-/Assets/Triangularity.meta
-/Assets/Scenes/Project Z map.unity
-/Assets/Scenes/Project Z map.unity.meta
-/Assets/_TerrainAutoUpgrade
-/Assets/_TerrainAutoUpgrade.meta
-/Assets/ADG_Textures
-/Assets/ADG_Textures.meta
-/Assets/ProBuilder Data
-/Assets/ProBuilder Data.meta
-/Assets/Scenes/TerrainProjectZMap.unity
-/Assets/Scenes/TerrainProjectZMap.unity.meta
-/Assets/Grass And Flowers Pack 1
-/Assets/Grass And Flowers Pack 1.meta
+/[Aa]ssets//Assets/Triangularity
+/[Aa]ssets//Assets/POLYGON city pack
+/[Aa]ssets//Assets/CubexCube - Free City Pack I
+/[Aa]ssets//Assets/Paulisia_S
+/[Aa]ssets//Assets/CubexCube - Free City Pack I.meta
+/[Aa]ssets//Assets/Paulisia_S.meta
+/[Aa]ssets//Assets/POLYGON city pack.meta
+/[Aa]ssets//Assets/Triangularity.meta
+/[Aa]ssets//Assets/Scenes/Project Z map.unity
+/[Aa]ssets//Assets/Scenes/Project Z map.unity.meta
+/[Aa]ssets//Assets/_TerrainAutoUpgrade
+/[Aa]ssets//Assets/_TerrainAutoUpgrade.meta
+/[Aa]ssets//Assets/ADG_Textures
+/[Aa]ssets//Assets/ADG_Textures.meta
+/[Aa]ssets//Assets/ProBuilder Data
+/[Aa]ssets//Assets/ProBuilder Data.meta
+/[Aa]ssets//Assets/Scenes/TerrainProjectZMap.unity
+/[Aa]ssets//Assets/Scenes/TerrainProjectZMap.unity.meta
+/[Aa]ssets//Assets/Grass And Flowers Pack 1
+/[Aa]ssets//Assets/Grass And Flowers Pack 1.meta
 
 
-Assets/TextMesh Pro
-Assets/Inventory System by NashuaH
-Assets/UI&ITEMS
-Assets/TextMesh Pro.meta
-Assets/Inventory System by NashuaH.meta
-Assets/UI&ITEMS.meta
+/[Aa]ssets/Assets/TextMesh Pro
+/[Aa]ssets/Assets/Inventory System by NashuaH
+/[Aa]ssets/Assets/UI&ITEMS
+/[Aa]ssets/Assets/TextMesh Pro.meta
+/[Aa]ssets/Assets/Inventory System by NashuaH.meta
+/[Aa]ssets/Assets/UI&ITEMS.meta
