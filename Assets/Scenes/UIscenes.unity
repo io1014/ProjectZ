@@ -352,6 +352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d77899aaa4400f34e80989443633c637, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -672,7 +676,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 41853023}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -1510,6 +1514,7 @@ GameObject:
   - component: {fileID: 220423620}
   - component: {fileID: 220423619}
   - component: {fileID: 220423618}
+  - component: {fileID: 220423621}
   m_Layer: 5
   m_Name: MyInventory
   m_TagString: Untagged
@@ -1524,7 +1529,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220423616}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1532,11 +1537,11 @@ RectTransform:
   - {fileID: 953561718}
   - {fileID: 2125525352}
   m_Father: {fileID: 535454106}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -174.8, y: -32.9}
+  m_AnchoredPosition: {x: -206.66663, y: -31.666656}
   m_SizeDelta: {x: 219.163, y: 221.6297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220423618
@@ -1592,6 +1597,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220423616}
   m_CullTransparentMesh: 1
+--- !u!114 &220423621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220423616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28c641587882b6b428fa4a0a205a4559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _uiItem: {fileID: 0}
+  _sprites: []
 --- !u!1 &233757861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,8 +3024,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1883990563}
   - {fileID: 220423617}
+  - {fileID: 1883990563}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4095,6 +4114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd8361966d954d843b8fcd0527b11fa5, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -6382,6 +6405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 559750777b8e3a14683a85676bc58b34, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -7474,6 +7501,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acaee509273bee040ab6f31002657312, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -9359,6 +9390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6513f387b394214ab33dee024cb8a2d, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -9461,6 +9496,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10eec3609e8fcd146a3c017ec7b7509b, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -9582,7 +9621,7 @@ RectTransform:
   - {fileID: 30279989}
   - {fileID: 173893598}
   m_Father: {fileID: 535454106}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9733,6 +9772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -10368,6 +10411,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a0b32fa54eb4c4b47bba382c0ea3de69, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
@@ -11821,6 +11868,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4890935255950899257, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d494b173a1af6e049a288faa8bb6c7be, type: 3}
     - target: {fileID: 4890935255950899259, guid: 82630b9bfcd77104ea29ea3877298528, type: 3}
       propertyPath: m_Name
       value: ItemImage
