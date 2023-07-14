@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class GetItem : MonoBehaviour
 {
-    public static GetItem Instance;
 
     [SerializeField] Sprite[] sprites;
     List<ItemObj> items = new List<ItemObj>();
     HeroStats _player;
     List<GameObject> _itemList = new List<GameObject>();
     float _itemRadius = 10;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
     private void Start()
     {
         //ItemObj itm1 = new ItemObj(/*sprites[0],*/ "ÇÇ½ºÅç", EItemType.Pistol);
@@ -45,6 +39,7 @@ public class GetItem : MonoBehaviour
             if(distance <= _itemRadius)
             {
                 _itemList.Add(item);
+                //GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().AddInventoryItem(item);
             }
         }
         return _itemList;
@@ -60,7 +55,8 @@ public class ItemObj
     public Pistol _pistol;
     public Bread _bread;
     public WireFence _wireFence;
-    public Bandage _bandage;
+    public Bandage _band;
+    public ItemObj _item { get { return _item; } }
     public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
         //_sprite = spr;
@@ -81,7 +77,7 @@ public class ItemObj
     }
     public void SetBand(Bandage band)
     {
-        _bandage = band;
+        _band = band;
     }
     public void Equip()
     {
@@ -91,12 +87,19 @@ public class ItemObj
             _pistol.transform.localPosition = Vector3.zero;
             _pistol.equipped();
     }
-    public void Eating()
+    public void Eat()
     {
             GameObject heroHand = GameObject.Find("Right");
             _bread.transform.SetParent(heroHand.transform);
             _bread.transform.localPosition = Vector3.zero;
-            _bread.Eat();
+            _bread.Eating();
+    }
+    public void Heal()
+    {
+        GameObject heroHand = GameObject.Find("Right");
+        _band.transform.SetParent(heroHand.transform);
+        _band.transform.localPosition = Vector3.zero;
+        _band.Healing();
     }
 }
 

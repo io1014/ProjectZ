@@ -21,6 +21,7 @@ public class ExamPlayerInfo : MonoBehaviour
         _itemObj = new ItemObj(/*null,*/ "Pistol", EItemType.Pistol);
         _itemObj = new ItemObj(/*null,*/ "Bread", EItemType.Bread);
         _itemObj = new ItemObj(/*null,*/ "WireFence", EItemType.WireFence);
+        _itemObj = new ItemObj(/*null,*/ "Bandage", EItemType.Bandage);
     }
     void Update()
     {
@@ -29,7 +30,7 @@ public class ExamPlayerInfo : MonoBehaviour
         //Debug.Log(_currentHP);
         if (Input.GetMouseButtonDown(0))
         {
-            CreatBread();
+            CreatBand();
         }
     }
     void CreatPistol()
@@ -56,7 +57,7 @@ public class ExamPlayerInfo : MonoBehaviour
             {
                 _itemObj.SetBread(breadComponont);
             }
-            _itemObj.Eating();
+            _itemObj.Eat();
         }
     }
     void CreatBand()
@@ -64,8 +65,13 @@ public class ExamPlayerInfo : MonoBehaviour
         if (_band == null)
         {
             _band = Instantiate(_bandPrefab);
-            Bandage breadComponont = _band.GetComponent<Bandage>();
+            Bandage bandComponont = _band.GetComponent<Bandage>();
             // 붕대 감는 것 구현
+            if(bandComponont != null)
+            {
+                _itemObj.SetBand(bandComponont);
+            }
+            _itemObj.Heal();
         }
     }
     void RunAndWalk()

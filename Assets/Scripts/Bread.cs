@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bread : MonoBehaviour
+public class Bread : ItemParent
 {
+    [SerializeField] string name;
     string _name = "Bread";         // 음식 이름
     float _weight = 0.1f;           // 무게
     float _increaseHP = 1f;         // 체력 회복 지수
     float _increaseFull = 1f;       // 배부름 지수
     bool _isAte = false;            // 빵 먹었는지 여부
-    ItemObj _itemInfo;              // 아이템 정보
+    //ItemObj _itemInfo;              // 아이템 정보
     ExamPlayerInfo _playerInfo;     // 피를 채울 플레이어의 정보
+
     private void Awake()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
+        _itemobj = new ItemObj("Bread", EItemType.Bread);
+        //_itemobj = GetComponent<ItemObj>();
     }
-    public void Eat()
+    public void SetItemInfo(ItemObj item)
+    {
+        _itemobj = item;
+    }
+    public void Eating()
     {
         if(!_isAte)
         {
@@ -31,3 +39,4 @@ public class Bread : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
