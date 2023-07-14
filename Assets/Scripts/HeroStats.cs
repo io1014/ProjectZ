@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class HeroStats : MonoBehaviour
 {
+    public static HeroStats instance;
+
     float _Maxstamina = 100;
     float _stamina = 100;
     int _speed = 2;
     float _MaxHP = 100;
     float _currentHP = 100;
+
+    private void Awake()
+    {
+        if (instance == null) 
+        {
+            instance = this ;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         RunAndWalk();
