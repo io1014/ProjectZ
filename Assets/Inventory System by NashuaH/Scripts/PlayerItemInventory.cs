@@ -14,7 +14,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>
 
     private void Start()
     {
-        _itemSet = _item._item;
+        //_itemSet = _item._item;
     }
     public void AddInventoryItem (GameObject item)
     {

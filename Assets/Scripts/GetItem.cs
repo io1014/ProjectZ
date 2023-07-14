@@ -32,6 +32,7 @@ public class GetItem : MonoBehaviour
         // 근처에 있는 아이템 중 특정거리 안에 들어온 아이템들의 리스트를 저장함
         _itemList.Clear();
         GameObject[] _items = GameObject.FindGameObjectsWithTag("Item");
+        // Item 태그로 찾지말고, 수업 때 배운 좀비처럼 주변에 Physics.OverlapSphere를 이용해서 만들기
         _player = GetComponent<HeroStats>();
         foreach (var item in _items)
         {
@@ -52,54 +53,11 @@ public class ItemObj
     //public Sprite _sprite;
     public string _name;
     public EItemType _eType;
-    public Pistol _pistol;
-    public Bread _bread;
-    public WireFence _wireFence;
-    public Bandage _band;
-    public ItemObj _item { get { return _item; } }
     public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
         //_sprite = spr;
         _name = name;
         _eType = etype;
-    }
-    public void SetPistol(Pistol pistol)
-    {
-        _pistol = pistol;
-    }
-    public void SetBread(Bread bread)
-    {
-        _bread = bread;
-    }
-    public void SetWirfence(WireFence wireFence)
-    {
-        _wireFence = wireFence;
-    }
-    public void SetBand(Bandage band)
-    {
-        _band = band;
-    }
-    public void Equip()
-    {
-        // 자기 종류가 피스톨이면 캐릭터의 손에 피스톨을 만들어 붙인다.
-            GameObject heroHand = GameObject.Find("Right");
-            _pistol.transform.SetParent(heroHand.transform);
-            _pistol.transform.localPosition = Vector3.zero;
-            _pistol.equipped();
-    }
-    public void Eat()
-    {
-            GameObject heroHand = GameObject.Find("Right");
-            _bread.transform.SetParent(heroHand.transform);
-            _bread.transform.localPosition = Vector3.zero;
-            _bread.Eating();
-    }
-    public void Heal()
-    {
-        GameObject heroHand = GameObject.Find("Right");
-        _band.transform.SetParent(heroHand.transform);
-        _band.transform.localPosition = Vector3.zero;
-        _band.Healing();
     }
 }
 

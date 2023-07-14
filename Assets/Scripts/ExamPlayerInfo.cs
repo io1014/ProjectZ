@@ -10,18 +10,16 @@ public class ExamPlayerInfo : MonoBehaviour
     GameObject _pistol;
     GameObject _bread;
     GameObject _band;
+    ItemParent _itemParent;
 
     float _stamina = 100;
     float _speed = 5;
     float _currentHP = 100;
     float _maxHP = 100;
-    ItemObj _itemObj;
     private void Start()
     {
-        _itemObj = new ItemObj(/*null,*/ "Pistol", EItemType.Pistol);
-        _itemObj = new ItemObj(/*null,*/ "Bread", EItemType.Bread);
-        _itemObj = new ItemObj(/*null,*/ "WireFence", EItemType.WireFence);
-        _itemObj = new ItemObj(/*null,*/ "Bandage", EItemType.Bandage);
+        ItemParent ip = new ItemParent();
+        _itemParent = ip;
     }
     void Update()
     {
@@ -30,7 +28,7 @@ public class ExamPlayerInfo : MonoBehaviour
         //Debug.Log(_currentHP);
         if (Input.GetMouseButtonDown(0))
         {
-            CreatBand();
+            CreatPistol();
         }
     }
     void CreatPistol()
@@ -41,8 +39,8 @@ public class ExamPlayerInfo : MonoBehaviour
             Pistol pistolComponont = _pistol.GetComponent<Pistol>();
             if (_pistol != null)
             {
-                _itemObj.SetPistol(pistolComponont);
-                _itemObj.Equip();
+                _itemParent.SetPistol(pistolComponont);
+                _itemParent.Equip();
             }
         }
     }
@@ -55,9 +53,9 @@ public class ExamPlayerInfo : MonoBehaviour
             Bread breadComponont = _bread.GetComponent<Bread>();
             if (breadComponont != null)
             {
-                _itemObj.SetBread(breadComponont);
+                _itemParent.SetBread(breadComponont);
             }
-            _itemObj.Eat();
+            _itemParent.Eat();
         }
     }
     void CreatBand()
@@ -69,9 +67,9 @@ public class ExamPlayerInfo : MonoBehaviour
             // 붕대 감는 것 구현
             if(bandComponont != null)
             {
-                _itemObj.SetBand(bandComponont);
+                _itemParent.SetBand(bandComponont);
             }
-            _itemObj.Heal();
+            _itemParent.Heal();
         }
     }
     void RunAndWalk()
