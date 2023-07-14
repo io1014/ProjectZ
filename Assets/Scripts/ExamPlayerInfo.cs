@@ -127,4 +127,5 @@ public class ExamPlayerInfo : MonoBehaviour
         }
         Debug.Log(_currentHP);
     }
+    
 }

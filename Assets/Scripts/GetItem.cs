@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class GetItem : MonoBehaviour
 {
+    public static GetItem Instance;
+
     [SerializeField] Sprite[] sprites;
     List<ItemObj> items = new List<ItemObj>();
     HeroStats _player;
     List<GameObject> _itemList = new List<GameObject>();
     float _itemRadius = 10;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
-        //ItemObj itm1 = new ItemObj(sprites[0],"피스톨",EItemType.Pistol);
+        //ItemObj itm1 = new ItemObj(/*sprites[0],*/ "피스톨", EItemType.Pistol);
         //items.Add(itm1);
+        //Debug.Log(itm1);
         //ItemObj itm2 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
         //ItemObj itm3 = new ItemObj(sprites[0], "피스톨", EItemType.Pistol);
     }
@@ -41,15 +49,6 @@ public class GetItem : MonoBehaviour
         }
         return _itemList;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        Vector3 v3 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-    }
-    public void RemoveInventory()
-    {
-        
-    }
 }
 
 
@@ -61,6 +60,7 @@ public class ItemObj
     public Pistol _pistol;
     public Bread _bread;
     public WireFence _wireFence;
+    public Bandage _bandage;
     public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
     {
         //_sprite = spr;
@@ -78,6 +78,10 @@ public class ItemObj
     public void SetWirfence(WireFence wireFence)
     {
         _wireFence = wireFence;
+    }
+    public void SetBand(Bandage band)
+    {
+        _bandage = band;
     }
     public void Equip()
     {
@@ -98,10 +102,20 @@ public class ItemObj
 
 public enum EItemType
 {
-    // 0 ~ 10 무기
+    // 무기
     Pistol,
-    // 11 ~ 20 음식
+    Shotgun,
+    Rifle,
+    ShortSword,
+    LongSword,
+    BaseballBat,
+    OneHandAxe,
+    TwoHandAxe,
+
+    // 음식
     Bread,
-    // 21 ~ 30 장애물
+    // 장애물
     WireFence,
+    // 의약품
+    Bandage,
 }
