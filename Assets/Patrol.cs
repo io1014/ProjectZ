@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
+    [SerializeField] Transform _Hero;
     float speed = 0.2f;
     float starttime = 2f;
     float waittime;
@@ -33,9 +35,21 @@ public class Patrol : MonoBehaviour
         }
         else
         {
+             transform.LookAt(moveSpot);
              transform.position += (moveSpot - transform.position).normalized * speed * Time.deltaTime; ;// Vector3.MoveTowards(transform.position, moveSpot, speed * Time.deltaTime);
         }
 
+        if(Vector3.Distance(_Hero.position, transform.position) < 5f)
+        {
+            GetComponent<Patrol>().enabled = false;
+        }
+        //HeroStats._instance.GetComponent<>
+
         
     }
+    public void Init(Transform hero)
+    {
+        _Hero = hero;
+    }
+
 }

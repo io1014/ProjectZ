@@ -15,49 +15,22 @@ public class MonsterMove : MonoBehaviour
 
     private void Start()
     {
-        
+
         _Monster = transform;
     }
     void Update()
     {
-        follow();
-        //currenttime += Time.deltaTime;
-        //if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.1f)
-        //{
-        //    follow();
-        //}
-        //else  
-        //{
-        //    if (currenttime >= time)
-        //    {
+        if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.1f)
+        {
+            follow();
+        }
 
-        //        //patrol();
-
-        //        Invoke("Resettime", 0.5f);
-        //    }
-            
-        //}
+        void follow()
+        {
+            Vector3 move = (_Hero.position - _Monster.position).normalized * _speed;
+            _Monster.position = _Monster.position + move * Time.deltaTime;
+        }
     }
-    //void Resettime()
-    //{
-    //    currenttime = 0;
-    //}
-
-    void follow()
-    {
-        Vector3 move = (_Hero.position - _Monster.position).normalized * _speed;
-        _Monster.position = _Monster.position + move * Time.deltaTime;
-    }
-
-    //void patrol()
-    //{
-    //    Vector3 random = new Vector3(Random.Range(-5,5),0,Random.Range(-5,5));
-    //    Vector3 radpos = transform.position += random;
-    //    transform.LookAt(random);
-    //    transform.Translate((radpos - transform.position).normalized * _speed * Time.deltaTime);
-
-    //}
-
     public void Init(Transform hero)
     {
         _Hero = hero;
@@ -71,9 +44,4 @@ public class MonsterMove : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-   
-
-    
-  
 }

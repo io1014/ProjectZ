@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroStats : MonoBehaviour
+public class HeroStats : GenericSingleton<HeroStats>
 {
-    public static HeroStats instance;
 
     float _Maxstamina = 100;
     float _stamina = 100;
@@ -12,18 +11,6 @@ public class HeroStats : MonoBehaviour
     float _MaxHP = 100;
     float _currentHP = 100;
 
-    private void Awake()
-    {
-        if (instance == null) 
-        {
-            instance = this ;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
     void Update()
     {
         RunAndWalk();
