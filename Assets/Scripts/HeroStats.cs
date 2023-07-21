@@ -8,7 +8,7 @@ public class HeroStats : MonoBehaviour
 
     float _Maxstamina = 100;
     float _stamina = 100;
-    int _speed = 2;
+    float _speed = 0.2f;
     float _MaxHP = 100;
     float _currentHP = 100;
 
@@ -67,7 +67,7 @@ public class HeroStats : MonoBehaviour
     {
         _speed = speed;
     }
-   public int getspeed()
+   public float getspeed()
     {
         return _speed;
     }

@@ -11,7 +11,7 @@ public class MonsterMove : MonoBehaviour
     [SerializeField] float damage;
     public int _health = 10;
     float time = 2;
-    public float currenttime ;
+    //public float currenttime ;
 
     private void Start()
     {
@@ -20,27 +20,28 @@ public class MonsterMove : MonoBehaviour
     }
     void Update()
     {
-        currenttime += Time.deltaTime;
-        if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.1f)
-        {
-            follow();
-        }
-        else  
-        {
-            if (currenttime >= time)
-            {
+        follow();
+        //currenttime += Time.deltaTime;
+        //if (Vector3.Distance(_Hero.position, _Monster.position) < 5f && Vector3.Distance(_Hero.position, _Monster.position) > 1.1f)
+        //{
+        //    follow();
+        //}
+        //else  
+        //{
+        //    if (currenttime >= time)
+        //    {
 
-                patrol();
+        //        //patrol();
 
-                Invoke("Resettime", 1f);
-            }
+        //        Invoke("Resettime", 0.5f);
+        //    }
             
-        }
+        //}
     }
-    void Resettime()
-    {
-        currenttime = 0;
-    }
+    //void Resettime()
+    //{
+    //    currenttime = 0;
+    //}
 
     void follow()
     {
@@ -48,12 +49,14 @@ public class MonsterMove : MonoBehaviour
         _Monster.position = _Monster.position + move * Time.deltaTime;
     }
 
-    void patrol()
-    {
-        Vector3 random = new Vector3(Random.Range(-10f,10f),0,Random.Range(-10f,10f)).normalized * 0.5f;
-        _Monster.position = _Monster.position + random * Time.deltaTime;
-        Debug.Log(random);
-    }
+    //void patrol()
+    //{
+    //    Vector3 random = new Vector3(Random.Range(-5,5),0,Random.Range(-5,5));
+    //    Vector3 radpos = transform.position += random;
+    //    transform.LookAt(random);
+    //    transform.Translate((radpos - transform.position).normalized * _speed * Time.deltaTime);
+
+    //}
 
     public void Init(Transform hero)
     {
