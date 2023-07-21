@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bread : ItemParent
 {
-    [SerializeField] string name;
+    //[SerializeField] string name;
     string _name = "Bread";         // 음식 이름
     float _weight = 0.1f;           // 무게
     float _increaseHP = 1f;         // 체력 회복 지수
@@ -16,12 +14,8 @@ public class Bread : ItemParent
     private void Awake()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
-        _itemobj = new ItemObj("Bread", EItemType.Bread);
+        _itemObj = new ItemObj("Bread", EItemType.Food);
         //_itemobj = GetComponent<ItemObj>();
-    }
-    public void SetItemInfo(ItemObj item)
-    {
-        _itemobj = item;
     }
     public void Eating()
     {

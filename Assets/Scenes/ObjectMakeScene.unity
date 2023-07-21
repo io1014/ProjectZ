@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747706156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.54, y: -1.1641746, z: -22.805115}
+  m_LocalPosition: {x: 4.54, y: -0.6, z: -22.805115}
   m_LocalScale: {x: 2.67, y: 1, z: 0.22}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -620,6 +620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22722071645936448a49347c269e34f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pistol: {fileID: 0}
+  _bread: {fileID: 0}
+  _wireFence: {fileID: 0}
+  _band: {fileID: 0}
   _player: {fileID: 1821183302}
 --- !u!136 &1211899304
 CapsuleCollider:
@@ -1116,6 +1120,7 @@ GameObject:
   - component: {fileID: 1821183309}
   - component: {fileID: 1821183307}
   - component: {fileID: 1821183308}
+  - component: {fileID: 1821183310}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1246,6 +1251,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &1821183310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821183302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 967b15a86d009ac4b9f4ee6fa75c3b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites: []
 --- !u!1 &1934349328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,7 +1360,7 @@ GameObject:
   - component: {fileID: 1976560388}
   - component: {fileID: 1976560387}
   - component: {fileID: 1976560386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081744678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -1.1641746, z: -23.925114}
+  m_LocalPosition: {x: 4.44, y: -0.77, z: -23.925114}
   m_LocalScale: {x: 0.58, y: 0.27, z: 0.39}
   m_ConstrainProportionsScale: 0
   m_Children: []

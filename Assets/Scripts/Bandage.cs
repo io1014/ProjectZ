@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bandage : MonoBehaviour
+public class Bandage : ItemParent
 {
     string _name = "Bandage";         // 의약품 이름
     float _weight = 0.1f;             // 무게
@@ -10,6 +10,7 @@ public class Bandage : MonoBehaviour
     private void Awake()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
+        _itemObj = new ItemObj("Bandage", EItemType.Medicine);
     }
     public void Healing()
     {
