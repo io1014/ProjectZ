@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WireFence : MonoBehaviour
+public class WireFence : ItemParent
 {
     [SerializeField] GameObject _player;
     ExamMonsterMove _monster;

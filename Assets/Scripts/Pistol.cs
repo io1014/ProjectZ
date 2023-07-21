@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol : MonoBehaviour
+public class Pistol : ItemParent
 {
     // 무기의 속성과 동작을 관리하는 스크립트
     string _name = "Pistol";         // 무기이름
@@ -14,9 +12,13 @@ public class Pistol : MonoBehaviour
     bool _isReloading = false;       // 재장전 여부
     int _magAmmo = 30;               // 탄환 수
     public bool _isEquipped = false; // 장착 여부
-    ItemObj _itemInfo;               // 아이템 정보
+    //ItemObj _itemInfo;               // 아이템 정보
 
     [SerializeField] GameObject _bulletPrefab;
+    private void Awake()
+    {
+        _itemObj = new ItemObj("Pistol", EItemType.Weapon);
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))

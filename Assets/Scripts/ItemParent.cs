@@ -2,27 +2,22 @@ using UnityEngine;
 
 public class ItemParent : MonoBehaviour
 {
-    protected ItemObj _itemobj;
+    protected ItemObj _itemObj;
     protected GameObject _itemGameObject;
     public Pistol _pistol;
     public Bread _bread;
     public WireFence _wireFence;
     public Bandage _band;
+
+    public ItemObj ItemObj { get { return _itemObj; } }
+    public GameObject ItemGameObject { get { return _itemGameObject; } }
     public void SetItemObj(ItemObj item)
     {
-        _itemobj = item;
+        _itemObj = item;
     }
     public void SetItemGameObject(GameObject itemGameObject)
     {
         _itemGameObject = itemGameObject;
-    }
-    public ItemObj GetItemObj()
-    {
-        return _itemobj;
-    }
-    public GameObject GetItemGameObject()
-    {
-        return _itemGameObject;
     }
     public void SetPistol(Pistol pistol)
     {
@@ -32,7 +27,7 @@ public class ItemParent : MonoBehaviour
     {
         _bread = bread;
     }
-    public void SetWirfence(WireFence wireFence)
+    public void SetWirefence(WireFence wireFence)
     {
         _wireFence = wireFence;
     }
@@ -62,4 +57,26 @@ public class ItemParent : MonoBehaviour
         _band.transform.localPosition = Vector3.zero;
         _band.Healing();
     }
+}
+public class ItemObj
+{
+    //public Sprite _sprite;
+    public string _name;
+    public EItemType _eType;
+    public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
+    {
+        //_sprite = spr;
+        _name = name;
+        _eType = etype;
+    }
+}
+
+public enum EItemType
+{
+    // 무기
+    Weapon,
+    // 음식
+    Food,
+    // 의약품
+    Medicine,
 }

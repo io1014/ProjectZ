@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bread : ItemParent
@@ -16,7 +14,7 @@ public class Bread : ItemParent
     private void Awake()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
-        _itemobj = new ItemObj("Bread", EItemType.Bread);
+        _itemObj = new ItemObj("Bread", EItemType.Food);
         //_itemobj = GetComponent<ItemObj>();
     }
     public void Eating()
