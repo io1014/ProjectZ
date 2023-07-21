@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+/*
 public class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     public static GenericSingleton<T> _instance;
@@ -16,3 +18,5 @@ public class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 }
+
+*/
