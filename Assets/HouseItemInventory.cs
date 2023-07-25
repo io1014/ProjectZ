@@ -15,11 +15,11 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     // Start is called before the first frame update
     private void Start()
     {
-        ItemObj obj = new ItemObj("Pistol", EItemType.Pistol);
+        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bread", EItemType.Bread);
+        obj = new ItemObj("Bread", EItemType.Food);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bandage", EItemType.Bandage);
+        obj = new ItemObj("Bandage", EItemType.Medicine);
         AddInventoryItem(obj);
     }
 

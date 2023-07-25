@@ -8,7 +8,7 @@ public class Bread : ItemParent
     float _increaseHP = 1f;         // 체력 회복 지수
     float _increaseFull = 1f;       // 배부름 지수
     bool _isAte = false;            // 빵 먹었는지 여부
-    //ItemObj _itemInfo;              // 아이템 정보
+    //ItemObj _itemInfo;            // 아이템 정보
     ExamPlayerInfo _playerInfo;     // 피를 채울 플레이어의 정보
 
     private void Awake()

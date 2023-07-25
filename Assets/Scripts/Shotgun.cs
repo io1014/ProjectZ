@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class Pistol : ItemParent
+public class Shotgun : ItemParent
 {
-    // 무기의 속성과 동작을 관리하는 스크립트
-    string _name = "Pistol";         // 무기이름
+    string _name = "Shotgun";         // 무기이름
     float _weight = 1.5f;            // 무게
     int _attackDamage = 1;           // 공격력
     float _range = 3f;               // 사정거리
@@ -12,7 +11,6 @@ public class Pistol : ItemParent
     bool _isReloading = false;       // 재장전 여부
     int _magAmmo = 30;               // 탄환 수
     public bool _isEquipped = false; // 장착 여부
-    //ItemObj _itemInfo;             // 아이템 정보
 
     [SerializeField] GameObject _bulletPrefab;
     private void Awake()
@@ -23,7 +21,7 @@ public class Pistol : ItemParent
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(_isEquipped)
+            if (_isEquipped)
             {
                 Shoot();
             }
