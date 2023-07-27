@@ -1,15 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExamPlayerInfo : MonoBehaviour
 {
-    [SerializeField] GameObject _pistolPrefab;
-    [SerializeField] GameObject _breadPrefab;
-    [SerializeField] GameObject _bandPrefab;
-    GameObject _pistol;
-    GameObject _bread;
-    GameObject _band;
     ItemParent _itemParent;
 
     float _stamina = 100;
@@ -18,8 +10,7 @@ public class ExamPlayerInfo : MonoBehaviour
     float _maxHP = 100;
     private void Start()
     {
-        ItemParent ip = new ItemParent();
-        _itemParent = ip;
+        _itemParent = new ItemParent();
     }
     void Update()
     {
@@ -28,48 +19,11 @@ public class ExamPlayerInfo : MonoBehaviour
         //Debug.Log(_currentHP);
         if (Input.GetMouseButtonDown(0))
         {
-            CreatPistol();
-        }
-    }
-    void CreatPistol()
-    {
-        if (_pistol == null)
-        {
-            _pistol = Instantiate(_pistolPrefab);
-            Pistol pistolComponont = _pistol.GetComponent<Pistol>();
-            if (_pistol != null)
-            {
-                _itemParent.SetPistol(pistolComponont);
-                _itemParent.Equip();
+            if(/* ex : 인벤토리에서 장착 버튼을 눌렀다고 가정했을 때 */true)
+            { 
+                _itemParent.ItemAction();
+                Debug.Log("아이템의 동작을 실행합니다. ");
             }
-        }
-    }
-    void CreatBread()
-    {
-        // HP가 100 이상일경우 인벤토리에서 '먹기' 라는 동작이 활성화 되지 않게 할 것
-        if (_bread == null)
-        {
-            _bread = Instantiate(_breadPrefab);
-            Bread breadComponont = _bread.GetComponent<Bread>();
-            if (breadComponont != null)
-            {
-                _itemParent.SetBread(breadComponont);
-            }
-            _itemParent.Eat();
-        }
-    }
-    void CreatBand()
-    {
-        if (_band == null)
-        {
-            _band = Instantiate(_bandPrefab);
-            Bandage bandComponont = _band.GetComponent<Bandage>();
-            // 붕대 감는 것 구현
-            if(bandComponont != null)
-            {
-                _itemParent.SetBand(bandComponont);
-            }
-            _itemParent.Heal();
         }
     }
     void RunAndWalk()
@@ -131,5 +85,4 @@ public class ExamPlayerInfo : MonoBehaviour
         }
         Debug.Log(_currentHP);
     }
-    
 }

@@ -21,11 +21,11 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
 
     private void Start()
     {
-        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon);
+        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bread", EItemType.Food);
+        obj = new ItemObj("Bread", EItemType.Food, 1f, 1);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bandage", EItemType.Medicine);
+        obj = new ItemObj("Bandage", EItemType.Medicine, 1f, 1);
         AddInventoryItem(obj);
     }
 

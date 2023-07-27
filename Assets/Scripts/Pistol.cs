@@ -12,12 +12,11 @@ public class Pistol : ItemParent
     bool _isReloading = false;       // 재장전 여부
     int _magAmmo = 30;               // 탄환 수
     public bool _isEquipped = false; // 장착 여부
-    //ItemObj _itemInfo;             // 아이템 정보
 
     [SerializeField] GameObject _bulletPrefab;
     private void Awake()
     {
-        _itemObj = new ItemObj("Pistol", EItemType.Weapon);
+        _itemObj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
     }
     private void Update()
     {
@@ -76,7 +75,7 @@ public class Pistol : ItemParent
         _isReloading = false;
         Debug.Log(" 재장전 완료! ");
     }
-    public void equipped()
+    public void Equipped()
     {
         if (!_isEquipped)
         {

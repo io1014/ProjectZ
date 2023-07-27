@@ -1,75 +1,148 @@
+using System;
+using System.IO;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ItemParent : MonoBehaviour
 {
     protected ItemObj _itemObj;
     protected GameObject _itemGameObject;
-    public Pistol _pistol;
-    public Bread _bread;
-    public WireFence _wireFence;
-    public Bandage _band;
+    [SerializeField] private GameObject[] _items;
+    [SerializeField] private int _spawnRadius;
 
-    public ItemObj ItemObj { get { return _itemObj; } }
-    public GameObject ItemGameObject { get { return _itemGameObject; } }
-    public void SetItemObj(ItemObj item)
+    public ItemObj ItemObj => _itemObj;
+    public GameObject ItemGameObject => _itemGameObject;
+    public ItemObjList _objList;
+    private void Awake()
     {
-        _itemObj = item;
+        _objList = new ItemObjList();
+        _objList._objs = new List<ItemObj>();
+
+        ItemObj pistol = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
+        _objList._objs.Add(pistol);
+
+        ItemObj bread = new ItemObj("Bread", EItemType.Food, 1f, 1);
+        _objList._objs.Add(bread);
+
+        ItemObj bandage = new ItemObj("Bandage", EItemType.Medicine, 1f, 1);
+        _objList._objs.Add(bandage);
+
+        SaveData();
+        LoadData();
     }
-    public void SetItemGameObject(GameObject itemGameObject)
+    public void SetItemObj(ItemObj item) => _itemObj = item;
+    public void SetItemGameObject(GameObject itemGameObject) => _itemGameObject = itemGameObject;
+    public void ItemAction()
     {
-        _itemGameObject = itemGameObject;
-    }
-    public void SetPistol(Pistol pistol)
-    {
-        _pistol = pistol;
-    }
-    public void SetBread(Bread bread)
-    {
-        _bread = bread;
-    }
-    public void SetWirefence(WireFence wireFence)
-    {
-        _wireFence = wireFence;
-    }
-    public void SetBand(Bandage band)
-    {
-        _band = band;
-    }
-    public void Equip()
-    {
-        // 자기 종류가 피스톨이면 캐릭터의 손에 피스톨을 만들어 붙인다.
+        // 인벤토리에서 Remove를 한다고 치면 해당 아이템의 정보를 인자로 받아와서 생성
         GameObject heroHand = GameObject.Find("Right");
-        _pistol.transform.SetParent(heroHand.transform);
-        _pistol.transform.localPosition = Vector3.zero;
-        _pistol.equipped();
+        _itemGameObject.transform.SetParent(heroHand.transform);
+
+        switch (_itemObj._eType)
+        {
+            case EItemType.Weapon:
+                _itemGameObject.transform.localPosition = Vector3.zero;
+                _itemGameObject.GetComponent<Pistol>().Equipped();
+                break;
+
+            case EItemType.Food:
+                _itemGameObject.transform.localPosition = Vector3.zero;
+                _itemGameObject.GetComponent<Bread>().Eating();
+                break;
+
+            case EItemType.Medicine:
+                _itemGameObject.transform.localPosition = Vector3.zero;
+                _itemGameObject.GetComponent<Bandage>().FirstAid();
+                break;
+            default:
+                break;
+        }
     }
-    public void Eat()
+    void SaveData()
     {
-        GameObject heroHand = GameObject.Find("Right");
-        _bread.transform.SetParent(heroHand.transform);
-        _bread.transform.localPosition = Vector3.zero;
-        _bread.Eating();
+        string json = JsonUtility.ToJson(_objList);
+        string path = Application.persistentDataPath + "/itemdata.json";
+        using (StreamWriter outStream = File.CreateText(path))
+        {
+            outStream.Write(json);
+        }
+        Debug.Log(json);
     }
-    public void Heal()
+    void LoadData()
     {
-        GameObject heroHand = GameObject.Find("Right");
-        _band.transform.SetParent(heroHand.transform);
-        _band.transform.localPosition = Vector3.zero;
-        _band.Healing();
+        if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
+        {
+            string json = "";
+            using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
+            {
+                json = inStream.ReadToEnd();
+            }
+            if (string.IsNullOrEmpty(json) == false)
+            {
+                _objList = JsonUtility.FromJson<ItemObjList>(json);
+                SpawnItems();
+                Debug.Log("Load가 되었습니다. ");
+            }
+            else
+            {
+                Debug.Log("파일은 있지만 내용이 없습니다. ");
+            }
+        }
+        else
+        {
+            Debug.Log("파일이 없습니다. ");
+        }
+    }
+    void SpawnItems()
+    {
+        foreach(var data in _objList._objs)
+        {
+            foreach(var item in _items)
+            {
+                ItemType itemType = item.GetComponent<ItemType>();
+                if(itemType != null && data._eType == item.GetComponent<ItemType>().Type)
+                {
+                    Vector3 RandomPosition = UnityEngine.Random.insideUnitSphere * _spawnRadius;
+                    RandomPosition.y = 0f;
+
+                    GameObject temp = Instantiate(item, RandomPosition, Quaternion.identity);
+                    temp.GetComponent<ItemType>().Init(data);
+                    temp.transform.position = RandomPosition;
+                    break;
+                }
+            }
+        }
     }
 }
+
+[Serializable]
+public class ItemObjList
+{
+    public List<ItemObj> _objs;
+}
+
+[Serializable]
 public class ItemObj
 {
     //public Sprite _sprite;
     public string _name;
     public EItemType _eType;
-    public ItemObj(/*Sprite spr,*/ string name, EItemType etype)
+    public float _scale;
+    public int _count;
+    public ItemObj(/*Sprite spr,*/ string name, EItemType etype, float scale, int count)
     {
         //_sprite = spr;
         _name = name;
         _eType = etype;
+        _scale = scale;
+        _count = count;
     }
 }
+//public class WeaponItem : ItemObj
+//{
+//    public WeaponItem(/*Sprite spr,*/ string name, EItemType etype, float scale, int count)
+//        : base(name, EItemType.Weapon, 1f, 1) { }
+//}
 
 public enum EItemType
 {
