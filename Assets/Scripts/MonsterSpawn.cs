@@ -64,6 +64,8 @@ public class MonsterSpawn : MonoBehaviour
             temp.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
             temp.transform.position += new Vector3(Random.Range(-10,10f), 0, Random.Range(-10,10f));
             temp.GetComponent<MonsterMove>().Init(_hero);
+            temp.GetComponent<Patrol>().Init(_hero);
+            //temp.GetComponent<ZombieStatePatroll>().Init(_hero);
 
             _monsterList.Add(temp);
             spawnCount--;

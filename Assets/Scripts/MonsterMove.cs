@@ -24,6 +24,11 @@ public class MonsterMove : MonoBehaviour
         {
             follow();
         }
+        if (Vector3.Distance(_Hero.position, transform.position) > 3f)
+        {
+            GetComponent<MonsterMove>().enabled = false;
+            GetComponent<Patrol>().enabled = true;
+        }
 
         void follow()
         {

@@ -39,9 +39,10 @@ public class Patrol : MonoBehaviour
              transform.position += (moveSpot - transform.position).normalized * speed * Time.deltaTime; ;// Vector3.MoveTowards(transform.position, moveSpot, speed * Time.deltaTime);
         }
 
-        if(Vector3.Distance(_Hero.position, transform.position) < 5f)
+        if(Vector3.Distance(_Hero.position, transform.position) < 3f)
         {
             GetComponent<Patrol>().enabled = false;
+            GetComponent<MonsterMove>().enabled = true;
         }
         //HeroStats._instance.GetComponent<>
 
