@@ -45,6 +45,12 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         _itemSlots.Add(temp);
         ShowInven();
     }
+    //public GameObject RemoveInventoryItem(itemdata)
+    //{
+    //    _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
+    //    _itemSlots.Remove(itemdata);
+    //    return itemdata;
+    //}
 }
 
 public interface IItemHandler

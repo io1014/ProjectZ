@@ -19,4 +19,18 @@ public class ItemSlot : MonoBehaviour
         _handler.MoveItem(gameObject);
         Destroy(gameObject);
     }
+
+    public void OnPlayerInvenButton()
+    {
+        GameObject hero = GameObject.Find("Player");
+        LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
+        GameObject tp = temp.SpawnItem(_itemdata);
+        tp.transform.position = hero.transform.position + hero.transform.forward * 0.5f;
+        // 일단 월드에 게임오브젝트를 만든다.
+        // 만들어지는 위치 캐릭터 앞 // 히어로정보
+        // 만들 정보  <- itemParent가 제네릭 이어야 한다.
+        // 그 다음에 itemAction을 실행한다.
+
+        Destroy(gameObject);
+    }
 }
