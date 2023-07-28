@@ -17,11 +17,11 @@ public class ExamPlayerInfo : MonoBehaviour
         //RunAndWalk();
         //StaminaRecovery();
         //Debug.Log(_currentHP);
-            //if(/* ex : 인벤토리에서 장착 버튼을 눌렀다고 가정했을 때 */true)
-            //{ 
-            //    _itemParent.ItemAction();
-            //    Debug.Log("아이템의 동작을 실행합니다. ");
-            //}
+        if (/* ex : 인벤토리에서 장착 버튼을 눌렀다고 가정했을 때 */true)
+        {
+            //_itemParent.ItemAction();
+            //Debug.Log("아이템의 동작을 실행합니다. ");
+        }
     }
     void RunAndWalk()
     {

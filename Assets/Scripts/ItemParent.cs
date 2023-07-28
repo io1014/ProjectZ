@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -12,27 +11,25 @@ public class ItemParent : MonoBehaviour
     public GameObject ItemGameObject => _itemGameObject;
     public void SetItemObj(ItemObj item) => _itemObj = item;
     public void SetItemGameObject(GameObject itemGameObject) => _itemGameObject = itemGameObject;
-    public void ItemAction(/*GameObject item*/)
+    public void ItemAction(EItemType itemType)
     {
-        // 인벤토리에서 Remove를 한다고 치면 해당 아이템의 정보를 인자로 받아와서 생성
-        //GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().MoveItem();
-        GameObject heroHand = GameObject.Find("Right");
-        _itemGameObject.transform.SetParent(heroHand.transform);
+        //GameObject heroHand = GameObject.Find("Right");
+        //_itemGameObject.transform.SetParent(heroHand.transform);
 
-        switch (_itemObj._eType)
+        switch (itemType)
         {
             case EItemType.Weapon:
-                _itemGameObject.transform.localPosition = Vector3.zero;
+                //_itemGameObject.transform.localPosition = Vector3.zero;
                 _itemGameObject.GetComponent<Pistol>().Equipped();
                 break;
 
             case EItemType.Food:
-                _itemGameObject.transform.localPosition = Vector3.zero;
+                //_itemGameObject.transform.localPosition = Vector3.zero;
                 _itemGameObject.GetComponent<Bread>().Eating();
                 break;
 
             case EItemType.Medicine:
-                _itemGameObject.transform.localPosition = Vector3.zero;
+                //_itemGameObject.transform.localPosition = Vector3.zero;
                 _itemGameObject.GetComponent<Bandage>().FirstAid();
                 break;
 

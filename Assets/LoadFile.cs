@@ -45,7 +45,6 @@ public class LoadFile : MonoBehaviour
             if (itemType != null && obj._eType == item.GetComponent<ItemType>().Type)
             {
                 GameObject temp = Instantiate(item);
-                Debug.Log("name : "+temp.name);
                 temp.GetComponent<ItemType>().Init(obj);
                 return temp;
             }
@@ -58,24 +57,8 @@ public class LoadFile : MonoBehaviour
         {
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
-            Debug.Log(data._eType + ", " + data._name);
             GameObject temp = SpawnItem(data);
             temp.transform.position = RandomPosition;
-
-            //foreach(var item in _items)
-            //{
-            //    ItemType itemType = item.GetComponent<ItemType>();
-            //    if(itemType != null && data._eType == item.GetComponent<ItemType>().Type)
-            //    {
-            //        Vector3 RandomPosition = UnityEngine.Random.insideUnitSphere * _spawnRadius;
-            //        RandomPosition.y = 0f;
-
-            //        GameObject temp = Instantiate(item, RandomPosition, Quaternion.identity);
-            //        temp.GetComponent<ItemType>().Init(data);
-            //        temp.transform.position = RandomPosition;
-            //        break;
-            //    }
-            //}
         }
     }
 }
