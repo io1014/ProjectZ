@@ -6,7 +6,6 @@ public class ItemParent : MonoBehaviour
 {
     protected ItemObj _itemObj;
     protected GameObject _itemGameObject;
-
     public ItemObj ItemObj => _itemObj;
     public GameObject ItemGameObject => _itemGameObject;
     public void SetItemObj(ItemObj item) => _itemObj = item;
@@ -20,22 +19,23 @@ public class ItemParent : MonoBehaviour
         {
             case EItemType.Weapon:
                 //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Pistol>().Equipped();
+                _itemGameObject.GetComponent<Pistol>().IsEquipped(true);
                 break;
 
             case EItemType.Food:
                 //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Bread>().Eating();
+                _itemGameObject.GetComponent<Bread>().Eating(true);
                 break;
 
             case EItemType.Medicine:
                 //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Bandage>().FirstAid();
+                _itemGameObject.GetComponent<Bandage>().FirstAid(true);
                 break;
 
             default:
                 break;
         }
+        
     }
 }
 

@@ -15,17 +15,14 @@ public class Bread : ItemParent
         _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
         _itemObj = new ItemObj("Bread", EItemType.Food, 1f, 1);
     }
-    public void Eating()
+    public void Eating(bool isAte)
     {
-        if(!_isAte)
-        {
-            //Player.IncreaseHealth(1) // 플레이어의 정보가 있는 스크립트에 인자를 줘서 피를 채움
-            _isAte = true;
-            _playerInfo.IncHp(10);
-            Invoke("DestroyBread", 1f);
-        }
-        _isAte = false;
+        //Player.IncreaseHealth(1) // 플레이어의 정보가 있는 스크립트에 인자를 줘서 피를 채움
+        _playerInfo.IncHp(10);
+        IsEating(isAte);
+        Invoke("DestroyBread", 1f);
     }
+    public void IsEating(bool isAte) => _isAte = isAte;
     void DestroyBread()
     {
         Destroy(gameObject);
