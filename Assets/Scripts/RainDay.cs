@@ -5,8 +5,7 @@ using UnityEngine;
 public class RainDay : MonoBehaviour
 {
     [SerializeField] float _realTime;
-    [SerializeField] float _rainFog;
-    [SerializeField] float _rainFogCalc;
+    [SerializeField] Light _light;
     float _dayFog;
     float _currentFogDensity;
 
@@ -16,6 +15,7 @@ public class RainDay : MonoBehaviour
     void Start()
     {
         _dayFog = RenderSettings.fogDensity;
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,8 +23,7 @@ public class RainDay : MonoBehaviour
     {
         int randomTime = Random.Range(1, 7200);
        
-        Invoke("Rainy", _realTime * Time.deltaTime * randomTime);
-        Invoke("RainyStop", _realTime*Time.deltaTime * randomTime);
+        Invoke("Rainy", _realTime * Time.deltaTime );
         
        
         
@@ -35,12 +34,17 @@ public class RainDay : MonoBehaviour
     {
         gameObject.SetActive(true);
         _isRainDay = true;
+        RainyGloomy();
     }
 
-    void RainyStop()
+    
+
+    void RainyGloomy()
     {
-        gameObject.SetActive(false);
-        _isRainDay = false;
+        if(_isRainDay == true)
+        {
+            _light.color = Color.black;
+        }
     }
 
 }
