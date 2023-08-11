@@ -628,6 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c641587882b6b428fa4a0a205a4559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hInven: {fileID: 1883990567}
   _carryInven: {fileID: 1792025767}
   _uiItem: {fileID: 9122115746187626504, guid: 865e7e6b0d3006841a9cdb8f6e96f9fd, type: 3}
   _sprites:
