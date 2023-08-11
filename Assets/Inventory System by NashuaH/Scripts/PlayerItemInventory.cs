@@ -17,7 +17,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         //_itemSet = _item._item;
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
-        _hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+ //       _hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
     }
 
