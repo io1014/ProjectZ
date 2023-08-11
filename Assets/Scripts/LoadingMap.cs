@@ -1,15 +1,26 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Unity.AI.Navigation;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
+
+
+
 
 public class LoadingMap : MonoBehaviour
 {
 
     [SerializeField] GameObject[] mapPrefabs;
+    NavMeshSurface _surface;
 
 
-    
+
+    private void Awake()
+    {
+        _surface = GetComponent<NavMeshSurface>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +46,10 @@ public class LoadingMap : MonoBehaviour
 
     void Terrain()
     {
-        Instantiate(mapPrefabs[0]);
+
+        GameObject terrain = Instantiate(mapPrefabs[0]);
+        //terrain.GetComponent<NavMeshSurface>().BuildNavMesh();
+       
     }
      void Ocean()
     {
@@ -47,15 +61,17 @@ public class LoadingMap : MonoBehaviour
 
     void Road()
     {
-        
-            Instantiate(mapPrefabs[2]);
+       
+        GameObject Road = Instantiate(mapPrefabs[2]);
+        //Road.GetComponent<NavMeshSurface>().BuildNavMesh();    
             
         
     }
 
     void HumanRoad()
     {
-            Instantiate(mapPrefabs[3]);  
+        GameObject HumanRoad =   Instantiate(mapPrefabs[3]);
+        //HumanRoad.GetComponent<NavMeshSurface>().BuildNavMesh();    
         
     }
 
@@ -71,8 +87,8 @@ public class LoadingMap : MonoBehaviour
 
     void Environment()
     {
-        
-            Instantiate(mapPrefabs[5]);  
+        GameObject Environment =   Instantiate(mapPrefabs[5]);
+       // Environment.GetComponent<NavMeshSurface>().BuildNavMesh();    
         
     }
 
