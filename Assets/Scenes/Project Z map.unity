@@ -6054,6 +6054,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _realTime: 1
   _light: {fileID: 1795929127}
+  _currentWeather: 0
+  _rain: {fileID: 0}
+  _nextWeather: 0
 --- !u!1 &1711825322
 GameObject:
   m_ObjectHideFlags: 0

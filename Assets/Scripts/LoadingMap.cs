@@ -62,7 +62,7 @@ public class LoadingMap : MonoBehaviour
     {
        
         GameObject Road = Instantiate(mapPrefabs[2]);
-        Road.GetComponent<NavMeshSurface>().BuildNavMesh();    
+        //Road.GetComponent<NavMeshSurface>().BuildNavMesh();    
             
         
     }
@@ -70,7 +70,7 @@ public class LoadingMap : MonoBehaviour
     void HumanRoad()
     {
         GameObject HumanRoad =   Instantiate(mapPrefabs[3]);
-        HumanRoad.GetComponent<NavMeshSurface>().BuildNavMesh();    
+        //HumanRoad.GetComponent<NavMeshSurface>().BuildNavMesh();    
         
     }
 
@@ -87,7 +87,7 @@ public class LoadingMap : MonoBehaviour
     void Environment()
     {
         GameObject Environment =   Instantiate(mapPrefabs[5]);
-        Environment.GetComponent<NavMeshSurface>().BuildNavMesh();    
+        //Environment.GetComponent<NavMeshSurface>().BuildNavMesh();    
         
     }
 
