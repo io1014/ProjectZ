@@ -17,8 +17,17 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         //_itemSet = _item._item;
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
- //       _hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
-        _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+
+        EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
+        if(etype == EItemType.Weapon)
+        {
+            _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        }
+        else if(etype == EItemType.Food || etype == EItemType.Medicine)
+        {
+            itemdata.GetComponent<ItemSlot>().OnPlayerInvenButton();
+        }
     }
 
     private void Start()
