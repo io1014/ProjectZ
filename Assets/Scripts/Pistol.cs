@@ -75,11 +75,5 @@ public class Pistol : ItemParent
         _isReloading = false;
         Debug.Log(" 재장전 완료! ");
     }
-    public void Equipped()
-    {
-        if (!_isEquipped)
-        {
-            _isEquipped = true;
-        }
-    }
+    public void IsEquipped(bool isEquipped) => _isEquipped = isEquipped;
 }

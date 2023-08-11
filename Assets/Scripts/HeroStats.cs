@@ -30,19 +30,14 @@ public class HeroStats : GenericSingleton<HeroStats>
         {
             _speed = 2;
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            _speed = 2;
-        }
+        if (Input.GetKeyUp(KeyCode.LeftControl)) _speed = 2;
+
         //´À¸®°Ô °È±â
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            _speed = 1;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            _speed = 2;
-        }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) _speed = 1;
+
+        
+        if (Input.GetKeyUp(KeyCode.LeftShift)) _speed = 2;
+      
     }
     void StaminaRecovery()
     {
@@ -62,6 +57,15 @@ public class HeroStats : GenericSingleton<HeroStats>
     public void Damage(float damage)
     {
         _currentHP -=  damage;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if ( _currentHP >= 0 && other.CompareTag("Hand"))
+        {
+            _currentHP -= 10;
+
+        }
     }
 }
 

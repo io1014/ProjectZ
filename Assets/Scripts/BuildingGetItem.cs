@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingGetItem : MonoBehaviour
 {
-    [SerializeField] GameObject _player;
+    
     [SerializeField] GameObject[] _items;
     [SerializeField] Building _buildingType;
      HeroStats _heroStats;
@@ -36,9 +36,13 @@ public class BuildingGetItem : MonoBehaviour
 
     void GetItem()
     {
+        GameObject _player = GameObject.FindGameObjectWithTag("Hero");
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if(dist <= 2f && Input.GetKeyDown(KeyCode.F))
         {
+            int bite = Random.Range(20, 60);
+            Debug.Log(dist + " , " + gameObject.name);
+            InvokeRepeating("GetInject", 10, bite);
             switch (_buildingType)
             {
                 case Building.Factory: Factory();break;
@@ -51,9 +55,7 @@ public class BuildingGetItem : MonoBehaviour
 
 
             }
-            int bite = Random.Range(20, 60);
-            Debug.Log(dist + " , " + gameObject.name);
-            InvokeRepeating("GetInject", 10, bite);
+            
 
         }
         else if (dist > 2f)
