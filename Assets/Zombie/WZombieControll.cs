@@ -21,7 +21,7 @@ public class WZombieControll : MonoBehaviour
         monsterTr = GetComponent<Transform>();
         playerTr = GameObject.FindWithTag("Hero").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
 
         agent.destination = playerTr.position;
         StartCoroutine(CheckZombieState());
@@ -31,8 +31,9 @@ public class WZombieControll : MonoBehaviour
     // Update is called once per frame
     void Update()   
     {
-
         Debug.Log(state);
+        Debug.Log(playerTr.position);
+        //Debug.Log(state);
     }
 
     //애니메이션 타입
@@ -98,7 +99,7 @@ public class WZombieControll : MonoBehaviour
 
                    
             }
+            yield return new WaitForSeconds(0.3f);  
         }
-        yield return new WaitForSeconds(0.3f);
     }
 }

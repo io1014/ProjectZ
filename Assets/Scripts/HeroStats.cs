@@ -15,7 +15,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         RunAndWalk();
         StaminaRecovery();
-        Debug.Log(_currentHP);
+        //Debug.Log(_currentHP);
     }
     void RunAndWalk()
     {

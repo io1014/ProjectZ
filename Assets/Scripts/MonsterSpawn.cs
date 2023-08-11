@@ -59,12 +59,10 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (spawnCount > 0 & spawnCount <= 50 && spawntime < 0)
         {
-            new Vector3(Random.Range(-10, 10f), 0, Random.Range(-10, 10f));
-            GameObject temp = Instantiate(Monster[Random.Range(0,Monster.Length)]);
-            temp.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+            GameObject temp = Instantiate(Monster[Random.Range(0,Monster.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
             temp.transform.position += new Vector3(Random.Range(-10,10f), 0, Random.Range(-10,10f));
-            temp.GetComponent<MonsterMove>().Init(_hero);
-            temp.GetComponent<Patrol>().Init(_hero);
+            //temp.GetComponent<MonsterMove>().Init(_hero);
+            //temp.GetComponent<Patrol>().Init(_hero);
             //temp.GetComponent<ZombieStatePatroll>().Init(_hero);
 
             _monsterList.Add(temp);
