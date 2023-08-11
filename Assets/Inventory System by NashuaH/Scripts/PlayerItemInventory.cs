@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItemHandler
 {
     [SerializeField] HouseItemInventory _hInven;
+    [SerializeField] CarryItemInventory _carryInven;
     [SerializeField] GameObject _uiItem;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] Transform _content;
@@ -17,6 +18,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
         _hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
     }
 
     private void Start()
