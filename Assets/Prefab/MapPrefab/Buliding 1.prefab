@@ -14355,6 +14355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7312820159255723096}
   - component: {fileID: 7312820159255723099}
+  - component: {fileID: -8410825131406452640}
   m_Layer: 3
   m_Name: Buliding 1
   m_TagString: Untagged
@@ -14402,6 +14403,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setmap: 0
+--- !u!210 &-8410825131406452640
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7312820159255723097}
+  m_Enabled: 1
+  m_SortingLayerID: -309904335
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &7312820159286120993
 GameObject:
   m_ObjectHideFlags: 0

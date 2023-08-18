@@ -9,6 +9,8 @@ public class DayAndNight : MonoBehaviour
     [SerializeField] float _nightFogCalc;
     float _dayFog;
     float _currentFogDensity;
+    [SerializeField] Animator _beingNight;
+  
 
     bool _isNight = false;
 
@@ -17,6 +19,7 @@ public class DayAndNight : MonoBehaviour
     void Start()
     {
         _dayFog = RenderSettings.fogDensity;
+        RenderSettings.fogDensity = 1f;
     }
 
     // Update is called once per frame
@@ -27,19 +30,26 @@ public class DayAndNight : MonoBehaviour
         if (transform.eulerAngles.x >= 170)
         {
             _isNight = true;
+            _beingNight.SetBool("IsNight", true);
+
         }
         else if(transform.eulerAngles.x <= 10)
         {
             _isNight = false;
+            _beingNight.SetBool("IsNight", false);
+
+                
         }
 
         if(_isNight)
         {
             if(_currentFogDensity <= _nightFog)
-            {
-                _currentFogDensity += 0.1f * _nightFogCalc * Time.deltaTime;
-                RenderSettings.fogDensity = _currentFogDensity; 
-            }
+           {
+               _currentFogDensity += 0.1f * _nightFogCalc * Time.deltaTime;
+              RenderSettings.fogDensity = _currentFogDensity;
+               
+                    
+           }
         }
         else
         {
@@ -47,6 +57,7 @@ public class DayAndNight : MonoBehaviour
             {
                 _currentFogDensity -= 0.1f * _nightFogCalc * Time.deltaTime;
                 RenderSettings.fogDensity = _currentFogDensity;
+                
             }
         }
     }

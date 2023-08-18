@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4267336521686292048}
   - component: {fileID: 4267336521686292061}
   - component: {fileID: -7481966895500929835}
+  - component: {fileID: 1213587620882039171}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -119,7 +120,18 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: dc1a9839cb6dc1a46ae39ff39a82a0e6, type: 2}
   m_BuildHeightMesh: 0
+--- !u!210 &1213587620882039171
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267336521686292049}
+  m_Enabled: 1
+  m_SortingLayerID: -309904335
+  m_SortingLayer: 2
+  m_SortingOrder: 0

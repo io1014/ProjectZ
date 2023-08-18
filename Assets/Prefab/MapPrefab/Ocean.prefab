@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 221042037662877095}
   - component: {fileID: 221042037662877092}
   - component: {fileID: 221042037662877089}
+  - component: {fileID: -9180537555195193839}
   m_Layer: 0
   m_Name: Ocean
   m_TagString: Untagged
@@ -97,3 +98,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setmap: 6
+--- !u!210 &-9180537555195193839
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221042037662877093}
+  m_Enabled: 1
+  m_SortingLayerID: -309904335
+  m_SortingLayer: 2
+  m_SortingOrder: 0

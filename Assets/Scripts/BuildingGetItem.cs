@@ -9,11 +9,16 @@ public class BuildingGetItem : MonoBehaviour
     [SerializeField] Building _buildingType;
      HeroStats _heroStats;
 
-
+    bool _isContacted = false;
     float _inject;
     List<GameObject> _itemsList;
     
     ItemFromBuidling _IFB;
+
+    private void Start()
+    {
+        _heroStats = new HeroStats();
+    }
 
     // Update is called once per frame
     void Update()
@@ -40,8 +45,9 @@ public class BuildingGetItem : MonoBehaviour
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if(dist <= 2f && Input.GetKeyDown(KeyCode.F))
         {
+            _isContacted = true;
             int bite = Random.Range(20, 60);
-            Debug.Log(dist + " , " + gameObject.name);
+            Debug.Log(dist + " , " + gameObject.name+"에 접근했습니다.");
             InvokeRepeating("GetInject", 10, bite);
             switch (_buildingType)
             {
@@ -58,9 +64,12 @@ public class BuildingGetItem : MonoBehaviour
             
 
         }
-        else if (dist > 2f)
+        else if (_isContacted = true && dist > 2f)
         {
+            //Debug.Log("멀어졌습니다");
+            _isContacted= false;
             CancelInvoke("GetInject");
+            
         }
 
     }
@@ -77,6 +86,7 @@ public class BuildingGetItem : MonoBehaviour
                 int randomItem = Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
                 _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
+            // ui 추가 
         }
         
     }
@@ -154,9 +164,9 @@ public class BuildingGetItem : MonoBehaviour
     void GetInject()
     {
         _inject = Random.Range(1,12);
-        int dmg = 5;
-        int Littledmg = 3;
-        int Bigdmg = 10;
+        float dmg = 5;
+        float Littledmg = 3;
+        float Bigdmg = 10;
 
         
         if (_inject >= 1 && _inject < 6)

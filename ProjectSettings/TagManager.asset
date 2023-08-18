@@ -15,7 +15,7 @@ TagManager:
   - UI
   - UI2
   - Item
-  - 
+  - Night
   - 
   - 
   - 
@@ -43,6 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Night
     uniqueID: 1173683251
+    locked: 0
+  - name: Map
+    uniqueID: 3985062961
+    locked: 0
+  - name: Zombie
+    uniqueID: 314477949
+    locked: 0
+  - name: Player
+    uniqueID: 3327815553
     locked: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342074194756504940}
   - component: {fileID: 1342074194756504941}
+  - component: {fileID: -330172683587547598}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -99,6 +100,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setmap: 3
+--- !u!210 &-330172683587547598
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342074194756504939}
+  m_Enabled: 1
+  m_SortingLayerID: -309904335
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1001 &1342074194397260896
 PrefabInstance:
   m_ObjectHideFlags: 0

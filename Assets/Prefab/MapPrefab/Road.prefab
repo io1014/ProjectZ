@@ -843,6 +843,7 @@ GameObject:
   - component: {fileID: 2207042440747487639}
   - component: {fileID: 2207042440747487636}
   - component: {fileID: 6247565899905478968}
+  - component: {fileID: -6880314876598390295}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -936,10 +937,21 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8820fce2d4d542e4ebde0782ba530694, type: 2}
   m_BuildHeightMesh: 0
+--- !u!210 &-6880314876598390295
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207042440747487638}
+  m_Enabled: 1
+  m_SortingLayerID: -309904335
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!1 &2207042441325053938
 GameObject:
   m_ObjectHideFlags: 0

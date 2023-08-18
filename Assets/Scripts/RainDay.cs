@@ -18,7 +18,7 @@ public class RainDay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _rain = GetComponent<ParticleSystem>();
+       
         _currentWeather = Weather.sun;
         _nextWeather = 1;
         _randomTime = Random.Range(10f, 180f);
@@ -26,50 +26,53 @@ public class RainDay : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        this._weatherTime -= Time.deltaTime; //10초에서 180초 동안 랜덤한 시간에 그 날씨 유지
-        if (_nextWeather == 1) //다음 날씨가 '눈'이고
-        {
-            if (this._weatherTime<= 0) //현재 날씨의 제한시간이 끝나면
-            {
-                _nextWeather = Random.Range(0, 2); //다음 날씨 계산(0 - 맑음, 1 - 비)
-                ChangeWeather(Weather.rain); //눈으로 바꿔줌
-                _weatherTime = Random.Range(0,180);
-            }
-        }
-        if (_nextWeather == 0) //다음 날씨가 '맑음'이고
-        {
-            if (this._weatherTime <= 0) //현재 날씨의 제한시간이 끝나면
-            {
-                _nextWeather = Random.Range(0, 2); //다음 날씨 계산(0 - 맑음, 1 -비)
-                ChangeWeather(Weather.sun); //맑음으로 바꿔줌
-                _weatherTime = Random.Range(0,180);
-            }
-        }
-
-
-
-    }
     public void ChangeWeather(Weather weatherType)
     {
-        if (weatherType != this._currentWeather)
+        if (weatherType != _currentWeather)
         {
             switch (weatherType)
             {
                 case Weather.sun:
                     _currentWeather = Weather.sun;
-                    this._rain.Stop();
-                    _light.color = Color.clear;
+                    _rain.Stop();
+                    _light.color = Color.white;
                     break;
                 case Weather.rain:
                     _currentWeather = Weather.rain;
-                    this._rain.Play();
+                    _rain.Play();
                     _light.color = Color.black;
                     break;
             }
         }
 
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+        _weatherTime -= Time.deltaTime; //10초에서 180초 동안 랜덤한 시간에 그 날씨 유지
+        if (_nextWeather == 1) //다음 날씨가 '눈'이고
+        {
+            if (_weatherTime <= 0) //현재 날씨의 제한시간이 끝나면
+            {
+                _nextWeather = Random.Range(0, 2); //다음 날씨 계산(0 - 맑음, 1 - 비)
+                ChangeWeather(Weather.rain); //눈으로 바꿔줌
+                _weatherTime = _randomTime;
+            }
+        }
+        if (_nextWeather == 0) //다음 날씨가 '맑음'이고
+        {
+            if (_weatherTime <= 0) //현재 날씨의 제한시간이 끝나면
+            {
+                _nextWeather = Random.Range(0, 2); //다음 날씨 계산(0 - 맑음, 1 -비)
+                ChangeWeather(Weather.sun); //맑음으로 바꿔줌
+                _weatherTime = _randomTime;
+            }
+        }
+
+
+
+    }
+    
 }
