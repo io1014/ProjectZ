@@ -15,6 +15,8 @@ public class ItemSlot : MonoBehaviour
     }
     public void ONButton()
     {
+
+
         GameObject hero = GameObject.Find("Player");
         LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
         GameObject tp = temp.SpawnItem(_itemdata);
@@ -32,6 +34,10 @@ public class ItemSlot : MonoBehaviour
         _handler.MoveItem(gameObject);
         Destroy(gameObject);
     }
+
+      
+
+   
 
     public void OnPlayerInvenButton()
     {

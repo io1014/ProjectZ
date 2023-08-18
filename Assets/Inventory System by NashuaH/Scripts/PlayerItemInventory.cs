@@ -9,24 +9,40 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     [SerializeField] GameObject _uiItem;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] Transform _content;
+    [SerializeField] GameObject _text;  // TrashCan이 켜져 있는지 확인 용
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
 
     public void MoveItem(GameObject itemdata)
     {
-        //_itemSet = _item._item;
-        _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
-        _itemSlots.Remove(itemdata);
-        //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        // TrashCan의 text가 false 일 경우 기존대로 실행
+        // TrashCan의 text가 true일 경우 버리고 필드 위에 생성하는 코드 실행
 
-        EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
-        if(etype == EItemType.Weapon)
+
+        //_itemSet = _item._item;
+        if (_text.activeSelf == false)
         {
-            _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+            _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
+            _itemSlots.Remove(itemdata);
+            //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+
+            EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
+            if (etype == EItemType.Weapon)
+            {
+                _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+            }
+            else if (etype == EItemType.Food || etype == EItemType.Medicine)
+            {
+                itemdata.GetComponent<ItemSlot>().OnPlayerInvenButton();
+            }
         }
-        else if(etype == EItemType.Food || etype == EItemType.Medicine)
+        else if (_text.activeSelf == true)
         {
-            itemdata.GetComponent<ItemSlot>().OnPlayerInvenButton();
+            Debug.Log("Item on Filed");
+            _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
+            _itemSlots.Remove(itemdata);
+
+            // 필드에 생성하는 코드
         }
     }
 
