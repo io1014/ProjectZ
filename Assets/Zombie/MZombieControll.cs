@@ -57,7 +57,7 @@ public class MZombieControll : MonoBehaviour
             {
                 state = State.attack;
             }
-            if (distance <= traceDist)
+            else if (distance <= traceDist)
             {
                 state = State.walk;
             }

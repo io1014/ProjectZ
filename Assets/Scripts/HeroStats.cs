@@ -7,7 +7,7 @@ public class HeroStats : GenericSingleton<HeroStats>
 
     float _Maxstamina = 100;
     float _stamina = 100;
-    float _speed = 0.2f;
+    float _speed = 2f;
     float _MaxHP = 100;
     float _currentHP = 100;
 

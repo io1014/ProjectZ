@@ -59,7 +59,7 @@ public class WZombieControll : MonoBehaviour
             {
                 state = State.Attack;
             }
-            if (distance <= traceDist)
+            else if (distance <= traceDist)
             {
                 state = State.Trace;
             }
