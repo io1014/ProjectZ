@@ -12,6 +12,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     [SerializeField] GameObject _text;  // TrashCan이 켜져 있는지 확인 용
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
+    bool _isText;
 
     public void MoveItem(GameObject itemdata)
     {
@@ -43,7 +44,17 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
             _itemSlots.Remove(itemdata);
 
             // 필드에 생성하는 코드
+            itemdata.GetComponent<ItemSlot>().RemoveItem();
         }
+    }
+
+    public void SetText(bool text)
+    {
+        _isText = text;
+    }
+    public bool GetText()
+    {
+        return _isText;
     }
 
     private void Start()

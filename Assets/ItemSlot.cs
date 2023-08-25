@@ -22,7 +22,8 @@ public class ItemSlot : MonoBehaviour
     }
     public void ONButton()
     {
-        if(eType == ESlotType.myInven)
+        bool text = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetText();
+        if(eType == ESlotType.myInven && text == false)
         {
             GameObject hero = GameObject.Find("Player");
             LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
@@ -41,9 +42,20 @@ public class ItemSlot : MonoBehaviour
             _handler.MoveItem(gameObject);
             Destroy(gameObject);
         }
-        else if(eType != ESlotType.myInven)
+        else if(eType == ESlotType.myInven && text == true)
         {
-
+            _handler.MoveItem(gameObject);
+            Destroy(gameObject);
+        }
+        else if(eType == ESlotType.houseInven)
+        {
+            _handler.MoveItem(gameObject);
+            Destroy(gameObject);
+        }
+        else if(eType == ESlotType.CarryInven)
+        {
+            // 캐리 인벤인 경우
+            // 슬롯을 클릭했을 때 생성되지않고, 마이 인벤으로 옮기기만 해야함
             _handler.MoveItem(gameObject);
             Destroy(gameObject);
         }
