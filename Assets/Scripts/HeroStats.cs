@@ -11,6 +11,8 @@ public class HeroStats : GenericSingleton<HeroStats>
     float _MaxHP = 100;
     float _currentHP = 100;
 
+
+
     void Update()
     {
         RunAndWalk();
