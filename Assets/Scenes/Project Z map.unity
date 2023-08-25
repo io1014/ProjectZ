@@ -789,8 +789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hero: {fileID: 500683359}
   Monster:
-  - {fileID: 4908681233244684407, guid: 19638d0b357bc91408b1614eb787e51d, type: 3}
-  - {fileID: 7722277215444911903, guid: f9e4f8e4af0555e4abc8e25791611d23, type: 3}
+  - {fileID: 663346398228966964, guid: 1fef54c83c9856a41910b0b15c25df66, type: 3}
+  - {fileID: 995640215329219843, guid: f938746582e0be84689a0b6468cd9b07, type: 3}
   spawnPoints:
   - {fileID: 1091062219}
   - {fileID: 1843829848}
