@@ -1,38 +1,52 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+public enum ESlotType
+{
+    myInven,
+    houseInven,
+    CarryInven,
+}
 public class ItemSlot : MonoBehaviour
 {
     [SerializeField] Image _img;
     public ItemObj _itemdata;
     IItemHandler _handler;
+    ESlotType eType;
 
-    public void Init(ItemObj data, Sprite spr, IItemHandler handler)
+    public void Init(ItemObj data, Sprite spr, IItemHandler handler, ESlotType type )
     {
         _handler = handler;
         _itemdata = data;
         _img.sprite = spr;
+        eType = type;
     }
     public void ONButton()
     {
+        if(eType == ESlotType.myInven)
+        {
+            GameObject hero = GameObject.Find("Player");
+            LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
+            GameObject tp = temp.SpawnItem(_itemdata);
+            Debug.Log(tp.name + "OnBtn");
 
+            GameObject heroHand = GameObject.Find("Right");
+            tp.transform.SetParent(heroHand.transform);
+            tp.transform.localPosition = Vector3.zero;
+            tp.transform.localRotation = Quaternion.identity;
 
-        GameObject hero = GameObject.Find("Player");
-        LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
-        GameObject tp = temp.SpawnItem(_itemdata);
-        Debug.Log(tp.name + "OnBtn");
+            ItemParent ip = new ItemParent();
+            ip.SetItemGameObject(tp);
+            ip.ItemAction(tp.GetComponent<ItemType>().Type);
 
-        GameObject heroHand = GameObject.Find("Right");
-        tp.transform.SetParent(heroHand.transform);
-        tp.transform.localPosition = Vector3.zero;
-        tp.transform.localRotation = Quaternion.identity;
+            _handler.MoveItem(gameObject);
+            Destroy(gameObject);
+        }
+        else if(eType != ESlotType.myInven)
+        {
 
-        ItemParent ip = new ItemParent();
-        ip.SetItemGameObject(tp);
-        ip.ItemAction(tp.GetComponent<ItemType>().Type);
-
-        _handler.MoveItem(gameObject);
-        Destroy(gameObject);
+            _handler.MoveItem(gameObject);
+            Destroy(gameObject);
+        }
     }
 
       

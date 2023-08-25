@@ -33,7 +33,7 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         for (int i = 0; i < _items.Count; i++)
         {
             ItemObj itemdata = _items[i];
-            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this);
+            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.CarryInven);
         }
     }
 
