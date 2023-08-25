@@ -9,8 +9,8 @@ public class MZombieControll : MonoBehaviour
 
     State state = State.Idle;
 
-    float traceDist = 10f; //추적거리
-    float attackDist = 2.0f; // 공격거리
+    float traceDist = 5f; //추적거리
+    float attackDist = 0.4f; // 공격거리
     bool isDie = false; //죽은지 체크
     Transform monsterTr;
     public Transform playerTr;
@@ -57,7 +57,7 @@ public class MZombieControll : MonoBehaviour
             {
                 state = State.attack;
             }
-            else if (distance <= traceDist)
+            else if (distance <= traceDist )
             {
                 state = State.walk;
             }
@@ -82,6 +82,7 @@ public class MZombieControll : MonoBehaviour
                     break;
 
                 case State.walk:
+                    transform.LookAt(playerTr.position);
                     agent.SetDestination(playerTr.position); //추적 대상
                     agent.isStopped = false;
                     anim.SetBool("walk", true);
@@ -89,7 +90,7 @@ public class MZombieControll : MonoBehaviour
                     break;
                 
                 case State.attack:
-                    anim.SetBool("attack", false);
+                    anim.SetBool("attack", true);
                     break;
 
                 case State.Die:
