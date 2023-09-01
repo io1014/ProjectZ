@@ -60,7 +60,6 @@ public class BuildingGetItem : MonoBehaviour
             {
                 case Building.Factory: Factory();break;
                 case Building.Hospital:Hospital();break;
-                    case Building.GasStation:GasStation();break;
                     case Building.FireDepartment:FireDepartment();break;    
                     case Building.Store:Store();break;  
                     case Building.House:House();break;
@@ -107,31 +106,37 @@ public class BuildingGetItem : MonoBehaviour
        
         _itemsList = new List<GameObject>();
         Building SI = Building.Store;
-  
-         
-            if (SI == _buildingType)
+
+
+        if (SI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+        {
+            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                for (int i = 0; i < _items.Length; i++)
-                {
-                    _itemsList.Add(_items[i]);
-                }
+                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
-        
-        
+            // ui 추가 
+        }
+
+
     }
 
     void Hospital()
     {
         _itemsList = new List<GameObject>();
             Building HSI = Building.Hospital;
-            if(HSI == _buildingType)
+        if (HSI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+        {
+            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                for(int i = 0; i < _items.Length; i++)
-                {
-                    _itemsList.Add(_items[i]);  
-                }
+                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
-        
+            // ui 추가 
+        }
+
     }
 
 
@@ -139,42 +144,36 @@ public class BuildingGetItem : MonoBehaviour
     {
         _itemsList = new List<GameObject>();
         Building HI = Building.House;
-        if(HI == _buildingType) 
+        if (HI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
         {
-            for(int i = 0; i < _items.Length;i++)
+            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                _itemsList.Add(_items[i]);  
+                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
+            // ui 추가 
         }
-       
+
     }
 
 
     void FireDepartment()
     {
         _itemsList = new List<GameObject>();
-        Building FI = Building.FireDepartment;
-        if( FI == _buildingType) 
+        Building FaI = Building.FireDepartment;
+        if (FaI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
         {
-            for(int i =0; i < _items.Length; i++)
+            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                _itemsList.Add(_items[i]);  
+                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
+            // ui 추가 
         }
     }
 
-    void GasStation()
-    {
-        _itemsList = new List<GameObject>();
-        Building GI = Building.GasStation;  
-        if( GI == _buildingType) 
-        {
-            for(int i = 0; i< _items.Length; i++)
-            {
-                _itemsList.Add(_items[i]);  
-            }
-        }
-    }
 
 
     void GetInject()
@@ -224,7 +223,6 @@ public class BuildingGetItem : MonoBehaviour
         Hospital,
         House,
         FireDepartment,
-        GasStation
     }
 
 
