@@ -12,7 +12,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     [SerializeField] GameObject _text;  // TrashCan이 켜져 있는지 확인 용
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
-    bool _isText;
+    bool _isText = false;
 
     public void MoveItem(GameObject itemdata)
     {
@@ -23,6 +23,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         //_itemSet = _item._item;
         if (_text.activeSelf == false)
         {
+            _isText = false;
             _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
             _itemSlots.Remove(itemdata);
             //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
@@ -39,6 +40,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         }
         else if (_text.activeSelf == true)
         {
+            _isText = true;
             Debug.Log("Item on Filed");
             _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
             _itemSlots.Remove(itemdata);

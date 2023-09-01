@@ -25,12 +25,12 @@ public class ItemSlot : MonoBehaviour
         bool text = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetText();
         if(eType == ESlotType.myInven && text == false)
         {
-            GameObject hero = GameObject.Find("Player");
+            GameObject hero = GameObject.Find("Hero");
             LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
             GameObject tp = temp.SpawnItem(_itemdata);
             Debug.Log(tp.name + "OnBtn");
 
-            GameObject heroHand = GameObject.Find("Right");
+            GameObject heroHand = GameObject.Find("Rweaponholder");
             tp.transform.SetParent(heroHand.transform);
             tp.transform.localPosition = Vector3.zero;
             tp.transform.localRotation = Quaternion.identity;

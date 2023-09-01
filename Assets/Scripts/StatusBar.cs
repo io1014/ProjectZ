@@ -43,7 +43,7 @@ public class StatusBar : MonoBehaviour
     void HpChange()
     {
         //    float _hpFillAmount = (_currentHP / _maxHP); 변수 값을 받으면 수정
-        float _hpFillAmount = (70f / 100f);  // test 용
+        float _hpFillAmount = (100f / 100f);  // test 용
         _hpImg.fillAmount = (_hpFillAmount);
 
     }

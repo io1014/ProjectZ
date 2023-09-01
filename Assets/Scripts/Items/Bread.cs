@@ -8,11 +8,11 @@ public class Bread : ItemParent
     float _increaseHP = 1f;         // 체력 회복 지수
     float _increaseFull = 1f;       // 배부름 지수
     bool _isAte = false;            // 빵 먹었는지 여부
-    ExamPlayerInfo _playerInfo;     // 피를 채울 플레이어의 정보
+    HeroStats _playerInfo;    // 피를 채울 플레이어의 정보
 
     private void Awake()
     {
-        _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
+        _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
         _itemObj = new ItemObj("Bread", EItemType.Food, 1f, 1);
     }
     public void Eating(bool isAte)
