@@ -9,8 +9,8 @@ public class WZombieControll : MonoBehaviour
 
     State state = State.Idle;
 
-    float traceDist = 10f; //추적거리
-    float attackDist = 2.0f; // 공격거리
+    float traceDist = 5f; //추적거리
+    float attackDist = 0.4f; // 공격거리
     bool isDie = false; //죽은지 체크
     Transform monsterTr;
     public Transform playerTr;
@@ -91,7 +91,7 @@ public class WZombieControll : MonoBehaviour
                     break;
                 
                 case State.Attack:
-                    anim.SetBool("Attack", false);
+                    anim.SetBool("Attack", true);
                     break;
 
                 case State.Die:
