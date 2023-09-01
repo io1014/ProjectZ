@@ -2187,8 +2187,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _items:
-  - {fileID: 2044380250128950159, guid: cac5484b96c4bdb4a92559af26deeaaf, type: 3}
-  - {fileID: 555290821068415512, guid: 6159420ec226b7046961717946230280, type: 3}
+  - {fileID: 1987713744733760, guid: aba7dea272bb8f240b7fbf3167eac822, type: 3}
+  - {fileID: 4335471984611049496, guid: a95ed28017a263249a213ef4e976c58e, type: 3}
   - {fileID: 3775779534423005000, guid: c0e3cb313d283b34e8f7946367abd22f, type: 3}
   _spawnRadius: 50
   _objList:
@@ -4186,7 +4186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myInven: {fileID: 1992550045}
   _houseInven: {fileID: 932861550}
-  _text: {fileID: 0}
+  _text: {fileID: 187337281}
 --- !u!114 &1858050268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4808,14 +4808,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hInven: {fileID: 932861551}
-  _carryInven: {fileID: 0}
+  _carryInven: {fileID: 1480093181}
   _uiItem: {fileID: 1982180362147421622, guid: 865e7e6b0d3006841a9cdb8f6e96f9fd, type: 3}
   _sprites:
   - {fileID: 21300000, guid: acaee509273bee040ab6f31002657312, type: 3}
   - {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
   - {fileID: 21300000, guid: d494b173a1af6e049a288faa8bb6c7be, type: 3}
   _content: {fileID: 1875298144}
-  _text: {fileID: 0}
+  _text: {fileID: 187337281}
 --- !u!114 &1992550047
 MonoBehaviour:
   m_ObjectHideFlags: 0

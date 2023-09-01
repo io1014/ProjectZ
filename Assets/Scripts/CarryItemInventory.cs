@@ -15,6 +15,9 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
     public void MoveItem(GameObject itemdata)
     {
         //_itemSet = _item._item;
+        //GameObject heroHand = GameObject.Find("Right");
+        //heroHand.transform.GetChild(0);
+
         _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
