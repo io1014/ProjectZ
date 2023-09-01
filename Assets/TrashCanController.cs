@@ -7,7 +7,7 @@ public class TrashCanController : MonoBehaviour
     [SerializeField] GameObject _myInven;
     [SerializeField] GameObject _houseInven;
     [SerializeField] GameObject _text;
-
+    bool _isText = false;
     public void showInventory()
     {
         _myInven.SetActive(!_myInven.activeSelf);
@@ -16,11 +16,17 @@ public class TrashCanController : MonoBehaviour
         if(_myInven.activeSelf == true)
         {
             _text.SetActive(true);
+            _isText = true;
         }
 
         else
         {
             _text.SetActive(false);
+            _isText = false;
         }
+    }
+    private void Update()
+    {
+        GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().SetText(_isText);
     }
 }
