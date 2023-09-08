@@ -50,15 +50,9 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         }
     }
 
-    public void SetText(bool text)
-    {
-        _isText = text;
-    }
-    public bool GetText()
-    {
-        return _isText;
-    }
-
+    public void SetText(bool text) => _isText = text;
+    public bool GetText() => _isText;
+    public GameObject GetItem() => _uiItem;
     private void Start()
     {
         ItemObj obj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);

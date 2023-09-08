@@ -20,8 +20,8 @@ public class ExamPlayerMove : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
-        Vector3 newVelocity = transform.forward * y * GetComponent<ExamPlayerInfo>().getspeed();
-        newVelocity += transform.right * x * GetComponent<ExamPlayerInfo>().getspeed();
+        Vector3 newVelocity = transform.forward * y * GetComponent<HeroStats>().getspeed();
+        newVelocity += transform.right * x * GetComponent<HeroStats>().getspeed();
         GetComponent<Rigidbody>().velocity = newVelocity;
     }
 

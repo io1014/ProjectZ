@@ -20,7 +20,15 @@ public class ItemSlot : MonoBehaviour
         _img.sprite = spr;
         eType = type;
     }
-    public void ONButton()
+
+    public void ButtonFiler()
+    {
+        int slotCount = GenericSingleton<CarryItemInventory>._instance.GetComponent<CarryItemInventory>().GetSlotCount();
+        // 여기서 슬롯카운트에 따라서 Pistol 스프라이트를 가진 슬롯들만 OnButton을 실행하지 않게 할 것인지 정해야함
+    }
+
+
+    public void OnButton()
     {
         bool text = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetText();
         if(eType == ESlotType.myInven && text == false)
@@ -61,10 +69,6 @@ public class ItemSlot : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-      
-
-   
 
     public void OnPlayerInvenButton()
     {

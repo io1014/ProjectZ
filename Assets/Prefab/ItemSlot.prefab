@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _img: {fileID: 6368662969902677470}
-  _text: {fileID: 0}
   _itemdata:
     _name: 
     _eType: 0
