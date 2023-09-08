@@ -58,6 +58,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
     }

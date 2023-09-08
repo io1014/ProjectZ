@@ -32,6 +32,7 @@ public class ItemSlot : MonoBehaviour
 
             GameObject heroHand = GameObject.Find("Rweaponholder");
             tp.transform.SetParent(heroHand.transform);
+            tp.transform.localScale = Vector3.one;
             tp.transform.localPosition = Vector3.zero;
             tp.transform.localRotation = Quaternion.identity;
 

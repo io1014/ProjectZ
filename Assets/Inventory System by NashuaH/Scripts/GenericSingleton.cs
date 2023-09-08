@@ -8,6 +8,7 @@ public class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviour
         if(_instance == null)
         {
             _instance = this;
+            Debug.Log(gameObject.name);
             DontDestroyOnLoad(gameObject);
         }
         else

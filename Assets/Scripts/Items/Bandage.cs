@@ -5,11 +5,11 @@ public class Bandage : ItemParent
     string _name = "Bandage";         // 의약품 이름
     float _weight = 0.1f;             // 무게
     float _increaseHP = 1f;           // 체력 회복 지수
-    ExamPlayerInfo _playerInfo;
+    HeroStats _playerInfo;
     bool _isTreat = false;
     private void Awake()
     {
-        _playerInfo = GameObject.FindGameObjectWithTag("Player").GetComponent<ExamPlayerInfo>();
+        _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
         _itemObj = new ItemObj("Bandage", EItemType.Medicine, 1f, 1);
     }
     public void FirstAid(bool isTreat)
