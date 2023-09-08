@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class HeroStats : GenericSingleton<HeroStats>
 {
 
-    [SerializeField] Image _staminaImg;
-    [SerializeField] Image _hpImg;
+    //[SerializeField] Image _staminaImg;
+    //[SerializeField] Image _hpImg;
     [SerializeField] GameObject _player;
+    [SerializeField] Slider _HPSlider;
+    [SerializeField] Slider _staminaSlider;
 
     float _Maxstamina = 100;
     float _stamina = 100;
@@ -19,35 +21,49 @@ public class HeroStats : GenericSingleton<HeroStats>
     private void Start()
     {
         // Hp, stamina bar 초기화 
-        _staminaImg.fillAmount = 1f;
-        _hpImg.fillAmount = 1f;
+        //_staminaImg.fillAmount = 1f;
+        //_hpImg.fillAmount = 1f;
+        HpChange();
+        StaminaChange();
     }
 
     void Update()
     {
         RunAndWalk();
         StaminaRecovery();
-        StaminaChange();
-        HpChange();
+        //StaminaChange();
+        //HpChange();
         Debug.Log(_currentHP);
+        HpChange();
+        StaminaChange();
     }
-
     
-    void StaminaChange()
-    {
-        //    float _staminaFillAmount = (_stamina / _maxStamina);  변수 값을 받으면 수정
-        float _staminaFillAmount = (_stamina / _Maxstamina); // test용
-        _staminaImg.fillAmount = (_staminaFillAmount);
-
-    }
-
     void HpChange()
     {
-        //    float _hpFillAmount = (_currentHP / _maxHP); 변수 값을 받으면 수정
-        float _hpFillAmount = (_currentHP / _MaxHP);  // test 용
-        _hpImg.fillAmount = (_hpFillAmount);
-
+        _HPSlider.maxValue = _MaxHP;
+        _HPSlider.value = _currentHP;
+       
     }
+    void StaminaChange()
+    {
+        _staminaSlider.maxValue = _Maxstamina;
+        _staminaSlider.value = _stamina;
+    }
+    //void StaminaChange()
+    //{
+    //    //    float _staminaFillAmount = (_stamina / _maxStamina);  변수 값을 받으면 수정
+    //    float _staminaFillAmount = (_stamina / _Maxstamina); // test용
+    //    _staminaImg.fillAmount = (_staminaFillAmount);
+
+    //}
+
+    //void HpChange()
+    //{
+    //    //    float _hpFillAmount = (_currentHP / _maxHP); 변수 값을 받으면 수정
+    //    float _hpFillAmount = (_currentHP / _MaxHP);  // test 용
+    //    _hpImg.fillAmount = (_hpFillAmount);
+
+    //}
 
     void RunAndWalk()
     {

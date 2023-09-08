@@ -73,6 +73,7 @@ public class WZombieControll : MonoBehaviour
     //좀비 애니메이션 움직임
     IEnumerator ZombieAction()
     {
+        float _next = 0.3f;
         while(!isDie)
         {
             switch(state) 
@@ -81,17 +82,21 @@ public class WZombieControll : MonoBehaviour
                 case State.Idle:
                     agent.isStopped = true; //추적여부
                     anim.SetBool("Run", false);
+                    _next = 1f;
                     break;
 
                 case State.Trace:
+                    transform.LookAt(playerTr.position);
                     agent.SetDestination(playerTr.position); //추적 대상
                     agent.isStopped = false;
                     anim.SetBool("Run", true);
                     anim.SetBool("Attack", false);
+                    _next = 3f;
                     break;
                 
                 case State.Attack:
                     anim.SetBool("Attack", true);
+                    _next = 1f;
                     break;
 
                 case State.Die:
@@ -99,7 +104,7 @@ public class WZombieControll : MonoBehaviour
 
                    
             }
-            yield return new WaitForSeconds(0.3f);  
+            yield return new WaitForSeconds(_next);  
         }
     }
 }
