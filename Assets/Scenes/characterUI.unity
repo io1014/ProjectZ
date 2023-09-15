@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,6 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387ee2ba6827ea7429d2563f2454c378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _HPSlider: {fileID: 0}
+  _staminaSlider: {fileID: 0}
+  _currentHP: 100
 --- !u!54 &79760103
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -972,6 +976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9496a9acd16806d42b6cfdc49d78f160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _staminaImg: {fileID: 0}
+  _hpImg: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!114 &1672402091
 MonoBehaviour:
   m_ObjectHideFlags: 0

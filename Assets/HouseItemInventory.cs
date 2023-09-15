@@ -9,7 +9,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     [SerializeField] GameObject _houseItem;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] Transform _content;
-    List<ItemObj> _items = new List<ItemObj>();
+    public List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
 
     // Start is called before the first frame update

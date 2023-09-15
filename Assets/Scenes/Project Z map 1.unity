@@ -2379,10 +2379,11 @@ MonoBehaviour:
   _houseItem: {fileID: 9122115746187626504, guid: b2f8d5fada3b36f419dc7c8a209f8e8c, type: 3}
   _sprites:
   - {fileID: 21300000, guid: acaee509273bee040ab6f31002657312, type: 3}
-  - {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
   - {fileID: 21300000, guid: d494b173a1af6e049a288faa8bb6c7be, type: 3}
   - {fileID: 21300000, guid: a0b32fa54eb4c4b47bba382c0ea3de69, type: 3}
+  - {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
   _content: {fileID: 896181904}
+  _items: []
 --- !u!114 &695400836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10010,6 +10011,7 @@ MonoBehaviour:
   - {fileID: 7312820159255723097, guid: 7ba2d66cce1ced145b227bb119dcbcc0, type: 3}
   - {fileID: 7210359955687265034, guid: 85b7efdc58312cc4e8fa937af4f6446b, type: 3}
   - {fileID: 1342074194756504939, guid: 93a01547d076f714c9b1ae9a169b7d90, type: 3}
+  _duration: 1
 --- !u!1 &1795929126
 GameObject:
   m_ObjectHideFlags: 0
