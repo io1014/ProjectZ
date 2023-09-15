@@ -330,8 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9856fe6bcad132c4285092df356b8820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Pistol
-  _type: 0
+  _name: Bread
+  _type: 1
+  _weight: 0.1
   _scale: 1
   _count: 1
 --- !u!4 &1447036838

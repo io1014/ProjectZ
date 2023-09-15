@@ -35,7 +35,6 @@ public class ItemParent : MonoBehaviour
             default:
                 break;
         }
-        
     }
 }
 
@@ -51,13 +50,15 @@ public class ItemObj
     //public Sprite _sprite;
     public string _name;
     public EItemType _eType;
+    public float _weight;
     public float _scale;
     public int _count;
-    public ItemObj(/*Sprite spr,*/ string name, EItemType etype, float scale, int count)
+    public ItemObj(/*Sprite spr,*/ string name, EItemType etype, float weight, float scale, int count)
     {
         //_sprite = spr;
         _name = name;
         _eType = etype;
+        _weight = weight;
         _scale = scale;
         _count = count;
     }

@@ -15,7 +15,7 @@ public class Shotgun : ItemParent
     [SerializeField] GameObject _bulletPrefab;
     private void Awake()
     {
-        _itemObj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
+        _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
     }
     private void Update()
     {

@@ -6,6 +6,7 @@ public class ReadWrite : MonoBehaviour
 {
     [SerializeField] string _name;
     [SerializeField] EItemType _type;
+    [SerializeField] float _weight;
     [SerializeField] float _scale;
     [SerializeField] int _count;
 
@@ -25,7 +26,7 @@ public class ReadWrite : MonoBehaviour
     void SaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        ItemObj itemData = new ItemObj(_name, _type, _scale, _count);
+        ItemObj itemData = new ItemObj(_name, _type, _weight, _scale, _count);
         _objList._objs.Add(itemData);
         string json = JsonUtility.ToJson(_objList);
         string path = Application.persistentDataPath + "/itemdata.json";

@@ -55,11 +55,11 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     public GameObject GetItem() => _uiItem;
     private void Start()
     {
-        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
+        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon, 1.5f, 1f, 1);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bread", EItemType.Food, 1f, 1);
+        obj = new ItemObj("Bread", EItemType.Food, 0.1f, 1f, 1);
         AddInventoryItem(obj);
-        obj = new ItemObj("Bandage", EItemType.Medicine, 1f, 1);
+        obj = new ItemObj("Bandage", EItemType.Medicine, 0.1f, 1f, 1);
         AddInventoryItem(obj);
     }
 
