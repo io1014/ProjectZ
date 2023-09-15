@@ -5,23 +5,22 @@ using UnityEngine;
 public class Flash : MonoBehaviour
 {
 
-    bool _night;
-    private void Start()
-    {
-        _night = GameObject.Find("Directional Light").GetComponent<DayAndNight>()._isNight;
-    }
+   
+   
 
     void Update()
     {
-       
-       
         
-        if(_night == true)
+
+
+        if (GameObject.Find("Directional Light").GetComponent<DayAndNight>()._isNight == true)
         {
+            Debug.Log("π„¿‘¥œ¥Ÿ.");
             gameObject.SetActive(true);
         }
-        else
+        else if(GameObject.Find("Directional Light").GetComponent<DayAndNight>()._isNight == false)
         {
+            Debug.Log("≥∑¿‘¥œ¥Ÿ.");
             gameObject.SetActive(false);
         }
 
