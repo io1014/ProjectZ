@@ -14,6 +14,7 @@ public class BuildingGetItem : MonoBehaviour
     GameObject _hero;
 
     bool _isContacted = false;
+    bool _rooted = false;
     float _inject;
    public GameObject[] _items;
     public List<GameObject> _itemList = new List<GameObject>();
@@ -85,22 +86,24 @@ public class BuildingGetItem : MonoBehaviour
 
     void Factory()
     {
-         Building FI = Building.Factory;      //FI = Factory Item
-        _itemList = new List<GameObject>();
+         
         
+        if(_rooted == false)
+        {
+            Building FI = Building.Factory;      //FI = Factory Item
+            _itemList = new List<GameObject>();
             if (FI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
                 int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
                     int randomItem = UnityEngine.Random.Range(0, _items.Length);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
                 }
                 // ui 추가 
+                _rooted = true;
             }
-        
-       
-       
+        }
         
     }
 
