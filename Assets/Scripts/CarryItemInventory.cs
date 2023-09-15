@@ -13,8 +13,6 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
     int _slotCount = 0;
-    Button _btn;
-
     public void MoveItem(GameObject itemdata)
     {
         //_itemSet = _item._item;
@@ -26,13 +24,9 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         _itemSlots.Remove(itemdata);
         if(_slotCount <= 0) _slotCount = 0;
         else _slotCount--;
-    }
-
-    private void Start()
-    {
-        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon, 1f, 1);
-        AddInventoryItem(obj);
-        _slotCount++;
+        GameObject temp = GameObject.Find("Rweaponholder");
+        GameObject weapon = temp.transform.GetChild(0).gameObject;
+        Destroy(weapon);
     }
     public int GetSlotCount()
     {

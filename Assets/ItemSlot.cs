@@ -28,7 +28,7 @@ public class ItemSlot : MonoBehaviour
     }
 
 
-    public void OnButton()
+    public void ONButton()
     {
         bool text = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetText();
         if(eType == ESlotType.myInven && text == false)
