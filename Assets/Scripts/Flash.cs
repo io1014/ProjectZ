@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Flash : MonoBehaviour
 {
-
+    [SerializeField] GameObject _flash;
    
+
    
 
     void Update()
@@ -15,13 +16,12 @@ public class Flash : MonoBehaviour
 
         if (GameObject.Find("Directional Light").GetComponent<DayAndNight>()._isNight == true)
         {
-            Debug.Log("π„¿‘¥œ¥Ÿ.");
-            gameObject.SetActive(true);
+            _flash.SetActive(true);
         }
         else if(GameObject.Find("Directional Light").GetComponent<DayAndNight>()._isNight == false)
         {
-            Debug.Log("≥∑¿‘¥œ¥Ÿ.");
-            gameObject.SetActive(false);
+   
+            _flash.SetActive(false);
         }
 
         

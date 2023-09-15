@@ -6,7 +6,7 @@ using UnityEngine;
 public class BuildingGetItem : MonoBehaviour
 {
     
-    [SerializeField] GameObject[] _items;
+    
 
 
     [SerializeField] Building _buildingType;
@@ -15,13 +15,16 @@ public class BuildingGetItem : MonoBehaviour
 
     bool _isContacted = false;
     float _inject;
-    List<GameObject> _itemsList;
-    
+   public GameObject[] _items;
+    public List<GameObject> _itemList = new List<GameObject>();
+
     ItemFromBuidling _IFB;
 
     private void Start()
     {
         _heroStats = new HeroStats();
+        _items = GameObject.Find("LoadFile").GetComponent<LoadFile>().Items;
+        
  
         
     }
@@ -49,7 +52,7 @@ public class BuildingGetItem : MonoBehaviour
     {
         GameObject _player = GameObject.FindGameObjectWithTag("Hero");
         float dist = Vector3.Distance(_player.transform.position, transform.position);
-        if(dist <= 2f && Input.GetKeyDown(KeyCode.F))
+        if(dist <= 2f && Input.GetKeyDown(KeyCode.G))
         {
 
             _isContacted = true;
@@ -83,15 +86,15 @@ public class BuildingGetItem : MonoBehaviour
     void Factory()
     {
          Building FI = Building.Factory;      //FI = Factory Item
-        _itemsList = new List<GameObject>();
+        _itemList = new List<GameObject>();
         
             if (FI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
                 int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
-                    int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                    _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                    int randomItem = UnityEngine.Random.Range(0, _items.Length);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
                 }
                 // ui 추가 
             }
@@ -104,7 +107,7 @@ public class BuildingGetItem : MonoBehaviour
     void Store()
     {
        
-        _itemsList = new List<GameObject>();
+        _itemList = new List<GameObject>();
         Building SI = Building.Store;
 
 
@@ -113,8 +116,8 @@ public class BuildingGetItem : MonoBehaviour
             int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
             for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
             // ui 추가 
         }
@@ -124,15 +127,15 @@ public class BuildingGetItem : MonoBehaviour
 
     void Hospital()
     {
-        _itemsList = new List<GameObject>();
+        _itemList = new List<GameObject>();
             Building HSI = Building.Hospital;
         if (HSI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
         {
             int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
             for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
             // ui 추가 
         }
@@ -142,15 +145,15 @@ public class BuildingGetItem : MonoBehaviour
 
     void House()
     {
-        _itemsList = new List<GameObject>();
+        _itemList = new List<GameObject>();
         Building HI = Building.House;
         if (HI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
         {
             int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
             for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
             // ui 추가 
         }
@@ -160,15 +163,15 @@ public class BuildingGetItem : MonoBehaviour
 
     void FireDepartment()
     {
-        _itemsList = new List<GameObject>();
+        _itemList = new List<GameObject>();
         Building FaI = Building.FireDepartment;
         if (FaI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
         {
             int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
             for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemsList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemsList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
             }
             // ui 추가 
         }
@@ -213,7 +216,10 @@ public class BuildingGetItem : MonoBehaviour
 
     }
 
-
+    public void MoveItem(GameObject itemData)
+    {
+        throw new NotImplementedException();
+    }
 
     [Serializable]
     public enum Building

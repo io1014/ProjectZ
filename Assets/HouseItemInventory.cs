@@ -23,8 +23,8 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         AddInventoryItem(obj);
         obj = new ItemObj("can_food", EItemType.Weapon, 1f, 1);
         AddInventoryItem(obj);
-    }
 
+    }
     void ShowInven()
     {
         for (int i = 0; i < _items.Count; i++)

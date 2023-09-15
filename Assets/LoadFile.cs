@@ -6,9 +6,10 @@ public class LoadFile : MonoBehaviour
     [SerializeField] private GameObject[] _items;
     [SerializeField] private int _spawnRadius;
     public ItemObjList _objList;
+    public GameObject[] Items { get { return _items; } }
     private void Awake()
-    {
-        _objList = new ItemObjList();
+        {
+            _objList = new ItemObjList();
         LoadData();
     }
     void LoadData()
