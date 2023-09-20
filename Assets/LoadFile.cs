@@ -8,8 +8,8 @@ public class LoadFile : MonoBehaviour
     public ItemObjList _objList;
     public GameObject[] Items { get { return _items; } }
     private void Awake()
-        {
-            _objList = new ItemObjList();
+    {
+        _objList = new ItemObjList();
         LoadData();
     }
     void LoadData()
@@ -38,7 +38,7 @@ public class LoadFile : MonoBehaviour
             Debug.Log("파일이 없습니다. ");
         }
     }
-    public GameObject SpawnItem(ItemObj obj)
+    public GameObject SpawnItem(ItemObj obj) // 아이템 타입 검사 후 생성한 데이터를 공유
     {
         foreach (var item in _items)
         {
@@ -52,7 +52,7 @@ public class LoadFile : MonoBehaviour
         }
         return null;
     }
-    void SpawnItems()
+    void SpawnItems() // 아이템 랜덤 생성
     {
         foreach (var data in _objList._objs)
         {

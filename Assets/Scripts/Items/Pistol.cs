@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pistol : ItemParent
+public class Pistol : ItemParent, IItem
 {
     // 무기의 속성과 동작을 관리하는 스크립트
     string _name = "Pistol";         // 무기이름
@@ -76,4 +76,9 @@ public class Pistol : ItemParent
         Debug.Log(" 재장전 완료! ");
     }
     public void IsEquipped(bool isEquipped) => _isEquipped = isEquipped;
+    public void Use()
+    {
+        IsEquipped(true);
+        Debug.Log(_name);
+    }
 }

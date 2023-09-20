@@ -46,7 +46,7 @@ public class ItemSlot : MonoBehaviour
 
             ItemParent ip = new ItemParent();
             ip.SetItemGameObject(tp);
-            ip.ItemAction(tp.GetComponent<ItemType>().Type);
+            ip.UseItem(tp.GetComponent<ItemType>().Type);
 
             _handler.MoveItem(gameObject);
             Destroy(gameObject);

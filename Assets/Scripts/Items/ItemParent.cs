@@ -8,35 +8,79 @@ public class ItemParent : MonoBehaviour
     protected GameObject _itemGameObject;
     public ItemObj ItemObj => _itemObj;
     public GameObject ItemGameObject => _itemGameObject;
+    Dictionary<EItemType, List<IItem>> _itemDic;
     public void SetItemObj(ItemObj item) => _itemObj = item;
     public void SetItemGameObject(GameObject itemGameObject) => _itemGameObject = itemGameObject;
-    public void ItemAction(EItemType itemType)
+    bool _awakeCalled = false;
+    private void Start()
     {
-        //GameObject heroHand = GameObject.Find("Right");
-        //_itemGameObject.transform.SetParent(heroHand.transform);
-
-        switch (itemType)
+        if (!_awakeCalled)
         {
-            case EItemType.Weapon:
-                //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Pistol>().IsEquipped(true);
-                break;
+            _itemDic = new Dictionary<EItemType, List<IItem>>();
 
-            case EItemType.Food:
-                //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Bread>().Eating(true);
-                break;
+            List<IItem> weaponItems = new List<IItem>();
+            Pistol pistol = new Pistol();
+            weaponItems.Add(pistol);
+            _itemDic.Add(EItemType.Weapon, weaponItems);
 
-            case EItemType.Medicine:
-                //_itemGameObject.transform.localPosition = Vector3.zero;
-                _itemGameObject.GetComponent<Bandage>().FirstAid(true);
-                break;
+            List<IItem> foodItems = new List<IItem>();
+            Bread bread = new Bread();
+            foodItems.Add(bread);
+            _itemDic.Add(EItemType.Food, foodItems);
 
-            default:
-                break;
+            List<IItem> medicItems = new List<IItem>();
+            Bandage bandage = new Bandage();
+            medicItems.Add(bandage);
+            _itemDic.Add(EItemType.Medicine, medicItems);
+
+            Debug.Log("_itemDic initialized with " + _itemDic.Count + " categories.");
+            _awakeCalled = true;
+            foreach (EItemType key in _itemDic.Keys)
+            {
+                Debug.Log("Key: " + key.ToString());
+            }
         }
     }
+    public void UseItem(EItemType itemType)
+    {
+        //switch (itemType)
+        //{
+        //    case EItemType.Weapon:
+        //        //_itemGameObject.transform.localPosition = Vector3.zero;
+        //        _itemGameObject.GetComponent<Pistol>().IsEquipped(true);
+        //        break;
+
+        //    case EItemType.Food:
+        //        //_itemGameObject.transform.localPosition = Vector3.zero;
+        //        _itemGameObject.GetComponent<Bread>().Eating(true);
+        //        break;
+
+        //    case EItemType.Medicine:
+        //        //_itemGameObject.transform.localPosition = Vector3.zero;
+        //        _itemGameObject.GetComponent<Bandage>().FirstAid(true);
+        //        break;
+
+        //    default:
+        //        break;
+        //}
+        if(_itemDic.ContainsKey(itemType))
+        {
+            Debug.Log("itemType: " + itemType);
+            List<IItem> items = _itemDic[itemType];
+
+            foreach(IItem item in items)
+            {
+                item.Use();
+            }
+        }
+
+    }
 }
+public interface IItem
+{
+    void Use();
+}
+
 
 [Serializable]
 public class ItemObjList
