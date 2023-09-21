@@ -10,6 +10,17 @@ public class ItemParent : MonoBehaviour
     public GameObject ItemGameObject => _itemGameObject;
     public void SetItemObj(ItemObj item) => _itemObj = item;
     public void SetItemGameObject(GameObject itemGameObject) => _itemGameObject = itemGameObject;
+
+    private void Awake()
+    {
+        Init();
+    }
+
+    public virtual void Init()
+    {
+
+    }
+
     public void UseItem(EItemType itemType)
     {
         switch (itemType)

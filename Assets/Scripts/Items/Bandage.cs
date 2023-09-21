@@ -6,10 +6,12 @@ public class Bandage : ItemParent, IItem
     float _weight = 0.1f;             // 무게
     float _increaseHP = 4f;           // 체력 회복 지수
     HeroStats _playerInfo;
-    private void Awake()
+
+    public override void Init()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
         _itemObj = new ItemObj(_name, EItemType.Medicine, _weight, 1f, 1);
+        
     }
     public void Use()
     {

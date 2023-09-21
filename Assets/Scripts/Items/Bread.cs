@@ -8,10 +8,11 @@ public class Bread : ItemParent, IItem
     float _increaseFull = 1f;       // 배부름 지수
     HeroStats _playerInfo;    // 피를 채울 플레이어의 정보
 
-    private void Awake()
+    public override void Init()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
         _itemObj = new ItemObj(_name, EItemType.Food, _weight, 1f, 1);
+
     }
     public void Use()
     {

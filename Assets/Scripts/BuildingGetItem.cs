@@ -70,7 +70,10 @@ public class BuildingGetItem : MonoBehaviour
                 default:break;
 
             }
-
+            foreach(var obj in _itemList)
+            {
+                obj.GetComponent<ItemParent>().Init();
+            }
             GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
         }
         else if (_isContacted = true && dist > 2f)

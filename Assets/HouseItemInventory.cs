@@ -28,7 +28,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     }
     void ShowInven()
     {
-        for (int i = 0; i < _items.Count; i++)
+        for (int i = 0; i < _itemSlots.Count; i++)
         {
             ItemObj itemdata = _items[i];
             _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.houseInven);
@@ -53,6 +53,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
 
     public void AddInventoryItem(ItemObj item)
     {
+        Debug.Log(item._eType);
         GameObject temp = Instantiate(_houseItem, _content);
         _items.Add(item);
         _itemSlots.Add(temp);
