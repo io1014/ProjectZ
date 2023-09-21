@@ -98,7 +98,7 @@ public class BuildingGetItem : MonoBehaviour
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
                     int randomItem = UnityEngine.Random.Range(0, _items.Length);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다  
                 }
                 // ui 추가 
                 _rooted = true;
