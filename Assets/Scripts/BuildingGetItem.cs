@@ -69,10 +69,9 @@ public class BuildingGetItem : MonoBehaviour
                     case Building.House:House();break;
                 default:break;
 
-
             }
-            
 
+            GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
         }
         else if (_isContacted = true && dist > 2f)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -32,6 +33,22 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
             ItemObj itemdata = _items[i];
             _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.houseInven);
         }
+    }
+
+    public void AddHouseItemInven(List<GameObject> _objs)
+    {
+        _items.Clear();
+        foreach(GameObject obj in _itemSlots)
+        {
+            Destroy(obj);
+        }
+        _itemSlots.Clear();
+        foreach(GameObject obj in _objs)
+        {
+            AddInventoryItem(obj.GetComponent<ItemParent>().ItemObj);
+        }
+        gameObject.SetActive(true);
+        _pInven.gameObject.SetActive(true);
     }
 
     public void AddInventoryItem(ItemObj item)
