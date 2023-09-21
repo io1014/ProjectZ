@@ -5,21 +5,28 @@ using UnityEngine;
 
 public class BuildingGetItem : MonoBehaviour
 {
-    
-    
 
 
+
+    
     [SerializeField] Building _buildingType;
      HeroStats _heroStats;
     GameObject _hero;
+
+    public static BuildingGetItem instance;
 
     bool _isContacted = false;
     bool _rooted = false;
     float _inject;
    public GameObject[] _items;
     public List<GameObject> _itemList = new List<GameObject>();
+   public bool _far = false;
 
     ItemFromBuidling _IFB;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -75,13 +82,19 @@ public class BuildingGetItem : MonoBehaviour
                 obj.GetComponent<ItemParent>().Init();
             }
             GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
+            if(GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
+            {
+                Debug.Log("루팅완료");
+                //gameObject.SetActive(false);
+            }
         }
         else if (_isContacted = true && dist > 2f)
         {
             //Debug.Log("멀어졌습니다");
             _isContacted= false;
             CancelInvoke("GetInject");
-            
+            _far = true;
+            _itemList.Clear();
         }
 
     }

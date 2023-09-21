@@ -13,6 +13,8 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     public List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
 
+    public bool _Looted = false;
+    
     // Start is called before the first frame update
     private void Start()
     {
@@ -49,6 +51,12 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         }
         gameObject.SetActive(true);
         _pInven.gameObject.SetActive(true);
+        if (BuildingGetItem.instance.GetComponent<BuildingGetItem>()._far == true)
+        {
+            _itemSlots.Clear(); 
+        }
+        
+        
     }
 
     public void AddInventoryItem(ItemObj item)
@@ -58,6 +66,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         _items.Add(item);
         _itemSlots.Add(temp);
         ShowInven();
+        
 
     }
 
@@ -66,5 +75,10 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
         _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        if (_itemSlots.Count <= 0)
+        {
+            _Looted = true;
+        }
+
     }
 }
