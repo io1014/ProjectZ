@@ -22,7 +22,7 @@ public class Bread : ItemParent, IItem
     public void Eating()
     {
         _playerInfo.IncHp(_increaseHP);
-        Invoke("DestroyBread", 1f);
+        Invoke("DestroyBread", 0.01f);
     }
     void DestroyBread()
     {

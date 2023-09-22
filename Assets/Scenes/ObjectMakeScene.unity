@@ -1631,6 +1631,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0b32fa54eb4c4b47bba382c0ea3de69, type: 3}
   _content: {fileID: 1065164376}
   _items: []
+  _Looted: 0
 --- !u!114 &932861552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2251,8 +2252,6 @@ MonoBehaviour:
   - {fileID: 555290821068415512, guid: 6159420ec226b7046961717946230280, type: 3}
   - {fileID: 2044380250128950159, guid: cac5484b96c4bdb4a92559af26deeaaf, type: 3}
   _spawnRadius: 50
-  _objList:
-    _objs: []
 --- !u!1 &1087644473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4043,8 @@ MonoBehaviour:
   _player: {fileID: 1821183302}
   _HPSlider: {fileID: 0}
   _staminaSlider: {fileID: 0}
+  Conditions: []
+  bloodEnabled: 0
   _currentHP: 100
 --- !u!1 &1841900002
 GameObject:

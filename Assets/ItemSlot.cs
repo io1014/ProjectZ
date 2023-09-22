@@ -24,58 +24,60 @@ public class ItemSlot : MonoBehaviour
 
     public void ONButton()
     {
-        bool text = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetText();
-        if(eType == ESlotType.myInven && text == false)
+        PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
+
+        bool text = myInven.GetText();
+        int slotCount = myInven.GetSlotCount();
+        Sprite[] spr = myInven.GetSprites();
+        if (eType == ESlotType.myInven && text == false && (_img.name == "Pistol"))
         {
-            ItemObj itemData = _itemdata;
-            if(itemData._eType == EItemType.Weapon)
-            {
-            GameObject hero = GameObject.Find("Hero");
-            LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
-            GameObject tp = temp.SpawnItem(itemData);
-            Debug.Log(tp.name + "OnBtn");
-
-            GameObject heroHand = GameObject.Find("Rweaponholder");
-            tp.transform.SetParent(heroHand.transform);
-            tp.transform.localScale = Vector3.one;
-            tp.transform.localPosition = Vector3.zero;
-            tp.transform.localRotation = Quaternion.identity;
-
-            ItemParent ip = new ItemParent();
-            ip.SetItemGameObject(tp);
-            ip.UseItem(tp.GetComponent<ItemType>().Type);
-
-            _handler.MoveItem(gameObject);
-            Destroy(gameObject);
-            }
-            else
-            {
-                ItemParent ip = new ItemParent();
-                ip.UseItem(itemData._eType);
-
-                _handler.MoveItem(gameObject);
-                Destroy(gameObject);
-            }
+            if (slotCount >= 1) return;
+            slotCount++;
+            Debug.Log("갱신된 슬롯 카운트 : "+slotCount);
+            myInven.SetSlotCount(slotCount);
+            MakeItem();
         }
-        else if(eType == ESlotType.myInven && text == true)
+        else if (eType == ESlotType.myInven && text == false && (_img.name != "Pistol"))
+        {
+            MakeItem();
+        }
+        else if (eType == ESlotType.myInven && text == true)
         {
             _handler.MoveItem(gameObject);
             Destroy(gameObject);
         }
-        else if(eType == ESlotType.houseInven)
+        else if (eType == ESlotType.houseInven)
         {
             _handler.MoveItem(gameObject);
             Destroy(gameObject);
         }
-        else if(eType == ESlotType.CarryInven)
+        else if (eType == ESlotType.CarryInven)
         {
-            // 캐리 인벤인 경우
-            // 슬롯을 클릭했을 때 생성되지않고, 마이 인벤으로 옮기기만 해야함
             _handler.MoveItem(gameObject);
             Destroy(gameObject);
         }
     }
 
+    void MakeItem()
+    {
+        GameObject hero = GameObject.Find("Hero");
+        LoadFile temp = GameObject.Find("LoadFile").GetComponent<LoadFile>();
+        GameObject tp = temp.SpawnItem(_itemdata);
+        Debug.Log(tp.name + "OnBtn");
+
+        GameObject heroHand = GameObject.Find("Rweaponholder");
+        tp.transform.SetParent(heroHand.transform);
+        tp.transform.localScale = Vector3.one;
+        tp.transform.localPosition = Vector3.zero;
+        tp.transform.localRotation = Quaternion.identity;
+
+        ItemParent ip = tp.GetComponent<ItemParent>();
+        ip.SetItemGameObject(tp);
+        ip.UseItem(tp.GetComponent<ItemType>().Type);
+
+        _handler.MoveItem(gameObject);
+        Destroy(gameObject);
+    }
     public void OnPlayerInvenButton()
     {
         GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().RemoveInventoryItem(gameObject);
