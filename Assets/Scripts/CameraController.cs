@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
                 // 해당 건물의 매터리얼을 임시 저장하고 대체함
                 _tempMat =  hit.collider.GetComponent<Renderer>().material;
                 _seeThrough.SetTexture("_Albedo", _tempMat.GetTexture("_MainTex"));
-                _seeThrough.SetTexture("_Metalic", _tempMat.GetTexture("_Metallic"));
+                //_seeThrough.SetTexture("_Metalic", _tempMat.GetTexture("_Metallic"));
                 hit.collider.GetComponent<Renderer>().material = _seeThrough;
                 _building = hit.collider.gameObject;
                 _isObstacleBuilding = true;

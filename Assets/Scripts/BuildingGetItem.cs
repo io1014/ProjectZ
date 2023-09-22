@@ -60,42 +60,55 @@ public class BuildingGetItem : MonoBehaviour
     {
         GameObject _player = GameObject.FindGameObjectWithTag("Hero");
         float dist = Vector3.Distance(_player.transform.position, transform.position);
-        if(dist <= 2f && Input.GetKeyDown(KeyCode.G))
+        if (_isContacted==false&& dist <= 2f && Input.GetKeyDown(KeyCode.G))
         {
-
+            GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", true);
             _isContacted = true;
             int bite = UnityEngine.Random.Range(20, 60);
-            Debug.Log(dist + " , " + gameObject.name+ gameObject.tag+_buildingType+"에 접근했습니다.");
+            Debug.Log(dist + " , " + gameObject.name + gameObject.tag + _buildingType + "에 접근했습니다.");
             InvokeRepeating("GetInject", 10, bite);
             switch (_buildingType)
             {
-                case Building.Factory: Factory();break;
-                case Building.Hospital:Hospital();break;
-                    case Building.FireDepartment:FireDepartment();break;    
-                    case Building.Store:Store();break;  
-                    case Building.House:House();break;
-                default:break;
+                case Building.Factory: Factory(); break;
+                case Building.Hospital: Hospital(); break;
+                case Building.FireDepartment: FireDepartment(); break;
+                case Building.Store: Store(); break;
+                case Building.House: House(); break;
+                default: break;
 
             }
-            foreach(var obj in _itemList)
+            foreach (var obj in _itemList)
             {
                 obj.GetComponent<ItemParent>().Init();
             }
             GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
-            if(GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
+            if (GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
             {
                 Debug.Log("루팅완료");
-                //gameObject.SetActive(false);
+                _itemList.Clear();
+
             }
+
+
+
+
+
         }
-        else if (_isContacted = true && dist > 2f)
+        else if (_isContacted == true && dist >2f ) 
         {
-            //Debug.Log("멀어졌습니다");
-            _isContacted= false;
+            
+             Debug.Log("멀어졌습니다");
+             _isContacted = false;
+            GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", false);
             CancelInvoke("GetInject");
             _far = true;
             _itemList.Clear();
+
+
+
         }
+       
+
 
     }
 

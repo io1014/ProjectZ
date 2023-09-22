@@ -95,6 +95,7 @@ public class WZombieControll : MonoBehaviour
                     break;
                 
                 case State.Attack:
+                    transform.LookAt(playerTr.position);
                     anim.SetBool("Attack", true);
                     _next = 1f;
                     break;

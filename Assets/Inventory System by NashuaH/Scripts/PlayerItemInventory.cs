@@ -13,6 +13,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
     bool _isText = false;
+    int _slotCount = 0;
 
     public void MoveItem(GameObject itemdata)
     {
@@ -31,7 +32,17 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
             EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
             if (etype == EItemType.Weapon)
             {
-                _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                if (_slotCount >= 1)
+                {
+                    Debug.Log("return");
+                    return;
+                }
+                else
+                {
+                    _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                    _slotCount++;
+                    Debug.Log("추가된 슬롯카운트 : "+_slotCount);
+                }
             }
             else if (etype == EItemType.Food || etype == EItemType.Medicine)
             {
@@ -52,6 +63,9 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
 
     public void SetText(bool text) => _isText = text;
     public bool GetText() => _isText;
+    public void SetSlotCount(int slotCount) => _slotCount = slotCount;
+    public int GetSlotCount() => _slotCount;
+    public Sprite[] GetSprites() => _sprites;
     public GameObject GetItem() => _uiItem;
     private void Start()
     {

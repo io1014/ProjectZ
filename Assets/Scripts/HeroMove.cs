@@ -27,13 +27,17 @@ public class HeroMove : MonoBehaviour
 
     void Rotate()
     {
-        //transform.rotation = Quaternion.Euler(0, rotY, 0);
         RaycastHit hit;
         Vector3 scrrenpos = Input.mousePosition; // ½ºÅ©¸°
         Vector3 pos = Camera.main.ScreenToWorldPoint(scrrenpos);
-        //Physics.Raycast(pos,, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Terriain"));
+        if(Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Terriain")))
+        {
+            Debug.Log("input rotate");
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+        
 
-        transform.LookAt(pos - transform.position);
+
     }
 
 

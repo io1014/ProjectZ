@@ -2458,6 +2458,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
   _content: {fileID: 896181904}
   _items: []
+  _Looted: 0
 --- !u!114 &695400836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2829,10 +2830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6c1eea83ee66545bbee87a76ea2b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fatigueImg: {fileID: 0}
-  _blood: {fileID: 0}
-  _thirsty: {fileID: 0}
-  _hungry: {fileID: 0}
+  _fatigueImg: {fileID: 1336761640}
+  _blood: {fileID: 212476096}
+  _thirsty: {fileID: 1564870794}
+  _hungry: {fileID: 1315160347}
 --- !u!114 &855916467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,8 +2911,8 @@ RectTransform:
   - {fileID: 1564870793}
   - {fileID: 1315160346}
   - {fileID: 212476095}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 1676977627}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5171,8 +5172,8 @@ RectTransform:
   m_Children:
   - {fileID: 306637121}
   - {fileID: 1317048294}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1676977627}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10410,6 +10411,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675047209}
   m_CullTransparentMesh: 1
+--- !u!1 &1676977626
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1676977627}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1676977627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676977626}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -84.50864, y: 50.237804, z: -31.397453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 855916470}
+  - {fileID: 1547635380}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1711825322
 GameObject:
   m_ObjectHideFlags: 0
