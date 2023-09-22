@@ -25,13 +25,20 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
-
-        tr.Rotate(Vector3.up * turnSpeed * Time.deltaTime * r);
-
+        Rotate();
         PlayerAnim(h, v);
     
     }
-
+    void Rotate()
+    {
+        RaycastHit hit;
+        Vector3 scrrenpos = Input.mousePosition; // ½ºÅ©¸°
+        Vector3 pos = Camera.main.ScreenToWorldPoint(scrrenpos);
+        if (Physics.Raycast(pos, Camera.main.transform.forward, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Terriain")))
+        {
+            transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
+        }
+    }
     void PlayerAnim(float h , float v)
     {
         if(v >= 0.1f)
