@@ -51,11 +51,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         }
         gameObject.SetActive(true);
         _pInven.gameObject.SetActive(true);
-        if (BuildingGetItem.instance.GetComponent<BuildingGetItem>()._far == true)
-        {
-            _itemSlots.Clear(); 
-        }
-        
+         
         
     }
 
@@ -74,11 +70,13 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     {
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
-        _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
         if (_itemSlots.Count <= 0)
         {
+            Debug.Log(_itemSlots.Count);
             _Looted = true;
         }
+        _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        
 
     }
 }

@@ -36,7 +36,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         RunAndWalk();
         StaminaRecovery();
-        Debug.Log(_currentHP);
+        //Debug.Log(_currentHP);
         HpChange();
         StaminaChange();
         blood = Random.Range(1, 10);

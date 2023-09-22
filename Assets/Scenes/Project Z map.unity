@@ -1906,6 +1906,7 @@ GameObject:
   - component: {fileID: 437490241}
   - component: {fileID: 437490240}
   - component: {fileID: 437490239}
+  - component: {fileID: 437490244}
   m_Layer: 5
   m_Name: InventoryInHouse
   m_TagString: Untagged
@@ -1934,6 +1935,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0b32fa54eb4c4b47bba382c0ea3de69, type: 3}
   _content: {fileID: 1069775452}
   _items: []
+  _Looted: 0
 --- !u!114 &437490240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2009,6 +2011,27 @@ RectTransform:
   m_AnchoredPosition: {x: 199, y: 25}
   m_SizeDelta: {x: 219.163, y: 219.8163}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &437490244
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437490238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 347fab92f0ccac2418a82434d6c1d1ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &441326989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,7 +2335,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &560778982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3163,6 +3186,8 @@ MonoBehaviour:
   _player: {fileID: 928020939}
   _HPSlider: {fileID: 312463078}
   _staminaSlider: {fileID: 531712102}
+  Conditions: []
+  bloodEnabled: 0
   _currentHP: 100
 --- !u!4 &928020944 stripped
 Transform:
@@ -3584,7 +3609,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -90, y: -0.0000062367008}
+  m_AnchoredPosition: {x: -90, y: 0.00014291622}
   m_SizeDelta: {x: 58.0745, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1069775453
