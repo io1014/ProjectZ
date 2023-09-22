@@ -10,7 +10,7 @@ public class WZombieControll : MonoBehaviour
     State state = State.Idle;
 
     float traceDist = 5f; //추적거리
-    float attackDist = 0.4f; // 공격거리
+    float attackDist = 0.5f; // 공격거리
     bool isDie = false; //죽은지 체크
     Transform monsterTr;
     public Transform playerTr;
@@ -28,12 +28,19 @@ public class WZombieControll : MonoBehaviour
         StartCoroutine(ZombieAction());
     }
 
+
     // Update is called once per frame
     void Update()   
     {
         //Debug.Log(state);
         //Debug.Log(playerTr.position);
         //Debug.Log(state);
+        if(state == State.Trace)
+        {
+
+            Invoke("LookatRotation", 1f);
+
+        }
     }
 
     //애니메이션 타입
@@ -82,22 +89,23 @@ public class WZombieControll : MonoBehaviour
                 case State.Idle:
                     agent.isStopped = true; //추적여부
                     anim.SetBool("Run", false);
-                    _next = 1f;
+                    _next = 0.3f;
                     break;
 
                 case State.Trace:
-                    transform.LookAt(playerTr.position);
+
+                    //LookatRotation();
                     agent.SetDestination(playerTr.position); //추적 대상
                     agent.isStopped = false;
                     anim.SetBool("Run", true);
                     anim.SetBool("Attack", false);
-                    _next = 3f;
+                    _next = 0.3f;
                     break;
                 
                 case State.Attack:
-                    transform.LookAt(playerTr.position);
+                    //LookatRotation();
                     anim.SetBool("Attack", true);
-                    _next = 1f;
+                    _next = 0.3f;
                     break;
 
                 case State.Die:
@@ -107,5 +115,12 @@ public class WZombieControll : MonoBehaviour
             }
             yield return new WaitForSeconds(_next);  
         }
+    }
+    void LookatRotation()
+    {
+        Vector3 to = new Vector3(playerTr.position.x,0, playerTr.position.z);
+        Vector3 from = new Vector3(transform.position.x,0,transform.position.z);
+
+        transform.rotation = Quaternion.LookRotation(to - from);
     }
 }

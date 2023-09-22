@@ -85,12 +85,12 @@ public class MZombieControll : MonoBehaviour
                   
 
                 case State.walk:
-                    transform.LookAt(playerTr.position);
+                    LookatRotation();
                     agent.SetDestination(playerTr.position); //추적 대상
                     agent.isStopped = false;
                     anim.SetBool("walk", true);
                     anim.SetBool("attack", false);
-                    _nextStateDelay = 3f;
+                    _nextStateDelay = 0.3f;
                     break;
                 
                 case State.attack:
@@ -106,5 +106,12 @@ public class MZombieControll : MonoBehaviour
             }
             yield return new WaitForSeconds(_nextStateDelay);  
         }
+    }
+    void LookatRotation()
+    {
+        Vector3 to = new Vector3(playerTr.position.x, 0, playerTr.position.z);
+        Vector3 from = new Vector3(transform.position.x, 0, transform.position.z);
+
+        transform.rotation = Quaternion.LookRotation(to - from);
     }
 }

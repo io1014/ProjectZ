@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroGameScene.unity
     guid: 86f0685f1259e4c459201ae6bddb2f85
   - enabled: 1
-    path: Assets/Scenes/Project Z map.unity
-    guid: ea4c22e2c5a116a4c98fdfc3cffe5443
-  - enabled: 1
-    path: Assets/Scenes/HowToGame.unity
-    guid: d7f509407ad74c14490378e1b1aee49b
-  - enabled: 1
     path: Assets/Scenes/Option.unity
     guid: 3b452c4d6d948334aacc6b591b3562b9
+  - enabled: 1
+    path: Assets/Scenes/HowToGame.unity
+    guid: 7d7e74a33febd824a9b9a099dd2a2f9c
+  - enabled: 1
+    path: Assets/Scenes/Project Z map.unity
+    guid: ea4c22e2c5a116a4c98fdfc3cffe5443
   m_configObjects: {}
