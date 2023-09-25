@@ -10,7 +10,7 @@ public class WZombieControll : MonoBehaviour
     State state = State.Idle;
 
     float traceDist = 5f; //추적거리
-    float attackDist = 0.5f; // 공격거리
+    float attackDist = 0.4f; // 공격거리
     bool isDie = false; //죽은지 체크
     Transform monsterTr;
     public Transform playerTr;
@@ -38,7 +38,7 @@ public class WZombieControll : MonoBehaviour
         if(state == State.Trace)
         {
 
-            Invoke("LookatRotation", 1f);
+            Invoke("LookatRotation", 0.1f);
 
         }
     }
@@ -123,4 +123,6 @@ public class WZombieControll : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(to - from);
     }
+
+
 }

@@ -48,7 +48,7 @@ public class RangedWeapon : ItemParent, IItem
             return;
         }
 
-        GameObject bullet = Instantiate(_bulletPrefab, firepos.transform.position, Quaternion.Euler(90,0,0));                               // 탄환 생성
+        GameObject bullet = Instantiate(_bulletPrefab, firepos.transform.position, _bulletPrefab.transform.rotation);                               // 탄환 생성
         bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
         bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
         bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도
