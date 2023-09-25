@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bread : ItemParent, IItem
+public class Food : ItemParent, IItem
 {
     string _name = "Bread";         // 음식 이름
     float _weight = 0.1f;           // 무게

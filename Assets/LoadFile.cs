@@ -15,13 +15,15 @@ public class LoadFile : MonoBehaviour
     void LoadData()
     {
         //Debug.Log(Application.persistentDataPath);
-        if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
+        TextAsset ta = Resources.Load("itemdata") as TextAsset;
+        //if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
         {
             string json = "";
-            using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
-            {
-                json = inStream.ReadToEnd();
-            }
+            //using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
+            //{
+            //    json = inStream.ReadToEnd();
+            //}
+            json = ta.text;
             if (string.IsNullOrEmpty(json) == false)
             {
                 _objList = JsonUtility.FromJson<ItemObjList>(json);
@@ -33,10 +35,10 @@ public class LoadFile : MonoBehaviour
                 Debug.Log("파일은 있지만 내용이 없습니다. ");
             }
         }
-        else
-        {
-            Debug.Log("파일이 없습니다. ");
-        }
+        //else
+        //{
+        //    Debug.Log("파일이 없습니다. ");
+        //}
     }
     public GameObject SpawnItem(ItemObj obj) // 아이템 타입 검사 후 생성한 데이터를 공유
     {

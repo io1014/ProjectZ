@@ -26,11 +26,11 @@ public class ItemParent : MonoBehaviour
         switch (itemType)
         {
             case EItemType.Weapon:
-                _itemGameObject.GetComponent<Pistol>().Use();
+                _itemGameObject.GetComponent<RangedWeapon>().Use();
                 break;
 
             case EItemType.Food:
-                _itemGameObject.GetComponent<Bread>().Use();
+                _itemGameObject.GetComponent<Food>().Use();
                 break;
 
             case EItemType.Medicine:

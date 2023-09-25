@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pistol : ItemParent, IItem
+public class RangedWeapon : ItemParent, IItem
 {
     // 무기의 속성과 동작을 관리하는 스크립트
     string _name = "Pistol";         // 무기이름
