@@ -62,7 +62,9 @@ public class BuildingGetItem : MonoBehaviour
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if (_isContacted==false&& dist <= 2f && Input.GetKeyDown(KeyCode.G))
         {
-            GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", true);
+            //GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", true);
+            GenericSingleton<HouseItemInventory>._instance.gameObject.SetActive(true);
+           GenericSingleton<HouseItemInventory>._instance.gameObject.GetComponent<Animator>().SetBool("Open", true);
             _isContacted = true;
             int bite = UnityEngine.Random.Range(20, 60);
             Debug.Log(dist + " , " + gameObject.name + gameObject.tag + _buildingType + "에 접근했습니다.");
@@ -84,8 +86,10 @@ public class BuildingGetItem : MonoBehaviour
             GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
             if (GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
             {
+                //_itemList.Clear();
+                Debug.Log(_itemList.Count);
                 Debug.Log("루팅완료");
-                _itemList.Clear();
+                
 
             }
 
@@ -102,8 +106,6 @@ public class BuildingGetItem : MonoBehaviour
             GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", false);
             CancelInvoke("GetInject");
             _far = true;
-            _itemList.Clear();
-
 
 
         }

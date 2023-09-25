@@ -39,6 +39,8 @@ public class LoadFile : MonoBehaviour
         //{
         //    Debug.Log("파일이 없습니다. ");
         //}
+
+        LoadingMap.instance.GetComponent<LoadingMap>().MapLoad();
     }
     public GameObject SpawnItem(ItemObj obj) // 아이템 타입 검사 후 생성한 데이터를 공유
     {
