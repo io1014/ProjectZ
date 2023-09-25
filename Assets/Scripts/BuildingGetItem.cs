@@ -86,7 +86,8 @@ public class BuildingGetItem : MonoBehaviour
             GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
             if (GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
             {
-                _itemList.Clear();
+                //_itemList.Clear();
+                Debug.Log(_itemList.Count);
                 Debug.Log("루팅완료");
                 
 
@@ -105,8 +106,6 @@ public class BuildingGetItem : MonoBehaviour
             GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", false);
             CancelInvoke("GetInject");
             _far = true;
-
-
 
 
         }

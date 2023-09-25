@@ -11,7 +11,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     [SerializeField] Sprite[] _sprites;
     [SerializeField] Transform _content;
     public List<ItemObj> _items = new List<ItemObj>();
-    List<GameObject> _itemSlots = new List<GameObject>();
+    public List<GameObject> _itemSlots = new List<GameObject>();
 
     public bool _Looted = false;
     
@@ -51,6 +51,8 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         }
         gameObject.SetActive(true);
         _pInven.gameObject.SetActive(true);
+        Debug.Log(_itemSlots.Count);
+        
          
         
     }
@@ -63,6 +65,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         _itemSlots.Add(temp);
         ShowInven();
         
+        
 
     }
 
@@ -70,13 +73,18 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     {
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
+        _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+        Check();
+       
+
+    }
+
+    public void Check()
+    {
         if (_itemSlots.Count <= 0)
         {
             Debug.Log(_itemSlots.Count);
             _Looted = true;
         }
-        _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
-        
-
     }
 }

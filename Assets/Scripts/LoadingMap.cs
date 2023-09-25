@@ -82,7 +82,9 @@ public class LoadingMap : MonoBehaviour
     void Building()
     {
 
-            Instantiate(mapPrefabs[4]);
+           GameObject Building = Instantiate(mapPrefabs[4]);
+        //Building.GetComponent<NavMeshSurface>().BuildNavMesh();
+
 
     }
 
