@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shotgun : ItemParent
+public class Shotgun : RangedWeapon
 {
     string _name = "Shotgun";         // 무기이름
     float _weight = 1.5f;            // 무게
@@ -16,6 +16,7 @@ public class Shotgun : ItemParent
     private void Awake()
     {
         _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
+        Debug.Log(_name);
     }
     private void Update()
     {

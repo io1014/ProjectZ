@@ -34,7 +34,7 @@ public class ItemParent : MonoBehaviour
                 break;
 
             case EItemType.Medicine:
-                _itemGameObject.GetComponent<Bandage>().Use();
+                _itemGameObject.GetComponent<FirstAidKits>().Use();
                 break;
 
             default:

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5126128736696377681}
   - component: {fileID: 2670151679778525584}
   - component: {fileID: 3059163988855499675}
+  - component: {fileID: 7952541460127374856}
   m_Layer: 7
   m_Name: Bell pepper green
   m_TagString: Untagged
@@ -110,3 +111,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.2588232
   m_Center: {x: -0.007933222, y: 0.25882366, z: 0.006260328}
+--- !u!114 &7952541460127374856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6639245508002578564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 597604d9d69162a4cacda0ef5e25010e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: BellPepper
+  _weight: 0
+  _increaseHP: 0
+  _increaseFull: 0
