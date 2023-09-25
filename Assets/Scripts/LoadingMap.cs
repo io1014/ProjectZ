@@ -16,17 +16,20 @@ public class LoadingMap : MonoBehaviour
     [SerializeField] GameObject[] mapPrefabs;
     [SerializeField] int _duration = 1;
     NavMeshSurface _surface;
+    public static LoadingMap instance;
 
     
 
     private void Awake()
     {
+        instance = this;
         _surface = GetComponent<NavMeshSurface>();
     }
     
-    void Start()
+   
+
+    public void MapLoad()
     {
-        
         Terrain();
         Ocean();
         Road();
@@ -34,16 +37,8 @@ public class LoadingMap : MonoBehaviour
         Building();
         Environment();
         car();
-        //Task.Run(() => Terrain());
-        //Task.Run(() => Ocean());
-        //Task.Run(() => Road());
-        //Task.Run(() => Building());
-        //Task.Run(() => car());
-        //Task.Run(() => HumanRoad());
-        //Task.Run(() => Environment());
+
     }
-
-
 
     void Terrain()
     {
