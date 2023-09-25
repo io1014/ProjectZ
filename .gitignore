@@ -4065,3 +4065,556 @@ Assets/Survival Tools/Textures/survivaltools2_Water_Normal.png
 Assets/Survival Tools/Textures/survivaltools2_Water_Normal.png.meta
 Assets/Survival Tools/Textures/walkiescreen.png
 Assets/Survival Tools/Textures/walkiescreen.png.meta
+Assets/PBRMeleeWeaponsPack.meta
+Assets/Pistol 92.meta
+Assets/PBRMeleeWeaponsPack/Misc.meta
+Assets/PBRMeleeWeaponsPack/Readme.pdf
+Assets/PBRMeleeWeaponsPack/Readme.pdf.meta
+Assets/PBRMeleeWeaponsPack/Scene.meta
+Assets/PBRMeleeWeaponsPack/Scripts.meta
+Assets/PBRMeleeWeaponsPack/Shaders.meta
+Assets/PBRMeleeWeaponsPack/Weapons.meta
+Assets/PBRMeleeWeaponsPack/Misc/Audio.meta
+Assets/PBRMeleeWeaponsPack/Misc/Environment HDR.hdr
+Assets/PBRMeleeWeaponsPack/Misc/Environment HDR.hdr.meta
+Assets/PBRMeleeWeaponsPack/Misc/Fonts.meta
+Assets/PBRMeleeWeaponsPack/Misc/Materials.meta
+Assets/PBRMeleeWeaponsPack/Misc/Sprites.meta
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click.wav
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click.wav.meta
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click_Soft_01.wav
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click_Soft_01.wav.meta
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click_Soft_02.wav
+Assets/PBRMeleeWeaponsPack/Misc/Audio/Click_Soft_02.wav.meta
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/Aurach Heavy.ttf
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/Aurach Heavy.ttf.meta
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/PanfletaStencil-Regular.ttf
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/PanfletaStencil-Regular.ttf.meta
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/VTKS PREDATOR.ttf
+Assets/PBRMeleeWeaponsPack/Misc/Fonts/VTKS PREDATOR.ttf.meta
+Assets/PBRMeleeWeaponsPack/Misc/Materials/Background.mat
+Assets/PBRMeleeWeaponsPack/Misc/Materials/Background.mat.meta
+Assets/PBRMeleeWeaponsPack/Misc/Materials/Enviroment Cubemap.mat
+Assets/PBRMeleeWeaponsPack/Misc/Materials/Enviroment Cubemap.mat.meta
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/LeftArrow.png
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/LeftArrow.png.meta
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/Mouse 0.png
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/Mouse 0.png.meta
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/RightArrow.png
+Assets/PBRMeleeWeaponsPack/Misc/Sprites/RightArrow.png.meta
+Assets/PBRMeleeWeaponsPack/Scene/Icons.unity
+Assets/PBRMeleeWeaponsPack/Scene/Icons.unity.meta
+Assets/PBRMeleeWeaponsPack/Scene/Icons_Profiles.meta
+Assets/PBRMeleeWeaponsPack/Scene/MainScene.unity
+Assets/PBRMeleeWeaponsPack/Scene/MainScene.unity.meta
+Assets/PBRMeleeWeaponsPack/Scene/MainScene_Profiles.meta
+Assets/PBRMeleeWeaponsPack/Scene/Icons_Profiles/PostProcessing Profile.asset
+Assets/PBRMeleeWeaponsPack/Scene/Icons_Profiles/PostProcessing Profile.asset.meta
+Assets/PBRMeleeWeaponsPack/Scene/MainScene_Profiles/PostProcessing Profile.asset
+Assets/PBRMeleeWeaponsPack/Scene/MainScene_Profiles/PostProcessing Profile.asset.meta
+Assets/PBRMeleeWeaponsPack/Scripts/CameraMovement.cs
+Assets/PBRMeleeWeaponsPack/Scripts/CameraMovement.cs.meta
+Assets/PBRMeleeWeaponsPack/Scripts/SphericalRotation.cs
+Assets/PBRMeleeWeaponsPack/Scripts/SphericalRotation.cs.meta
+Assets/PBRMeleeWeaponsPack/Scripts/WeaponsChanger.cs
+Assets/PBRMeleeWeaponsPack/Scripts/WeaponsChanger.cs.meta
+Assets/PBRMeleeWeaponsPack/Shaders/Blood.png
+Assets/PBRMeleeWeaponsPack/Shaders/Blood.png.meta
+Assets/PBRMeleeWeaponsPack/Shaders/Blood_NRM.png
+Assets/PBRMeleeWeaponsPack/Shaders/Blood_NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Shaders/PBR Bloody Surface.shader
+Assets/PBRMeleeWeaponsPack/Shaders/PBR Bloody Surface.shader.meta
+Assets/PBRMeleeWeaponsPack/Shaders/Splat.png
+Assets/PBRMeleeWeaponsPack/Shaders/Splat.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Baseball Bat 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Baseball Bat 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Baseball Bat 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Baseball Bat 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Base/Baseball Bat.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Base/Baseball Bat.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Icons/Baseball Bat 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Baseball Bat 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat AO 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat AO 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat AO 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat AO 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat MET 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/Baseball Bat NRM 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/my.tbpost
+Assets/PBRMeleeWeaponsPack/Weapons/Baseball Bat/Materials/Textures/my.tbpost.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Butcher Knife 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Butcher Knife 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Butcher Knife 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Butcher Knife 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Base/Butcher Knife.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Base/Butcher Knife.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Icons/Butcher Knife 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Butcher Knife 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife AO 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife MET 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Butcher Knife/Materials/Textures/Butcher Knife NRM 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Cloth03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Cloth/Textures/Cloth03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Crowbar 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Crowbar 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Crowbar 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Crowbar 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Base/Crowbar.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Base/Crowbar.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Icons/Crowbar 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Crowbar 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Crowbar/Materials/Textures/Crowbar 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Fireaxe 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Fireaxe 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Fireaxe 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Fireaxe 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Base/Fireaxe.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Base/Fireaxe.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Icons/Fire Axe 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Fire Axe 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Fireaxe/Materials/Textures/Fire Axe 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Hammer 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Hammer 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Hammer 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Hammer 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Base/Hammer.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Base/Hammer.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Icons/Hammer 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Hammer 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Hammer/Materials/Textures/Hammer 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Heavy Wrench 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Heavy Wrench 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Heavy Wrench 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Heavy Wrench 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Base/Heavy Wrench.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Base/Heavy Wrench.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Icons/Heavy Wrench 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Heavy Wrench 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Heavy Wrench/Materials/Textures/Heavy Wrench 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Machete 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Machete 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Machete 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Machete 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Base/Machete.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Base/Machete.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Icons/Machete 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Machete 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Machete/Materials/Textures/Machete 3.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Shovel 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Shovel 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Shovel 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Shovel 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Base/Shovel.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Base/Shovel.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Icons/Shovel 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Shovel 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 MET.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 MET.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Shovel/Materials/Textures/Shovel 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Base.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Tactical Knife 02.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Tactical Knife 02.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Tactical Knife 03.prefab
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Tactical Knife 03.prefab.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Base/Tactical Knife.fbx
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Base/Tactical Knife.fbx.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 01.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 01.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 02.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 02.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 03.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Icons/Tactical Knife 03.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 01.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 01.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 02.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 02.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 03.mat
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Tactical Knife 03.mat.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 1.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 2.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 AO.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 AO.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 MET .png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 MET .png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 NRM.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3 NRM.png.meta
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3.png
+Assets/PBRMeleeWeaponsPack/Weapons/Tactical Knife/Materials/Textures/Tactical Knife 3.png.meta
+Assets/Pistol 92/Materials.meta
+Assets/Pistol 92/Models.meta
+Assets/Pistol 92/Prefabs.meta
+Assets/Pistol 92/Scene.meta
+Assets/Pistol 92/Textures.meta
+Assets/Pistol 92/Materials/Pistol Black Mat.mat
+Assets/Pistol 92/Materials/Pistol Black Mat.mat.meta
+Assets/Pistol 92/Materials/Pistol BulletMat.mat
+Assets/Pistol 92/Materials/Pistol BulletMat.mat.meta
+Assets/Pistol 92/Materials/Pistol Dark Mat.mat
+Assets/Pistol 92/Materials/Pistol Dark Mat.mat.meta
+Assets/Pistol 92/Materials/Pistol White Mat.mat
+Assets/Pistol 92/Materials/Pistol White Mat.mat.meta
+Assets/Pistol 92/Models/Pistol 92.fbx
+Assets/Pistol 92/Models/Pistol 92.fbx.meta
+Assets/Pistol 92/Models/Pistol BulletShell.fbx
+Assets/Pistol 92/Models/Pistol BulletShell.fbx.meta
+Assets/Pistol 92/Prefabs/Pistol 92 Black.prefab
+Assets/Pistol 92/Prefabs/Pistol 92 Black.prefab.meta
+Assets/Pistol 92/Prefabs/Pistol 92 Dark.prefab
+Assets/Pistol 92/Prefabs/Pistol 92 Dark.prefab.meta
+Assets/Pistol 92/Prefabs/Pistol 92 White.prefab
+Assets/Pistol 92/Prefabs/Pistol 92 White.prefab.meta
+Assets/Pistol 92/Prefabs/Pistol Bullet.prefab
+Assets/Pistol 92/Prefabs/Pistol Bullet.prefab.meta
+Assets/Pistol 92/Prefabs/Pistol BulletShell.prefab
+Assets/Pistol 92/Prefabs/Pistol BulletShell.prefab.meta
+Assets/Pistol 92/Scene/New Lighting Settings.lighting
+Assets/Pistol 92/Scene/New Lighting Settings.lighting.meta
+Assets/Pistol 92/Scene/TestScene.unity
+Assets/Pistol 92/Scene/TestScene.unity.meta
+Assets/Pistol 92/Textures/Pistol Black Diffuse.png
+Assets/Pistol 92/Textures/Pistol Black Diffuse.png.meta
+Assets/Pistol 92/Textures/Pistol Bullet Metallic.png
+Assets/Pistol 92/Textures/Pistol Bullet Metallic.png.meta
+Assets/Pistol 92/Textures/Pistol BulletTex.png
+Assets/Pistol 92/Textures/Pistol BulletTex.png.meta
+Assets/Pistol 92/Textures/Pistol Dark Diffuse.png
+Assets/Pistol 92/Textures/Pistol Dark Diffuse.png.meta
+Assets/Pistol 92/Textures/Pistol Emission.png
+Assets/Pistol 92/Textures/Pistol Emission.png.meta
+Assets/Pistol 92/Textures/Pistol Height.png
+Assets/Pistol 92/Textures/Pistol Height.png.meta
+Assets/Pistol 92/Textures/Pistol Metallic.png
+Assets/Pistol 92/Textures/Pistol Metallic.png.meta
+Assets/Pistol 92/Textures/Pistol Normal.png
+Assets/Pistol 92/Textures/Pistol Normal.png.meta
+Assets/Pistol 92/Textures/Pistol White Diffuse.png
+Assets/Pistol 92/Textures/Pistol White Diffuse.png.meta
