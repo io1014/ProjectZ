@@ -1,23 +1,37 @@
+using System;
 using UnityEngine;
+
 
 public class RangedWeapon : ItemParent, IItem
 {
-    // 무기의 속성과 동작을 관리하는 스크립트
-    string _name = "Pistol";         // 무기이름
-    float _weight = 1.5f;            // 무게
-    int _attackDamage = 1;           // 공격력
-    float _range = 3f;               // 사정거리
-    float _reloadTime = 1.5f;        // 재장전 시간
-    float _bulletSpeed = 5f;        // 탄 속도
-    bool _isReloading = false;       // 재장전 여부
-    int _magAmmo = 30;               // 탄환 수
-    public bool _isEquipped = false; // 장착 여부
+    string _name = "";
+    float _weight;
+    int _attackDamage;
+    float _range;
+    float _reloadTime;
+    float _bulletSpeed;
+    int _magAmmo;
+    bool _isReloading = false;
+    bool _isEquipped = false;
 
     [SerializeField] GameObject _bulletPrefab;
-    [SerializeField] GameObject firepos;
+    [SerializeField] GameObject firePos;
+    public override void ItemInit (ItemObj data)
+    {
+        RangedWeaponData rd = (RangedWeaponData)data;
+        _range = rd._range;
+        // instantiate 위치 찾아서 setStatData실행
+        _itemObj = data;
+        _name = data._name;
+        _weight = data._weight;
+    }
     private void Awake()
     {
-        _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
+       // _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
+    }
+    private void Start()
+    {
+        Debug.Log(_name + _weight);
     }
     private void Update()
     {
@@ -48,7 +62,7 @@ public class RangedWeapon : ItemParent, IItem
             return;
         }
 
-        GameObject bullet = Instantiate(_bulletPrefab, firepos.transform.position, _bulletPrefab.transform.rotation);                               // 탄환 생성
+        GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position, _bulletPrefab.transform.rotation);                               // 탄환 생성
         bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
         bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
         bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FirstAidKits : ItemParent, IItem
+public class Medicine : ItemParent, IItem
 {
     string _name = "Bandage";         // 의약품 이름
     float _weight = 0.1f;             // 무게

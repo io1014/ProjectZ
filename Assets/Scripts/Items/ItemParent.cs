@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 public class ItemParent : MonoBehaviour
 {
@@ -14,9 +15,14 @@ public class ItemParent : MonoBehaviour
     private void Awake()
     {
         Init();
+        ItemInit(_itemObj);
     }
 
     public virtual void Init()
+    {
+
+    }
+    public virtual void ItemInit(ItemObj obj)
     {
 
     }
@@ -34,7 +40,7 @@ public class ItemParent : MonoBehaviour
                 break;
 
             case EItemType.Medicine:
-                _itemGameObject.GetComponent<FirstAidKits>().Use();
+                _itemGameObject.GetComponent<Medicine>().Use();
                 break;
 
             default:
@@ -46,7 +52,6 @@ public interface IItem
 {
     void Use();
 }
-
 
 [Serializable]
 public class ItemObjList
@@ -71,6 +76,64 @@ public class ItemObj
         _weight = weight;
         _scale = scale;
         _count = count;
+    }
+}
+
+[Serializable]
+public class RangedWeaponList
+{
+    public List<RangedWeaponData> _rangedWeapons;
+}
+[Serializable]
+public class FoodList
+{
+    public List<FoodData> _foods;
+}
+[Serializable]
+public class MedicineList
+{
+    public List<MedicineData> _medicines;
+}
+
+[Serializable]
+public class RangedWeaponData : ItemObj
+{
+    public int _attackDamage;
+    public float _range;
+    public float _reloadTime;
+    public float _bulletSpeed;
+    public int _magAmmo;
+
+    public RangedWeaponData(string name, EItemType etype, float weight, float scale, int count, int attckDamage, float range, float reloadTime, float bulletSpeed, int magAmmo) 
+        : base(name, etype, weight, scale, count)
+    {
+        _attackDamage = attckDamage;
+        _range = range;
+        _reloadTime = reloadTime;
+        _magAmmo = magAmmo;
+    }
+}
+[Serializable]
+public class FoodData : ItemObj
+{
+    float _increaseHP;
+    float _increaseFull;
+    public FoodData(string name, EItemType etype, float weight, float scale, int count, float increaseHP, float increaseFull)
+        : base(name, etype, weight, scale, count)
+    {
+        _increaseFull = increaseHP;
+        _increaseHP = increaseFull;
+    }
+}
+[Serializable]
+public class MedicineData : ItemObj
+{
+    float _increaseHP;
+
+    public MedicineData(string name, EItemType etype, float weight, float scale, int count, float increaseHP)
+        : base(name, etype, weight, scale, count)
+    {
+        _increaseHP = increaseHP;
     }
 }
 //public class WeaponItem : ItemObj
