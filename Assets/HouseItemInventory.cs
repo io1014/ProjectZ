@@ -84,6 +84,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         if (_itemSlots.Count <= 0)
         {
             Debug.Log(_itemSlots.Count);
+            BuildingGetItem.instance._itemList.Clear();
             _Looted = true;
         }
     }

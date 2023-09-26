@@ -17,12 +17,13 @@ public class BuildingGetItem : MonoBehaviour
 
     bool _isContacted = false;
     bool _rooted = false;
+    bool _add = false;
     float _inject;
    public GameObject[] _items;
     public List<GameObject> _itemList = new List<GameObject>();
    public bool _far = false;
 
-    ItemFromBuidling _IFB;
+
     private void Awake()
     {
         instance = this;
@@ -32,6 +33,7 @@ public class BuildingGetItem : MonoBehaviour
     {
         _heroStats = new HeroStats();
         _items = GameObject.Find("LoadFile").GetComponent<LoadFile>().Items;
+        Factory();
         
  
         
@@ -53,6 +55,7 @@ public class BuildingGetItem : MonoBehaviour
         }
         */
         GetItem();
+        
     }
 
 
@@ -71,7 +74,7 @@ public class BuildingGetItem : MonoBehaviour
             InvokeRepeating("GetInject", 10, bite);
             switch (_buildingType)
             {
-                case Building.Factory: Factory(); break;
+                //case Building.Factory: Factory(); break;
                 case Building.Hospital: Hospital(); break;
                 case Building.FireDepartment: FireDepartment(); break;
                 case Building.Store: Store(); break;
@@ -79,25 +82,28 @@ public class BuildingGetItem : MonoBehaviour
                 default: break;
 
             }
-            foreach (var obj in _itemList)
+            if(_rooted == false)
             {
-                obj.GetComponent<ItemParent>().Init();
+                foreach (var obj in _itemList)
+                {
+                    obj.GetComponent<ItemParent>().Init();
+                }
+                GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
+                _rooted = true;
             }
-            GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
-            if (GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
-            {
-                //_itemList.Clear();
-                Debug.Log(_itemList.Count);
-                Debug.Log("루팅완료");
-                
-
-            }
-
-
-
-
+            
 
         }
+        if (GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted == true)
+        {
+            Debug.Log(_itemList.Count);
+            _itemList.Clear();
+
+            Debug.Log("루팅완료");
+            GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>()._Looted = false;
+        }
+
+
         else if (_isContacted == true && dist >2f ) 
         {
             
@@ -118,7 +124,7 @@ public class BuildingGetItem : MonoBehaviour
     {
          
         
-        if(_rooted == false)
+        if(_add == false)
         {
             Building FI = Building.Factory;      //FI = Factory Item
             _itemList = new List<GameObject>();
@@ -131,7 +137,7 @@ public class BuildingGetItem : MonoBehaviour
                     _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다  
                 }
                 // ui 추가 
-                _rooted = true;
+                _add = true;
             }
         }
         
