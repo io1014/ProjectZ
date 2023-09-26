@@ -110,25 +110,26 @@ public class RangedWeaponData : ItemObj
         _attackDamage = attckDamage;
         _range = range;
         _reloadTime = reloadTime;
+        _bulletSpeed = bulletSpeed;
         _magAmmo = magAmmo;
     }
 }
 [Serializable]
 public class FoodData : ItemObj
 {
-    float _increaseHP;
-    float _increaseFull;
+    public float _increaseHP;
+    public float _increaseFull;
     public FoodData(string name, EItemType etype, float weight, float scale, int count, float increaseHP, float increaseFull)
         : base(name, etype, weight, scale, count)
     {
-        _increaseFull = increaseHP;
-        _increaseHP = increaseFull;
+        _increaseHP = increaseHP;
+        _increaseFull = increaseFull;
     }
 }
 [Serializable]
 public class MedicineData : ItemObj
 {
-    float _increaseHP;
+    public float _increaseHP;
 
     public MedicineData(string name, EItemType etype, float weight, float scale, int count, float increaseHP)
         : base(name, etype, weight, scale, count)

@@ -27,39 +27,42 @@ public class LoadFile : MonoBehaviour
         TextAsset foodFile = Resources.Load("Food") as TextAsset;
         TextAsset medicineFile = Resources.Load("Medicine") as TextAsset;
         //if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
+        string rangedJson = "";
+        string foodJson = "";
+        string medicineJson = "";
+        //using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
+        //{
+        //    json = inStream.ReadToEnd();
+        //}
+        rangedJson = rangedFile.text;
+        foodJson = foodFile.text;
+        medicineJson = medicineFile.text;
+        if (string.IsNullOrEmpty(rangedJson) == false)
         {
-            string rangedjson = "";
-            string foodjson = "";
-            string medicinejson = "";
-            //using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
-            //{
-            //    json = inStream.ReadToEnd();
-            //}
-            rangedjson = rangedFile.text;
-            if (string.IsNullOrEmpty(rangedjson) == false)
-            {
-                //_objList = JsonUtility.FromJson<ItemObjList>(json);
-                _rangedWeaponList = JsonUtility.FromJson<RangedWeaponList>(rangedjson);
-                RangedSpawn();
-                Debug.Log("RangedWeapon Load가 되었습니다. ");
-            }
-            else if(string.IsNullOrEmpty(foodjson) == false)
-            {
-                _foodList = JsonUtility.FromJson<FoodList>(foodjson);
-                FoodSpawn();
-                Debug.Log("Food Load가 되었습니다. ");
-            }
-            else if (string.IsNullOrEmpty(medicinejson) == false)
-            {
-                _medicineList = JsonUtility.FromJson<MedicineList>(medicinejson);
-                MedicineSpawn();
-                Debug.Log("Medicine Load가 되었습니다. ");
-            }
-            else
-            {
-                Debug.Log("파일은 있지만 내용이 없습니다. ");
-            }
+            //_objList = JsonUtility.FromJson<ItemObjList>(json);
+            _rangedWeaponList = JsonUtility.FromJson<RangedWeaponList>(rangedJson);
+            RangedSpawn();
+            Debug.Log("RangedWeapon Load가 되었습니다. ");
         }
+        if (string.IsNullOrEmpty(foodJson) == false)
+        {
+            _foodList = JsonUtility.FromJson<FoodList>(foodJson);
+            FoodSpawn();
+            Debug.Log("Food Load가 되었습니다. ");
+        }
+        if (string.IsNullOrEmpty(medicineJson) == false)
+        {
+            _medicineList = JsonUtility.FromJson<MedicineList>(medicineJson);
+            MedicineSpawn();
+            Debug.Log("Medicine Load가 되었습니다. ");
+        }
+        else
+        {
+            Debug.Log("파일은 있지만 내용이 없습니다. ");
+        }
+        Debug.Log("Ranged File: " + rangedFile.text);
+        Debug.Log("Food File: " + foodFile.text);
+        Debug.Log("Medicine File: " + medicineFile.text);
         LoadingMap.instance.GetComponent<LoadingMap>().MapLoad();
     }
     public GameObject SpawnItem(ItemObj obj) // 아이템 타입 검사 후 생성한 데이터를 공유

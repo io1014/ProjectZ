@@ -16,22 +16,23 @@ public class RangedWeapon : ItemParent, IItem
 
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject firePos;
-    public override void ItemInit (ItemObj data)
+    public override void ItemInit(ItemObj data)
     {
-        RangedWeaponData rd = (RangedWeaponData)data;
-        _range = rd._range;
         // instantiate 위치 찾아서 setStatData실행
+        RangedWeaponData rd = (RangedWeaponData)data;
         _itemObj = data;
         _name = data._name;
         _weight = data._weight;
+
+        _attackDamage = rd._attackDamage;
+        _range = rd._range;
+        _reloadTime = rd._reloadTime;
+        _bulletSpeed = rd._bulletSpeed;
+        _magAmmo = rd._magAmmo;
     }
     private void Awake()
     {
        // _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
-    }
-    private void Start()
-    {
-        Debug.Log(_name + _weight);
     }
     private void Update()
     {

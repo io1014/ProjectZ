@@ -2,16 +2,24 @@ using UnityEngine;
 
 public class Medicine : ItemParent, IItem
 {
-    string _name = "Bandage";         // 의약품 이름
-    float _weight = 0.1f;             // 무게
-    float _increaseHP = 4f;           // 체력 회복 지수
+    string _name = "";         // 의약품 이름
+    float _weight;             // 무게
+    float _increaseHP;           // 체력 회복 지수
     HeroStats _playerInfo;
 
     public override void Init()
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
         _itemObj = new ItemObj(_name, EItemType.Medicine, _weight, 1f, 1);
-        
+    }
+    public override void ItemInit(ItemObj data)
+    {
+        MedicineData md = (MedicineData)data;
+        _itemObj = data;
+        _name = data._name;
+        _weight = data._weight;
+
+        _increaseHP = md._increaseHP;
     }
     public void Use()
     {
