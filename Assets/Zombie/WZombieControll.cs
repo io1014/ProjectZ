@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class WZombieControll : MonoBehaviour
 {
+    float HP = 50;
 
     State state = State.Idle;
 
@@ -74,6 +75,10 @@ public class WZombieControll : MonoBehaviour
             {
                 state = State.Idle;
             }
+            if(HP == 0)
+            {
+                state = State.Die;
+            }
         }
     }
 
@@ -109,6 +114,8 @@ public class WZombieControll : MonoBehaviour
                     break;
 
                 case State.Die:
+                    Destroy(gameObject);
+                    _next = 0.3f;
                     break;
 
                    
@@ -124,5 +131,13 @@ public class WZombieControll : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(to - from);
     }
 
+    public void GetDamage(int damage)
+    {
+        HP -= damage;
+        if (HP < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 }
