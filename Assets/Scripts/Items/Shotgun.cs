@@ -15,7 +15,7 @@ public class Shotgun : RangedWeapon
     [SerializeField] GameObject _bulletPrefab;
     private void Awake()
     {
-        _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
+        //_itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
         Debug.Log(_name);
     }
     private void Update()

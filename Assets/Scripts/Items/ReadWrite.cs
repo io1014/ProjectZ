@@ -17,10 +17,13 @@ public class ReadWrite : MonoBehaviour
     [SerializeField] float _reloadTime;
     [SerializeField] float _bulletSpeed;
     [SerializeField] int _magAmmo;
+    [SerializeField] RangedWeaponType _rwType;
 
     [Header("Food|Medicine")]
     [SerializeField] float _increaseHP;
     [SerializeField] float _increaseFull;
+    [SerializeField] FoodType _fType;
+    [SerializeField] MedicineType _mType;
 
     //ItemObjList _objList;
     RangedWeaponList _rangedWeaponList;
@@ -62,7 +65,7 @@ public class ReadWrite : MonoBehaviour
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
         RangedWeaponData itemData = new RangedWeaponData(_name, _type, _weight, _scale, _count, 
-            _attackDamage, _range, _reloadTime, _bulletSpeed, _magAmmo);
+            _attackDamage, _range, _reloadTime, _bulletSpeed, _magAmmo, _rwType);
         _rangedWeaponList._rangedWeapons.Add(itemData);
         string json = JsonUtility.ToJson(_rangedWeaponList);
         string path = Application.persistentDataPath + "/RangedWeapon.json";
@@ -75,7 +78,7 @@ public class ReadWrite : MonoBehaviour
     void FoodSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        FoodData itemData = new FoodData(_name, _type, _weight, _scale, _count, _increaseHP, _increaseFull);
+        FoodData itemData = new FoodData(_name, _type, _weight, _scale, _count, _increaseHP, _increaseFull, _fType);
         _foodList._foods.Add(itemData);
         string json = JsonUtility.ToJson(_foodList);
         string path = Application.persistentDataPath + "/Food.json";
@@ -88,7 +91,7 @@ public class ReadWrite : MonoBehaviour
     void MedicineSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        MedicineData itemData = new MedicineData(_name, _type, _weight, _scale, _count, _increaseHP);
+        MedicineData itemData = new MedicineData(_name, _type, _weight, _scale, _count, _increaseHP, _mType);
         _medicineList._medicines.Add(itemData);
         string json = JsonUtility.ToJson(_medicineList);
         string path = Application.persistentDataPath + "/Medicine.json";

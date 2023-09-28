@@ -1,10 +1,15 @@
 using System;
 using UnityEngine;
 
-
+public enum RangedWeaponType
+{
+    None,
+    Pistol,
+}
 public class RangedWeapon : ItemParent, IItem
 {
     string _name = "";
+
     float _weight;
     int _attackDamage;
     float _range;
@@ -13,10 +18,11 @@ public class RangedWeapon : ItemParent, IItem
     int _magAmmo;
     bool _isReloading = false;
     bool _isEquipped = false;
+    public RangedWeaponType _rwType;
 
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject firePos;
-    public override void ItemInit(ItemObj data)
+    public override void Init(ItemObj data)
     {
         // instantiate 위치 찾아서 setStatData실행
         RangedWeaponData rd = (RangedWeaponData)data;

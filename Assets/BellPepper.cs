@@ -10,7 +10,7 @@ public class BellPepper : ItemParent
     private void Awake()
     {
         _playerInfo = GetComponent<HeroStats>();
-        _itemObj = new ItemObj(_name, EItemType.Food, _weight, 1f, 1);
+        //_itemObj = new ItemObj(_name, EItemType.Food, _weight, 1f, 1);
     }
     public void Eating(bool isAte)
     {

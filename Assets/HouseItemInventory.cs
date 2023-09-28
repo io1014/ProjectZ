@@ -18,14 +18,14 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
     // Start is called before the first frame update
     private void Start()
     {
-        ItemObj obj = new ItemObj("Pistol", EItemType.Weapon,0, 1f, 1);
-        AddInventoryItem(obj);
-        obj = new ItemObj("Bread", EItemType.Food, 0, 1f, 1);
-        AddInventoryItem(obj);
-        obj = new ItemObj("Bandage", EItemType.Medicine, 0, 1f, 1);
-        AddInventoryItem(obj);
-        obj = new ItemObj("can_food", EItemType.Weapon, 0, 1f, 1);
-        AddInventoryItem(obj);
+        //ItemObj obj = new ItemObj("Pistol", EItemType.Weapon,0, 1f, 1);
+        //AddInventoryItem(obj);
+        //obj = new ItemObj("Bread", EItemType.Food, 0, 1f, 1);
+        //AddInventoryItem(obj);
+        //obj = new ItemObj("Bandage", EItemType.Medicine, 0, 1f, 1);
+        //AddInventoryItem(obj);
+        //obj = new ItemObj("can_food", EItemType.Weapon, 0, 1f, 1);
+        //AddInventoryItem(obj);
 
     }
     void ShowInven()
@@ -47,7 +47,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         _itemSlots.Clear();
         foreach(GameObject obj in _objs)
         {
-            AddInventoryItem(obj.GetComponent<ItemParent>().ItemObj);
+            AddInventoryItem(GameObject.Find("LoadFile").GetComponent<LoadFile>().SetData(obj));
         }
         gameObject.SetActive(true);
         _pInven.gameObject.SetActive(true);
