@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         // 총알이 충돌했을 때의 동작
         if(other.CompareTag("Monster"))
         {
-           other.GetComponent<WZombieControll>().GetDamage(_damage);
+           //other.GetComponent<WZombieControll>().GetDamage(_damage);
            Destroy(gameObject);
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public enum RangedWeaponType
@@ -19,9 +20,18 @@ public class RangedWeapon : ItemParent, IItem
     bool _isReloading = false;
     bool _isEquipped = false;
     public RangedWeaponType _rwType;
+   
 
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject firePos;
+    [SerializeField] MeshRenderer muzzleFlash;
+    private void Start()
+    {
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        muzzleFlash.enabled = false;
+
+
+    }
     public override void Init(ItemObj data)
     {
         // instantiate 위치 찾아서 setStatData실행
@@ -68,13 +78,22 @@ public class RangedWeapon : ItemParent, IItem
             Debug.Log(" 재장전 중, 발사할 수 없습니다. ");
             return;
         }
-
-        GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position, _bulletPrefab.transform.rotation);                               // 탄환 생성
+       
+        GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position , firePos.transform.rotation);  
+        // 탄환 생성
         bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
         bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
         bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도
         bullet.transform.position = transform.position;                               // 탄환에 Pistol의 위치를 할당
         _magAmmo--;                                                                   // 탄환 감소
+        StartCoroutine(ShowMuzzleFlash());
+        }
+
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        muzzleFlash.enabled = false;
     }
     void Reload()
     {
