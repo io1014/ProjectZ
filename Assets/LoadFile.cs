@@ -83,7 +83,7 @@ public class LoadFile : MonoBehaviour
                             {
                                 temp = Instantiate(item);
                                 temp.GetComponent<ItemParent>().Init(obj);
-                                temp.GetComponent<ItemType>().Init(obj);
+                                temp.GetComponent<ItemType>().TypeInit(obj);
                             }
                         }break;
                     case EItemType.Food:
@@ -92,7 +92,7 @@ public class LoadFile : MonoBehaviour
                             {
                                 temp = Instantiate(item);
                                 temp.GetComponent<ItemParent>().Init(obj);
-                                temp.GetComponent<ItemType>().Init(obj);
+                                temp.GetComponent<ItemType>().TypeInit(obj);
                             }
                         }
                         break;
@@ -102,7 +102,7 @@ public class LoadFile : MonoBehaviour
                             {
                                 temp = Instantiate(item);
                                 temp.GetComponent<ItemParent>().Init(obj);
-                                temp.GetComponent<ItemType>().Init(obj);
+                                temp.GetComponent<ItemType>().TypeInit(obj);
                             }
                         }
                         break;

@@ -111,10 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597604d9d69162a4cacda0ef5e25010e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
-  _spawnRadius: 0
-  _objList:
-    _objs: []
+  _fType: 1
 --- !u!114 &-8769106650349258556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,8 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110e76249bf79434189f8a3a54408962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
-  _spawnRadius: 0
-  _objList:
-    _objs: []
   type: 1

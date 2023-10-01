@@ -6,7 +6,7 @@ public class ItemType : ItemParent
     [SerializeField] EItemType type;
     public EItemType Type { get { return type; } }
 
-    public void Init(ItemObj data)
+    public void TypeInit(ItemObj data)
     {
         _itemObj = data;
         transform.localScale = Vector3.one * _itemObj._scale;
