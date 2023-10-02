@@ -16,9 +16,10 @@ public class AudioPlay : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    //    DontDestroyOnLoad(audioSource);
 
         DontDestroyOnLoad(transform.gameObject);
-        audioSource = GetComponent<AudioSource>();
+          audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayMusic()

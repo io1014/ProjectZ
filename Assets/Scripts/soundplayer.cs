@@ -60,9 +60,6 @@ public class soundplayer : MonoBehaviour
         _fx.mute = !isPlay;
     }
 
-    public void OnBGMPlay(bool isPlay)
-    {
-        _bgm.mute = !isPlay;
-    }
+
 
 }
