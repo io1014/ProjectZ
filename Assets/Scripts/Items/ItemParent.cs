@@ -12,17 +12,7 @@ public class ItemParent : MonoBehaviour
     public void SetItemObj(ItemObj item) => _itemObj = item;
     public void SetItemGameObject(GameObject itemGameObject) => _itemGameObject = itemGameObject;
 
-    private void Awake()
-    {
-        Init();
-        ItemInit(_itemObj);
-    }
-
-    public virtual void Init()
-    {
-
-    }
-    public virtual void ItemInit(ItemObj obj)
+    public virtual void Init(ItemObj obj)
     {
 
     }
@@ -68,7 +58,7 @@ public class ItemObj
     public float _weight;
     public float _scale;
     public int _count;
-    public ItemObj(/*Sprite spr,*/ string name, EItemType etype, float weight, float scale, int count)
+    protected ItemObj(/*Sprite spr,*/ string name, EItemType etype, float weight, float scale, int count)
     {
         //_sprite = spr;
         _name = name;
@@ -103,8 +93,9 @@ public class RangedWeaponData : ItemObj
     public float _reloadTime;
     public float _bulletSpeed;
     public int _magAmmo;
+    public RangedWeaponType _rwType;
 
-    public RangedWeaponData(string name, EItemType etype, float weight, float scale, int count, int attckDamage, float range, float reloadTime, float bulletSpeed, int magAmmo) 
+    public RangedWeaponData(string name, EItemType etype, float weight, float scale, int count, int attckDamage, float range, float reloadTime, float bulletSpeed, int magAmmo, RangedWeaponType rwType) 
         : base(name, etype, weight, scale, count)
     {
         _attackDamage = attckDamage;
@@ -112,6 +103,7 @@ public class RangedWeaponData : ItemObj
         _reloadTime = reloadTime;
         _bulletSpeed = bulletSpeed;
         _magAmmo = magAmmo;
+        _rwType = rwType;
     }
 }
 [Serializable]
@@ -119,22 +111,26 @@ public class FoodData : ItemObj
 {
     public float _increaseHP;
     public float _increaseFull;
-    public FoodData(string name, EItemType etype, float weight, float scale, int count, float increaseHP, float increaseFull)
+    public FoodType _fType;
+    public FoodData(string name, EItemType etype, float weight, float scale, int count, float increaseHP, float increaseFull, FoodType fType)
         : base(name, etype, weight, scale, count)
     {
         _increaseHP = increaseHP;
         _increaseFull = increaseFull;
+        _fType = fType;
     }
 }
 [Serializable]
 public class MedicineData : ItemObj
 {
     public float _increaseHP;
+    public MedicineType _mType;
 
-    public MedicineData(string name, EItemType etype, float weight, float scale, int count, float increaseHP)
+    public MedicineData(string name, EItemType etype, float weight, float scale, int count, float increaseHP, MedicineType mType)
         : base(name, etype, weight, scale, count)
     {
         _increaseHP = increaseHP;
+        _mType = mType;
     }
 }
 //public class WeaponItem : ItemObj

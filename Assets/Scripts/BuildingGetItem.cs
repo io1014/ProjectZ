@@ -84,10 +84,6 @@ public class BuildingGetItem : MonoBehaviour
             }
             if(_rooted == false)
             {
-                foreach (var obj in _itemList)
-                {
-                    obj.GetComponent<ItemParent>().Init();
-                }
                 GenericSingleton<HouseItemInventory>._instance.GetComponent<HouseItemInventory>().AddHouseItemInven(_itemList);
                 _rooted = true;
             }
