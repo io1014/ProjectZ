@@ -11,6 +11,8 @@ public class WZombieControll : MonoBehaviour
 
     float traceDist = 5f; //추적거리
     float attackDist = 0.4f; // 공격거리
+    float attackdamage = 5f;
+    float Hp = 50f;
     bool isDie = false; //죽은지 체크
     Transform monsterTr;
     public Transform playerTr;
@@ -82,7 +84,7 @@ public class WZombieControll : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
-            anim.SetTrigger("Hit");
+            //anim.SetTrigger("Hit");
 
             //해당 충돌 발생 지점 체크
             Vector3 pos = collision.GetContact(0).point;
@@ -91,12 +93,14 @@ public class WZombieControll : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
 
             ShowBloodEffect(pos, rot);
+
+
         }
     }
     void ShowBloodEffect(Vector3 pos, Quaternion rot)
     {
         GameObject blood = Instantiate<GameObject>(bloodEffect, pos, rot, monsterTr);
-        Destroy(blood);
+        Destroy(blood,0.5F);
     }
 
     //좀비 애니메이션 움직임
