@@ -119,18 +119,18 @@ public class LoadFile : MonoBehaviour
                         }
                         break;
 
-                    //case EItemType.MeleeWeapon:
-                    //    {
-                    //        //Debug.Log(((MeleeWeaponData)obj)._mwType+","+item.name);
-                    //        Debug.Log(item.name +", "+ item.GetComponent<ItemType>().Type);
-                    //        if (((MeleeWeaponData)obj)._mwType == item.GetComponent<MeleeWeapon>()._mwType)
-                    //        {
-                    //            temp = Instantiate(item);
-                    //            temp.GetComponent<ItemParent>().Init(obj);
-                    //            temp.GetComponent<ItemType>().TypeInit(obj);
-                    //        }
-                    //    }
-                    //    break;
+                    case EItemType.MeleeWeapon:
+                        {
+                            //Debug.Log(((MeleeWeaponData)obj)._mwType+","+item.name);
+                            Debug.Log(item.name + ", " + item.GetComponent<ItemType>().Type);
+                            if (((MeleeWeaponData)obj)._mwType == item.GetComponent<MeleeWeapon>()._mwType)
+                            {
+                                temp = Instantiate(item);
+                                temp.GetComponent<ItemParent>().Init(obj);
+                                temp.GetComponent<ItemType>().TypeInit(obj);
+                            }
+                        }
+                        break;
 
                     case EItemType.Food:
                         {
