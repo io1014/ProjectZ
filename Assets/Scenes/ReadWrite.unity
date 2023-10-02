@@ -332,9 +332,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Pistol
   _type: 0
-  _weight: 1.5
+  _weight: 4
   _scale: 1
   _count: 1
+  _attackDamage: 1
+  _range: 5
+  _reloadTime: 1.5
+  _bulletSpeed: 10
+  _magAmmo: 30
+  _rwType: 1
+  _increaseHP: 0
+  _increaseFull: 0
+  _fType: 0
+  _mType: 0
 --- !u!4 &1447036838
 Transform:
   m_ObjectHideFlags: 0

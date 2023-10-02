@@ -19,6 +19,12 @@ public class ReadWrite : MonoBehaviour
     [SerializeField] int _magAmmo;
     [SerializeField] RangedWeaponType _rwType;
 
+    [Header("MeleeWeapon")]
+    [SerializeField] int _swingDamage;
+    [SerializeField] int _swingSpeed;
+    [SerializeField] float _duration;
+    [SerializeField] MeleeWeaponType _mwType;
+
     [Header("Food|Medicine")]
     [SerializeField] float _increaseHP;
     [SerializeField] float _increaseFull;
@@ -27,6 +33,7 @@ public class ReadWrite : MonoBehaviour
 
     //ItemObjList _objList;
     RangedWeaponList _rangedWeaponList;
+    MeleeWeaponList _meleeWeaponList;
     FoodList _foodList;
     MedicineList _medicineList;
     private void Start()
@@ -35,6 +42,9 @@ public class ReadWrite : MonoBehaviour
         //_objList._objs = new List<ItemObj>();
         _rangedWeaponList = new RangedWeaponList();
         _rangedWeaponList._rangedWeapons = new List<RangedWeaponData>();
+
+        _meleeWeaponList = new MeleeWeaponList();
+        _meleeWeaponList._meleeWeapons = new List<MeleeWeaponData>();
 
         _foodList = new FoodList();
         _foodList._foods = new List<FoodData>();
@@ -48,8 +58,11 @@ public class ReadWrite : MonoBehaviour
         {
             switch ( _type )
             {
-                case EItemType.Weapon:
+                case EItemType.RangedWeapon:
                     RangedWeaponSaveData(); break;
+
+                case EItemType.MeleeWeapon:
+                    MeleeWeaponSaveData(); break;
 
                 case EItemType.Food:
                     FoodSaveData(); break;
@@ -69,6 +82,20 @@ public class ReadWrite : MonoBehaviour
         _rangedWeaponList._rangedWeapons.Add(itemData);
         string json = JsonUtility.ToJson(_rangedWeaponList);
         string path = Application.persistentDataPath + "/RangedWeapon.json";
+        using (StreamWriter outStream = File.CreateText(path))
+        {
+            outStream.Write(json);
+        }
+        Debug.Log(json);
+    }
+    void MeleeWeaponSaveData()
+    {
+        // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
+        MeleeWeaponData itemData = new MeleeWeaponData(_name, _type, _weight, _scale, _count,
+            _swingDamage, _swingSpeed, _duration, _mwType);
+        _meleeWeaponList._meleeWeapons.Add(itemData);
+        string json = JsonUtility.ToJson(_meleeWeaponList);
+        string path = Application.persistentDataPath + "/MeleeWeapon.json";
         using (StreamWriter outStream = File.CreateText(path))
         {
             outStream.Write(json);

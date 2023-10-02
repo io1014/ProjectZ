@@ -2792,6 +2792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - {fileID: 9205087497003642489, guid: d77b90abf1dad0c44b6e4857815ee5c4, type: 3}
+  - {fileID: 1521815488188378, guid: 4a9e365793edb9141a158ba5ce14f83f, type: 3}
   - {fileID: 555290821068415512, guid: 6159420ec226b7046961717946230280, type: 3}
   - {fileID: 2044380250128950159, guid: cac5484b96c4bdb4a92559af26deeaaf, type: 3}
   _spawnRadius: 50
@@ -4672,6 +4673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597604d9d69162a4cacda0ef5e25010e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fType: 0
 --- !u!1 &1710585111
 GameObject:
   m_ObjectHideFlags: 0

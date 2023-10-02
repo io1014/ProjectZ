@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4247536192522500}
   - component: {fileID: 33710061923989394}
   - component: {fileID: 23969414949704590}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Baseball Bat_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
@@ -95,8 +95,10 @@ GameObject:
   - component: {fileID: 33154555287711750}
   - component: {fileID: 23834028849791900}
   - component: {fileID: -4870726666704521700}
-  m_Layer: 0
-  m_Name: Baseball Bat 01
+  - component: {fileID: 6590106698550401325}
+  - component: {fileID: -140414169694349126}
+  m_Layer: 7
+  m_Name: Baseball Bat
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,3 +184,29 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 52012effd84c100408b87e85b3dbf3b7, type: 3}
+--- !u!114 &6590106698550401325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521815488188378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d80edf709524e4e8d9db5370ca7fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mwType: 1
+--- !u!114 &-140414169694349126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521815488188378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110e76249bf79434189f8a3a54408962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1

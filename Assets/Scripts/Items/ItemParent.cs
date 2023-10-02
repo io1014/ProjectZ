@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 public class ItemParent : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class ItemParent : MonoBehaviour
     {
         switch (itemType)
         {
-            case EItemType.Weapon:
+            case EItemType.RangedWeapon:
                 _itemGameObject.GetComponent<RangedWeapon>().Use();
                 break;
 
@@ -74,6 +75,11 @@ public class RangedWeaponList
     public List<RangedWeaponData> _rangedWeapons;
 }
 [Serializable]
+public class MeleeWeaponList
+{
+    public List<MeleeWeaponData> _meleeWeapons;
+}
+[Serializable]
 public class FoodList
 {
     public List<FoodData> _foods;
@@ -103,6 +109,22 @@ public class RangedWeaponData : ItemObj
         _bulletSpeed = bulletSpeed;
         _magAmmo = magAmmo;
         _rwType = rwType;
+    }
+}
+[Serializable]
+public class MeleeWeaponData : ItemObj
+{
+    public int _swingDamage;
+    public int _swingSpeed;
+    public float _duration;
+    public MeleeWeaponType _mwType;
+    public MeleeWeaponData(string name, EItemType etype, float weight, float scale, int count, int swingDamage, int swingSpeed, float duration, MeleeWeaponType mwType)
+        : base(name, etype, weight, scale, count)
+    {
+        _swingDamage = swingDamage;
+        _swingSpeed = swingSpeed;
+        _duration = duration;
+        _mwType = mwType;
     }
 }
 [Serializable]
@@ -140,10 +162,8 @@ public class MedicineData : ItemObj
 [Serializable]
 public enum EItemType
 {
-    // 무기
-    Weapon,
-    // 음식
+    RangedWeapon,
+    MeleeWeapon,
     Food,
-    // 의약품
     Medicine,
 }

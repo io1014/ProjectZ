@@ -30,7 +30,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
             //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
 
             EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
-            if (etype == EItemType.Weapon)
+            if (etype == EItemType.RangedWeapon || etype == EItemType.MeleeWeapon)
             {
                 if (_slotCount >= 1)
                 {

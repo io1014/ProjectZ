@@ -7,6 +7,7 @@ public class LoadFile : MonoBehaviour
     [SerializeField] private int _spawnRadius;
     //ItemObjList _objList;
     RangedWeaponList _rangedWeaponList;
+    MeleeWeaponList _meleeWeaponList;
     FoodList _foodList;
     MedicineList _medicineList;
 
@@ -16,6 +17,7 @@ public class LoadFile : MonoBehaviour
     {
         //_objList = new ItemObjList();
         _rangedWeaponList = new RangedWeaponList();
+        _meleeWeaponList = new MeleeWeaponList();
         _foodList = new FoodList();
         _medicineList = new MedicineList();
         LoadData();
@@ -24,10 +26,12 @@ public class LoadFile : MonoBehaviour
     {
         //Debug.Log(Application.persistentDataPath);
         TextAsset rangedFile = Resources.Load("RangedWeapon") as TextAsset;
+        TextAsset meleeFile = Resources.Load("MeleeWeapon") as TextAsset;
         TextAsset foodFile = Resources.Load("Food") as TextAsset;
         TextAsset medicineFile = Resources.Load("Medicine") as TextAsset;
         //if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
         string rangedJson = "";
+        string meleeJson = "";
         string foodJson = "";
         string medicineJson = "";
         //using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
@@ -35,6 +39,7 @@ public class LoadFile : MonoBehaviour
         //    json = inStream.ReadToEnd();
         //}
         rangedJson = rangedFile.text;
+        meleeJson = meleeFile.text;
         foodJson = foodFile.text;
         medicineJson = medicineFile.text;
         if (string.IsNullOrEmpty(rangedJson) == false)
@@ -48,15 +53,34 @@ public class LoadFile : MonoBehaviour
             RangedSpawn();
             Debug.Log("RangedWeapon Load가 되었습니다. ");
         }
+        if (string.IsNullOrEmpty(meleeJson) == false)
+        {
+            //_objList = JsonUtility.FromJson<ItemObjList>(json);
+            _meleeWeaponList = JsonUtility.FromJson<MeleeWeaponList>(meleeJson);
+            foreach (var data in _meleeWeaponList._meleeWeapons)
+            {
+                Debug.Log("weapon Data : " + data._name + ", type : " + data._mwType);
+            }
+            MeleeSpawn();
+            Debug.Log("MeleeWeapon Load가 되었습니다. ");
+        }
         if (string.IsNullOrEmpty(foodJson) == false)
         {
             _foodList = JsonUtility.FromJson<FoodList>(foodJson);
+            foreach (var data in _foodList._foods)
+            {
+                Debug.Log("food Data : " + data._name + ", type : " + data._fType);
+            }
             FoodSpawn();
             Debug.Log("Food Load가 되었습니다. ");
         }
         if (string.IsNullOrEmpty(medicineJson) == false)
         {
             _medicineList = JsonUtility.FromJson<MedicineList>(medicineJson);
+            foreach (var data in _medicineList._medicines)
+            {
+                Debug.Log("medicine Data : " + data._name + ", type : " + data._mType);
+            }
             MedicineSpawn();
             Debug.Log("Medicine Load가 되었습니다. ");
         }
@@ -65,6 +89,7 @@ public class LoadFile : MonoBehaviour
             Debug.Log("파일은 있지만 내용이 없습니다. ");
         }
         Debug.Log("Ranged File: " + rangedFile.text);
+        Debug.Log("Melee File: " + meleeFile.text);
         Debug.Log("Food File: " + foodFile.text);
         Debug.Log("Medicine File: " + medicineFile.text);
         LoadingMap.instance.GetComponent<LoadingMap>().MapLoad();
@@ -82,7 +107,7 @@ public class LoadFile : MonoBehaviour
                 Debug.Log("아이템 타입 "+obj._eType);
                 switch (obj._eType)
                 {
-                    case EItemType.Weapon:
+                    case EItemType.RangedWeapon:
                         {
                             Debug.Log(((RangedWeaponData)obj)._rwType);
                             if(((RangedWeaponData)obj)._rwType == item.GetComponent<RangedWeapon>()._rwType)
@@ -91,7 +116,22 @@ public class LoadFile : MonoBehaviour
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
-                        }break;
+                        }
+                        break;
+
+                    //case EItemType.MeleeWeapon:
+                    //    {
+                    //        //Debug.Log(((MeleeWeaponData)obj)._mwType+","+item.name);
+                    //        Debug.Log(item.name +", "+ item.GetComponent<ItemType>().Type);
+                    //        if (((MeleeWeaponData)obj)._mwType == item.GetComponent<MeleeWeapon>()._mwType)
+                    //        {
+                    //            temp = Instantiate(item);
+                    //            temp.GetComponent<ItemParent>().Init(obj);
+                    //            temp.GetComponent<ItemType>().TypeInit(obj);
+                    //        }
+                    //    }
+                    //    break;
+
                     case EItemType.Food:
                         {
                             if (((FoodData)obj)._fType == item.GetComponent<Food>()._fType)
@@ -102,6 +142,7 @@ public class LoadFile : MonoBehaviour
                             }
                         }
                         break;
+
                     case EItemType.Medicine:
                         {
                             if (((MedicineData)obj)._mType == item.GetComponent<Medicine>()._mType)
@@ -111,6 +152,9 @@ public class LoadFile : MonoBehaviour
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
                         }
+                        break;
+
+                    default: 
                         break;
                 }
 
@@ -123,6 +167,17 @@ public class LoadFile : MonoBehaviour
     void RangedSpawn() // 아이템 랜덤 생성
     {
         foreach (var data in _rangedWeaponList._rangedWeapons)
+        {
+            Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
+            RandomPosition.y = 0f;
+            GameObject temp = SpawnItem(data);
+            temp.transform.localScale = Vector3.one;
+            temp.transform.position = RandomPosition;
+        }
+    }
+    void MeleeSpawn() // 아이템 랜덤 생성
+    {
+        foreach (var data in _meleeWeaponList._meleeWeapons)
         {
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
@@ -159,7 +214,7 @@ public class LoadFile : MonoBehaviour
         ItemObj result = null;
         switch (obj.GetComponent<ItemType>().Type)
         {
-            case EItemType.Weapon:
+            case EItemType.RangedWeapon:
                 {
                     foreach(var data in _rangedWeaponList._rangedWeapons)
                     {
@@ -168,7 +223,21 @@ public class LoadFile : MonoBehaviour
                             result = data;
                         }
                     }
-                }break;
+                }
+                break;
+
+            case EItemType.MeleeWeapon:
+                {
+                    foreach (var data in _meleeWeaponList._meleeWeapons)
+                    {
+                        if (obj.GetComponent<MeleeWeapon>()._mwType == data._mwType)
+                        {
+                            result = data;
+                        }
+                    }
+                }
+                break;
+
             case EItemType.Food:
                 {
                     foreach (var data in _foodList._foods)
@@ -180,6 +249,7 @@ public class LoadFile : MonoBehaviour
                     }
                 }
                 break;
+
             case EItemType.Medicine:
                 {
                     foreach (var data in _medicineList._medicines)
@@ -190,7 +260,10 @@ public class LoadFile : MonoBehaviour
                         }
                     }
                 }
-                break; 
+                break;
+
+            default:
+                break;
         }
         return result;
     }
