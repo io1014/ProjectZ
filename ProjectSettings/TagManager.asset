@@ -9,6 +9,10 @@ TagManager:
   - Factory
   - Hand
   - Light
+  - Cloth
+  - Weapon
+  - Bullet
+  - Music
   layers:
   - Default
   - TransparentFX
