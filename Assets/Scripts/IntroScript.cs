@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class IntroScript : MonoBehaviour
 {
-
+    [SerializeField] GameObject massage;
     public void IntroToGame()
     {
-        SceneManager.LoadScene("Project Z map");
+        massage.SetActive(true);
+  //    SceneManager.LoadScene("Project Z map");
     }
 
     public void GotoOption()
