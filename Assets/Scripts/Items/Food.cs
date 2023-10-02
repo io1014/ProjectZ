@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-
+[Serializable]
 public enum FoodType
 {
     None,

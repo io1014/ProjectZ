@@ -41,6 +41,10 @@ public class LoadFile : MonoBehaviour
         {
             //_objList = JsonUtility.FromJson<ItemObjList>(json);
             _rangedWeaponList = JsonUtility.FromJson<RangedWeaponList>(rangedJson);
+            foreach(var data in _rangedWeaponList._rangedWeapons)
+            {
+                Debug.Log("weapon Data : "+data._name+", type : "+data._rwType);
+            }
             RangedSpawn();
             Debug.Log("RangedWeapon Load가 되었습니다. ");
         }
@@ -75,10 +79,12 @@ public class LoadFile : MonoBehaviour
                 // switch 
                 // weapontype, foodtype, medicineType을 각각 검사해서 맞는 prefab을 로드
                 GameObject temp = null;
+                Debug.Log("아이템 타입 "+obj._eType);
                 switch (obj._eType)
                 {
                     case EItemType.Weapon:
                         {
+                            Debug.Log(((RangedWeaponData)obj)._rwType);
                             if(((RangedWeaponData)obj)._rwType == item.GetComponent<RangedWeapon>()._rwType)
                             {
                                 temp = Instantiate(item);

@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 public class ItemParent : MonoBehaviour
 {
@@ -138,7 +137,7 @@ public class MedicineData : ItemObj
 //    public WeaponItem(/*Sprite spr,*/ string name, EItemType etype, float scale, int count)
 //        : base(name, EItemType.Weapon, 1f, 1) { }
 //}
-
+[Serializable]
 public enum EItemType
 {
     // ¹«±â
