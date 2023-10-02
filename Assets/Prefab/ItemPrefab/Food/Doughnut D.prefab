@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3990576710844553890}
   - component: {fileID: 58190507835725063}
   - component: {fileID: 2822152489234194893}
-  - component: {fileID: -6375926734121769229}
-  - component: {fileID: -8611787672642153666}
-  - component: {fileID: -6246127581337530158}
+  - component: {fileID: -3625779256818952153}
+  - component: {fileID: -3163020721885525765}
+  - component: {fileID: 2226594037539322312}
   m_Layer: 7
   m_Name: Doughnut D
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6375926734121769229
+--- !u!114 &-3625779256818952153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597604d9d69162a4cacda0ef5e25010e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8611787672642153666
+  _fType: 0
+--- !u!114 &-3163020721885525765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110e76249bf79434189f8a3a54408962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
---- !u!135 &-6246127581337530158
+  type: 0
+--- !u!135 &2226594037539322312
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
