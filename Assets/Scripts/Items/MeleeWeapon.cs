@@ -1,6 +1,6 @@
 using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 
 [Serializable]
 public enum MeleeWeaponType
@@ -22,10 +22,11 @@ public class MeleeWeapon : ItemParent, IItem
 {
     string _name = "";
     float _weight;
-    int _swingDamage;
-    int _swingSpeed;
+    int _swingDamage = 25;
+    int _swingSpeed = 1;
     float _duration;
     bool _isEquipped = false;
+    [SerializeField] BoxCollider meleeArea;
     public MeleeWeaponType _mwType;
     public override void Init(ItemObj data)
     {
@@ -38,12 +39,31 @@ public class MeleeWeapon : ItemParent, IItem
         _swingSpeed = md._swingSpeed;
         _duration = md._duration;
     }
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+
+        }
+    }
+    void Attack()
+    {
+        if (_isEquipped == false) return;
+
+        StartCoroutine("Swing");
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("DoSwing");
+    }
     public void Use()
     {
 
     }
-    private void Start()
+    IEnumerator Swing()
     {
-        Debug.Log(_name);
+        yield return new WaitForSeconds(0.1f);
+        meleeArea.enabled = true;
+
+        yield return new WaitForSeconds(0.3f);
+        meleeArea.enabled = false;
     }
 }

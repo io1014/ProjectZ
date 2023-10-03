@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: -4870726666704521700}
   - component: {fileID: 6590106698550401325}
   - component: {fileID: -140414169694349126}
+  - component: {fileID: 1674469115249042162}
   m_Layer: 7
   m_Name: Baseball Bat
   m_TagString: Weapon
@@ -196,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d80edf709524e4e8d9db5370ca7fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meleeArea: {fileID: 1674469115249042162}
   _mwType: 1
 --- !u!114 &-140414169694349126
 MonoBehaviour:
@@ -210,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!65 &1674469115249042162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521815488188378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.000000052154064, y: 2, z: 0.0000004991889}
