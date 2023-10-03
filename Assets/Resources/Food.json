@@ -1,1 +1,294 @@
-{"_foods":[{"_name":"Bread","_eType":2,"_weight":0.30000001192092898,"_scale":1.0,"_count":1,"_increaseHP":15.0,"_increaseFull":30.0,"_fType":1}]}
+{
+  "_foods": [
+    {
+      "_name": "Bread",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 10.0,
+      "_increaseFull": 30.0,
+      "_fType": 1
+    },
+    {
+      "_name": "BellPeper",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 8.0,
+      "_fType": 2
+    },
+    {
+      "_name": "BellPeperSlice",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 1.0,
+      "_increaseFull": 4.0,
+      "_fType": 3
+    },
+    {
+      "_name": "Cake",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 3.0,
+      "_increaseFull": 10.0,
+      "_fType": 4
+    },
+    {
+      "_name": "Candy",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 3.0,
+      "_increaseFull": 10.0,
+      "_fType": 5
+    },
+    {
+      "_name": "Coffee",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 30.0,
+      "_fType": 6
+    },
+    {
+      "_name": "Cookie",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 8.0,
+      "_fType": 7
+    },
+    {
+      "_name": "Curry",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 15.0,
+      "_increaseFull": 40.0,
+      "_fType": 8
+    },
+    {
+      "_name": "Doughnut",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 8.0,
+      "_fType": 9
+    },
+    {
+      "_name": "Frappe",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 5.0,
+      "_fType": 10
+    },
+    {
+      "_name": "HotDog",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 7.0,
+      "_increaseFull": 20.0,
+      "_fType": 11
+    },
+    {
+      "_name": "IceCream",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 10.0,
+      "_increaseFull": 30.0,
+      "_fType": 12
+    },
+    {
+      "_name": "Ketchup",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 5.0,
+      "_increaseFull": 20.0,
+      "_fType": 13
+    },
+    {
+      "_name": "Lamb",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 10.0,
+      "_increaseFull": 30.0,
+      "_fType": 14
+    },
+    {
+      "_name": "Melon",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 3.0,
+      "_increaseFull": 10.0,
+      "_fType": 15
+    },
+    {
+      "_name": "MelonHalf",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 6.0,
+      "_fType": 16
+    },
+    {
+      "_name": "Peach",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 4.0,
+      "_increaseFull": 12.0,
+      "_fType": 17
+    },
+    {
+      "_name": "PeachHalf",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 6.0,
+      "_fType": 18
+    },
+    {
+      "_name": "Pizza",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 20.0,
+      "_increaseFull": 50.0,
+      "_fType": 19
+    },
+    {
+      "_name": "PizzaSlice",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 3.0,
+      "_increaseFull": 10.0,
+      "_fType": 20
+    },
+    {
+      "_name": "Pretzel",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 5.0,
+      "_fType": 21
+    },
+    {
+      "_name": "Salami",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 6.0,
+      "_increaseFull": 20.0,
+      "_fType": 22
+    },
+    {
+      "_name": "Salmon",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 10.0,
+      "_increaseFull": 30.0,
+      "_fType": 23
+    },
+    {
+      "_name": "Skewer",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 5.0,
+      "_increaseFull": 15.0,
+      "_fType": 24
+    },
+    {
+      "_name": "Soda",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 8.0,
+      "_fType": 25
+    },
+    {
+      "_name": "Susi",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 4.0,
+      "_increaseFull": 12.0,
+      "_fType": 26
+    },
+    {
+      "_name": "Tomato",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 4.0,
+      "_increaseFull": 12.0,
+      "_fType": 27
+    },
+    {
+      "_name": "Udon",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 5.0,
+      "_increaseFull": 15.0,
+      "_fType": 28
+    },
+    {
+      "_name": "Wasabi",
+      "_eType": 2,
+      "_weight": 0.10000000149011612,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 1.0,
+      "_increaseFull": 3.0,
+      "_fType": 29
+    }
+  ]
+}

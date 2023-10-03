@@ -61,7 +61,7 @@ public class LoadFile : MonoBehaviour
             {
                 Debug.Log("weapon Data : " + data._name + ", type : " + data._mwType);
             }
-            MeleeSpawn();
+            //MeleeSpawn();
             Debug.Log("MeleeWeapon Load가 되었습니다. ");
         }
         if (string.IsNullOrEmpty(foodJson) == false)
@@ -71,7 +71,7 @@ public class LoadFile : MonoBehaviour
             {
                 Debug.Log("food Data : " + data._name + ", type : " + data._fType);
             }
-            FoodSpawn();
+            //FoodSpawn();
             Debug.Log("Food Load가 되었습니다. ");
         }
         if (string.IsNullOrEmpty(medicineJson) == false)
