@@ -23,18 +23,21 @@ public class Bullet : MonoBehaviour
         // 원거리 무기의 damage값 저장
         _damage = damage;
     }
+    public float getDamage()
+    {
+        return _damage;
+    }
     public void SetRange(float range)
     {
         // 원거리 무기의 사정거리값 저장
         _lifetime = range;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        // 총알이 충돌했을 때의 동작
-        if(other.CompareTag("Monster"))
-        {
-           //other.GetComponent<WZombieControll>().GetDamage(_damage);
-           Destroy(gameObject);
-        }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    // 총알이 충돌했을 때의 동작
+    //    if(other.CompareTag("Monster"))
+    //    {
+    //        other.GetComponent<WZombieControll>().GetDamage(_damage);
+    //        Destroy(gameObject);
+    //    }
     }
-}

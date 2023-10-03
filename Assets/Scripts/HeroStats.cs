@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HeroStats : GenericSingleton<HeroStats>
 
@@ -19,7 +20,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     float _stamina = 100;
     float _speed = 2f;
     float _MaxHP = 100;
-    public float _currentHP = 100;
+    public float _currentHP;
 
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     }
     private void Start()
     {
-     
+        _currentHP = _MaxHP;
         HpChange();
         StaminaChange();
     }
@@ -36,7 +37,6 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         RunAndWalk();
         StaminaRecovery();
-        //Debug.Log(_currentHP);
         HpChange();
         StaminaChange();
         blood = Random.Range(1, 10);
@@ -60,7 +60,7 @@ public class HeroStats : GenericSingleton<HeroStats>
         {
             _speed = 5;
 
-            _stamina -= 30 * Time.deltaTime;
+            _stamina -= 20 * Time.deltaTime;
         }
         if (_stamina < 0)
         {
@@ -94,7 +94,6 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         _currentHP -= damage;
     }
-
     private void OnTriggerEnter(Collider other) // µ¥¹ÌÁö
     {
         if (blood < 10 && _currentHP >= 0 && other.CompareTag("Hand"))
@@ -106,6 +105,10 @@ public class HeroStats : GenericSingleton<HeroStats>
         {
             bloodEnabled = true;
             _currentHP -= 10;
+        }
+        if (_currentHP <= 0)
+        {
+            PlayerDie();
         }
     }
     public void bloodUUI()
@@ -123,6 +126,10 @@ public class HeroStats : GenericSingleton<HeroStats>
         {
             _currentHP = 100;
         }
+    }
+    void PlayerDie()
+    {
+        SceneManager.LoadScene("Gameover");
     }
 }
 

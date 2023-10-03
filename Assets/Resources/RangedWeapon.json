@@ -1,1 +1,1 @@
-{"_rangedWeapons":[{"_name":"Pistol","_eType":0,"_weight":4.0,"_scale":1.0,"_count":1,"_attackDamage":1,"_range":5.0,"_reloadTime":1.5,"_bulletSpeed":10.0,"_magAmmo":30,"_rwType":1}]}
+{"_rangedWeapons":[{"_name":"Pistol","_eType":0,"_weight":4.0,"_scale":1.0,"_count":1,"_attackDamage":10,"_range":5.0,"_reloadTime":1.5,"_bulletSpeed":10.0,"_magAmmo":30,"_rwType":1}]}

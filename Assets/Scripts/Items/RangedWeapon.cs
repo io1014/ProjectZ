@@ -20,11 +20,13 @@ public class RangedWeapon : ItemParent, IItem
     bool _isReloading = false;
     bool _isEquipped = false;
     public RangedWeaponType _rwType;
-   
+    AudioSource _audio;
+    
 
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] GameObject firePos;
     [SerializeField] MeshRenderer muzzleFlash;
+    [SerializeField] AudioClip fire;
     Transform PlayerTr;
     
     private void Start()
@@ -32,6 +34,7 @@ public class RangedWeapon : ItemParent, IItem
         PlayerTr = GameObject.FindWithTag("Hero").GetComponent<Transform>();
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
         muzzleFlash.enabled = false;
+        _audio = GetComponent<AudioSource>();
         
 
     }
@@ -83,6 +86,7 @@ public class RangedWeapon : ItemParent, IItem
             return;
         }
         GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position ,Quaternion.identity);
+        _audio.PlayOneShot(fire, 1.0f);
         bullet.transform.up = transform.forward;
 
         bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
