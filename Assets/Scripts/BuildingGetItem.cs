@@ -65,6 +65,7 @@ public class BuildingGetItem : MonoBehaviour
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if (_isContacted==false&& dist <= 2f && Input.GetKeyDown(KeyCode.G))
         {
+            // 사운드 추가 필요
             //GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", true);
             GenericSingleton<HouseItemInventory>._instance.gameObject.SetActive(true);
            GenericSingleton<HouseItemInventory>._instance.gameObject.GetComponent<Animator>().SetBool("Open", true);
