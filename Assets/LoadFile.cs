@@ -1,4 +1,3 @@
-using System.IO;
 using UnityEngine;
 
 public class LoadFile : MonoBehaviour
@@ -61,7 +60,7 @@ public class LoadFile : MonoBehaviour
             {
                 Debug.Log("weapon Data : " + data._name + ", type : " + data._mwType);
             }
-            //MeleeSpawn();
+            MeleeSpawn();
             Debug.Log("MeleeWeapon Load가 되었습니다. ");
         }
         if (string.IsNullOrEmpty(foodJson) == false)
@@ -71,7 +70,7 @@ public class LoadFile : MonoBehaviour
             {
                 Debug.Log("food Data : " + data._name + ", type : " + data._fType);
             }
-            //FoodSpawn();
+            FoodSpawn();
             Debug.Log("Food Load가 되었습니다. ");
         }
         if (string.IsNullOrEmpty(medicineJson) == false)
@@ -104,7 +103,7 @@ public class LoadFile : MonoBehaviour
                 // switch 
                 // weapontype, foodtype, medicineType을 각각 검사해서 맞는 prefab을 로드
                 GameObject temp = null;
-                Debug.Log("아이템 타입 "+obj._eType);
+                Debug.Log("아이템 타입 "+obj._eType + obj._name);
                 switch (obj._eType)
                 {
                     case EItemType.RangedWeapon:
@@ -115,6 +114,10 @@ public class LoadFile : MonoBehaviour
                                 temp = Instantiate(item);
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
+                            }
+                            else
+                            {
+                                continue;
                             }
                         }
                         break;
@@ -129,16 +132,28 @@ public class LoadFile : MonoBehaviour
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
+                            else
+                            {
+                                continue;
+                            }
                         }
                         break;
 
                     case EItemType.Food:
                         {
+                            Debug.Log($"food type : {((FoodData)obj)._fType}");
+                            Debug.Log($"item type : {item.GetComponent<Food>()._fType}");
                             if (((FoodData)obj)._fType == item.GetComponent<Food>()._fType)
                             {
+                                Debug.Log($"switch in : {obj._name} + {item.name}");
                                 temp = Instantiate(item);
+                                Debug.Log(temp.name + temp.GetComponent<Food>()._fType + obj._name);
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
+                            }
+                            else
+                            {
+                                continue;
                             }
                         }
                         break;
@@ -151,14 +166,19 @@ public class LoadFile : MonoBehaviour
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
+                            else
+                            {
+                                continue;
+                            }
                         }
                         break;
 
-                    default: 
+                    default:
+                        Debug.Log($"default : {obj._name}");
                         break;
                 }
 
-                Debug.Log(item.name);
+                Debug.Log(item.name + temp.name);
                 return temp;
             }
         }
@@ -190,6 +210,7 @@ public class LoadFile : MonoBehaviour
     {
         foreach (var data in _foodList._foods)
         {
+            Debug.Log(data._name);
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1307809839777944
+--- !u!1 &1277966274570706
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4395990233762256}
-  - component: {fileID: 33393485132494168}
-  - component: {fileID: 23877676680618968}
+  - component: {fileID: 4228862423855760}
+  - component: {fileID: 33117422028006744}
+  - component: {fileID: 23287552717064030}
   m_Layer: 0
-  m_Name: Tactical Knife_Cloth
+  m_Name: Crowbar_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4395990233762256
+--- !u!4 &4228862423855760
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307809839777944}
+  m_GameObject: {fileID: 1277966274570706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4947844167003774}
+  m_Father: {fileID: 4322825722637396}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33393485132494168
+--- !u!33 &33117422028006744
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307809839777944}
-  m_Mesh: {fileID: 4300002, guid: 8329ab1b997074e4ca18a93612829dd6, type: 3}
---- !u!23 &23877676680618968
+  m_GameObject: {fileID: 1277966274570706}
+  m_Mesh: {fileID: 4300002, guid: e5b80535b6ae5fc42a5ab5f1a32df817, type: 3}
+--- !u!23 &23287552717064030
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307809839777944}
+  m_GameObject: {fileID: 1277966274570706}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1762973041994130
+--- !u!1 &1978137888114846
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,48 +91,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4947844167003774}
-  - component: {fileID: 33692845381239052}
-  - component: {fileID: 23345537429680422}
-  - component: {fileID: 6081843620590878931}
+  - component: {fileID: 4322825722637396}
+  - component: {fileID: 33576516979179988}
+  - component: {fileID: 23808952841406084}
+  - component: {fileID: 4485390482220258774}
   m_Layer: 0
-  m_Name: Tactical Knife 01
+  m_Name: Crowbar
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4947844167003774
+--- !u!4 &4322825722637396
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762973041994130}
+  m_GameObject: {fileID: 1978137888114846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4395990233762256}
+  - {fileID: 4228862423855760}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &33692845381239052
+--- !u!33 &33576516979179988
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762973041994130}
-  m_Mesh: {fileID: 4300000, guid: 8329ab1b997074e4ca18a93612829dd6, type: 3}
---- !u!23 &23345537429680422
+  m_GameObject: {fileID: 1978137888114846}
+  m_Mesh: {fileID: 4300000, guid: e5b80535b6ae5fc42a5ab5f1a32df817, type: 3}
+--- !u!23 &23808952841406084
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762973041994130}
+  m_GameObject: {fileID: 1978137888114846}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -146,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 01adf659b8b13054b928d2e1170a7267, type: 2}
+  - {fileID: 2100000, guid: 74cb96619a303f94699b23207eb44b3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,17 +168,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6081843620590878931
+--- !u!64 &4485390482220258774
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1762973041994130}
+  m_GameObject: {fileID: 1978137888114846}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 8329ab1b997074e4ca18a93612829dd6, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e5b80535b6ae5fc42a5ab5f1a32df817, type: 3}
