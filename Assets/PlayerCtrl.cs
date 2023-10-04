@@ -9,7 +9,7 @@ public class PlayerCtrl : MonoBehaviour
     Animation anim;
 
     float turnSpeed = 80f;
-    public bool _Gun = true;
+    public bool _Gun = false;
 
     private void Awake()
     {
@@ -34,10 +34,9 @@ public class PlayerCtrl : MonoBehaviour
 
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
         Rotate();
+
         if (_Gun == true)
-        {
-            PlayerAnim(h, v);
-        }    
+        { PlayerAnim(h, v); }   
     }
     void Rotate()
     {

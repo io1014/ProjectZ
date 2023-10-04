@@ -48,6 +48,10 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
                         Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _rangedEquip = true;
+                        if (_rangedEquip == true)
+                        {
+                            PlayerCtrl.instance.GetComponent<PlayerCtrl>()._Gun = true;
+                        }
                         _meleeEquip = false;
                         Debug.Log("원거리 무기가 장착 되었습니다.");
                     }
