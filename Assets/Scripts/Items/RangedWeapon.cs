@@ -22,6 +22,7 @@ public class RangedWeapon : ItemParent, IItem
     bool _isReloading = false;
     bool _isEquipped = false;
     public RangedWeaponType _rwType;
+    bool mousepos = true;
     AudioSource _audio;
     
 
@@ -31,6 +32,7 @@ public class RangedWeapon : ItemParent, IItem
     [SerializeField] AudioClip fire;
     Transform PlayerTr;
 
+   
     
     private void Start()
     {
@@ -74,10 +76,27 @@ public class RangedWeapon : ItemParent, IItem
         {
             Reload();
         }
+        mouseposition();
+        Debug.Log(mousepos);
+    }
+    void mouseposition() // 인벤토리를 누르면 총알이 같이나가는거 방지
+    {
+
+        Vector3 mpos = Input.mousePosition;
+        Vector3 cpoint = Camera.main.ScreenToWorldPoint(mpos);
+        
+        if(cpoint.y >  77.35)
+        {
+            mousepos = false;
+        }
+        else
+        {
+            mousepos = true;
+        }
     }
     void Shoot()
     {
-        if (_magAmmo <= 0 && _isReloading == false)
+        if (_magAmmo <= 0 && _isReloading == false && mousepos == true)
         {
             // 탄환 수가 0이면 재장전
             Reload();
