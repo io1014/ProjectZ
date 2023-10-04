@@ -20,9 +20,10 @@ public class ReadWrite : MonoBehaviour
     [SerializeField] RangedWeaponType _rwType;
 
     [Header("MeleeWeapon")]
-    [SerializeField] int _swingDamage;
-    [SerializeField] int _swingSpeed;
-    [SerializeField] float _duration;
+    [SerializeField] float _swingDamageMin;
+    [SerializeField] float _swingDamageMax;
+    [SerializeField] float _swingSpeed;
+    [SerializeField] int _durability;
     [SerializeField] MeleeWeaponType _mwType;
 
     [Header("Food|Medicine")]
@@ -92,7 +93,7 @@ public class ReadWrite : MonoBehaviour
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
         MeleeWeaponData itemData = new MeleeWeaponData(_name, _type, _weight, _scale, _count,
-            _swingDamage, _swingSpeed, _duration, _mwType);
+            _swingDamageMin, _swingDamageMax, _swingSpeed, _durability, _mwType);
         _meleeWeaponList._meleeWeapons.Add(itemData);
         string json = JsonUtility.ToJson(_meleeWeaponList);
         string path = Application.persistentDataPath + "/MeleeWeapon.json";

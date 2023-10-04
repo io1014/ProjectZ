@@ -5,6 +5,8 @@ public enum MedicineType
 {
     None,
     Bandage,
+    FirstAidKit,
+    Pills,
 }
 
 public class Medicine : ItemParent, IItem

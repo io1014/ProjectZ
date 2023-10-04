@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 33189804287199342}
   - component: {fileID: 23316673807073582}
   - component: {fileID: 653971359234993946}
+  - component: {fileID: -2675200655541904300}
+  - component: {fileID: 2713689826813326156}
   m_Layer: 0
   m_Name: HeavyWrench
   m_TagString: Weapon
@@ -182,3 +184,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 2fef246f9fc27fb49a4b0637a4593f47, type: 3}
+--- !u!114 &-2675200655541904300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981925059874814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d80edf709524e4e8d9db5370ca7fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeArea: {fileID: 0}
+  _mwType: 6
+--- !u!114 &2713689826813326156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981925059874814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110e76249bf79434189f8a3a54408962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1

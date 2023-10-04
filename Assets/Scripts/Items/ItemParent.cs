@@ -113,16 +113,18 @@ public class RangedWeaponData : ItemObj
 [Serializable]
 public class MeleeWeaponData : ItemObj
 {
-    public int _swingDamage;
-    public int _swingSpeed;
-    public float _duration;
+    public float _swingDamageMin;
+    public float _swingDamageMax;
+    public float _swingSpeed;
+    public int _durability;
     public MeleeWeaponType _mwType;
-    public MeleeWeaponData(string name, EItemType etype, float weight, float scale, int count, int swingDamage, int swingSpeed, float duration, MeleeWeaponType mwType)
+    public MeleeWeaponData(string name, EItemType etype, float weight, float scale, int count, float swingDamageMin, float swingDamageMax, float swingSpeed, int durability, MeleeWeaponType mwType)
         : base(name, etype, weight, scale, count)
     {
-        _swingDamage = swingDamage;
+        _swingDamageMin = swingDamageMin;
+        _swingDamageMax = swingDamageMax;
         _swingSpeed = swingSpeed;
-        _duration = duration;
+        _durability = durability;
         _mwType = mwType;
     }
 }

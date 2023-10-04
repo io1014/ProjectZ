@@ -25,6 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerMotionBool();
         Debug.Log(_Gun);
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -70,5 +71,9 @@ public class PlayerCtrl : MonoBehaviour
         {
             anim.CrossFade("Idle", 0.25f);
         }
+    }
+    void PlayerMotionBool()
+    {
+        _Gun = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetRangedEquip();
     }
 }

@@ -27,9 +27,19 @@ public class GetItem : MonoBehaviour
                 GameObject itemObject = items[i].gameObject;
                 ItemObj itemInfo = itemObject.GetComponent<ItemType>().ItemObj;
                 _itemList.Add(itemInfo);
-                GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().AddInventoryItem(itemInfo);
-                Destroy(items[i].gameObject);
-                Debug.Log("아이템을 획득하셨습니다. ");
+                PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
+                float maxWeight = myInven.GetMaxWeight();
+                if (myInven._currentWeight >= maxWeight)
+                {
+                    Debug.Log("아이템을 획득하지 못하였습니다." + "(" + itemInfo._name + ")");
+                    return _itemList;
+                }
+                else
+                {
+                    myInven.AddInventoryItem(itemInfo);
+                    Destroy(items[i].gameObject);
+                    Debug.Log("아이템을 획득하였습니다. " + "("+ itemInfo._name+ ")" );
+                }
             }
         }
         return _itemList;

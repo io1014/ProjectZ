@@ -289,6 +289,26 @@
       "_increaseHP": 1.0,
       "_increaseFull": 3.0,
       "_fType": 29
+    },
+    {
+      "_name": "CannedFood",
+      "_eType": 2,
+      "_weight": 0.30000001192092898,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 10.0,
+      "_increaseFull": 30.0,
+      "_fType": 30
+    },
+    {
+      "_name": "Water",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_increaseHP": 2.0,
+      "_increaseFull": 6.0,
+      "_fType": 31
     }
   ]
 }

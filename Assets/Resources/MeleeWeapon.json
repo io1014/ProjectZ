@@ -1,1 +1,112 @@
-{"_meleeWeapons":[{"_name":"BaseballBat","_eType":1,"_weight":2.0,"_scale":1.0,"_count":1,"_swingDamage":1,"_swingSpeed":2,"_duration":15.0,"_mwType":1}]}
+{
+  "_meleeWeapons": [
+    {
+      "_name": "BaseballBat",
+      "_eType": 1,
+      "_weight": 2.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.800000011920929,
+      "_swingDamageMax": 1.100000023841858,
+      "_swingSpeed": 1.0,
+      "_durability": 15,
+      "_mwType": 1
+    },
+    {
+      "_name": "ButcherKnife",
+      "_eType": 1,
+      "_weight": 1.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.4000000059604645,
+      "_swingDamageMax": 0.800000011920929,
+      "_swingSpeed": 1.2000000476837159,
+      "_durability": 10,
+      "_mwType": 2
+    },
+    {
+      "_name": "Crowbar",
+      "_eType": 1,
+      "_weight": 2.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.6000000238418579,
+      "_swingDamageMax": 1.100000023841858,
+      "_swingSpeed": 1.0,
+      "_durability": 15,
+      "_mwType": 3
+    },
+    {
+      "_name": "FireAxe",
+      "_eType": 1,
+      "_weight": 3.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.800000011920929,
+      "_swingDamageMax": 2.0,
+      "_swingSpeed": 1.0,
+      "_durability": 13,
+      "_mwType": 4
+    },
+    {
+      "_name": "Hammer",
+      "_eType": 1,
+      "_weight": 6.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 2.0,
+      "_swingDamageMax": 3.0,
+      "_swingSpeed": 0.8999999761581421,
+      "_durability": 10,
+      "_mwType": 5
+    },
+    {
+      "_name": "HeavyWrench",
+      "_eType": 1,
+      "_weight": 1.5,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.5,
+      "_swingDamageMax": 1.0,
+      "_swingSpeed": 1.0,
+      "_durability": 10,
+      "_mwType": 6
+    },
+    {
+      "_name": "Machete",
+      "_eType": 1,
+      "_weight": 2.0,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 2.0,
+      "_swingDamageMax": 3.0,
+      "_swingSpeed": 1.0,
+      "_durability": 13,
+      "_mwType": 7
+    },
+    {
+      "_name": "Shovel",
+      "_eType": 1,
+      "_weight": 1.5,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.800000011920929,
+      "_swingDamageMax": 1.899999976158142,
+      "_swingSpeed": 0.800000011920929,
+      "_durability": 10,
+      "_mwType": 8
+    },
+    {
+      "_name": "TacticalKnife",
+      "_eType": 1,
+      "_weight": 0.5,
+      "_scale": 1.0,
+      "_count": 1,
+      "_swingDamageMin": 0.6000000238418579,
+      "_swingDamageMax": 1.2000000476837159,
+      "_swingSpeed": 1.0,
+      "_durability": 10,
+      "_mwType": 9
+    }
+  ]
+}

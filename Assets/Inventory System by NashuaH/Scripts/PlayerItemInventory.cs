@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItemHandler
+public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemHandler
 {
     [SerializeField] HouseItemInventory _hInven;
     [SerializeField] CarryItemInventory _carryInven;
@@ -16,6 +16,8 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     bool _rangedEquip = false;
     bool _meleeEquip = false;
     int _slotCount = 0;
+    float _maxWeight = 5f;
+    public float _currentWeight { get; set; }
 
     public void MoveItem(GameObject itemdata)
     {
@@ -48,10 +50,10 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
                         Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _rangedEquip = true;
-                        if (_rangedEquip == true)
-                        {
-                            PlayerCtrl.instance.GetComponent<PlayerCtrl>()._Gun = true;
-                        }
+                        //if (_rangedEquip == true)
+                        //{
+                        //    PlayerCtrl.instance.GetComponent<PlayerCtrl>()._Gun = true;
+                        //}
                         _meleeEquip = false;
                         Debug.Log("원거리 무기가 장착 되었습니다.");
                     }
@@ -84,6 +86,7 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
         }
     }
 
+    public float GetMaxWeight() => _maxWeight;
     public void SetText(bool text) => _isText = text;
     public bool GetText() => _isText;
     public void SetSlotCount(int slotCount) => _slotCount = slotCount;
@@ -96,8 +99,8 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     public GameObject GetItem() => _uiItem;
     private void Start()
     {
-        RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
-        AddInventoryItem(rw);
+        //RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
+        //AddInventoryItem(rw);
         //MeleeWeaponData mw = new MeleeWeaponData("BaseballBat", EItemType.MeleeWeapon, 1, 1, 1, 1, 1, 1, MeleeWeaponType.BaseballBat);
         //AddInventoryItem(mw);
         //FoodData fd= new FoodData("Bread", EItemType.Food, 0.1f, 1f, 1, 1, 1, FoodType.Bread);
@@ -117,10 +120,21 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
 
     public void AddInventoryItem (ItemObj item)
     {
-        GameObject temp = Instantiate(_uiItem, _content);
-        _items.Add(item);
-        _itemSlots.Add(temp);
-        ShowInven();
+        if (_maxWeight <= _currentWeight)
+        {
+            Debug.Log("가방이 너무 무겁습니다 ! ");
+            return;
+        }
+        else
+        {
+            _currentWeight += item._weight;
+            Debug.Log($"현재 가방 무게는 {_currentWeight} 입니다. ");
+
+            GameObject temp = Instantiate(_uiItem, _content);
+            _items.Add(item);
+            _itemSlots.Add(temp);
+            ShowInven();
+        }
     }
     public void RemoveInventoryItem(GameObject itemData)
     {

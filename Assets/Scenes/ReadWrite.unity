@@ -330,9 +330,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9856fe6bcad132c4285092df356b8820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Bandage
-  _type: 3
-  _weight: 0.1
+  _name: ButcherKnife
+  _type: 1
+  _weight: 0.4
   _scale: 1
   _count: 1
   _attackDamage: 0
@@ -341,9 +341,10 @@ MonoBehaviour:
   _bulletSpeed: 0
   _magAmmo: 0
   _rwType: 0
-  _swingDamage: 0
+  _swingDamageMin: 0
+  _swingDamageMax: 0
   _swingSpeed: 0
-  _duration: 0
+  _durability: 0
   _mwType: 0
   _increaseHP: 10
   _increaseFull: 0

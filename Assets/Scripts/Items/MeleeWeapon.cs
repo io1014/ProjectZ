@@ -22,9 +22,10 @@ public class MeleeWeapon : ItemParent, IItem
 {
     string _name = "";
     float _weight;
-    int _swingDamage = 25;
-    int _swingSpeed = 1;
-    float _duration;
+    float _swingDamageMin;
+    float _swingDamageMax;
+    float _swingSpeed;
+    int _durability;
     bool _isEquipped = false;
     [SerializeField] BoxCollider meleeArea;
     public MeleeWeaponType _mwType;
@@ -35,9 +36,10 @@ public class MeleeWeapon : ItemParent, IItem
         _name = data._name;
         _weight = data._weight;
 
-        _swingDamage = md._swingDamage;
+        _swingDamageMin = md._swingDamageMin;
+        _swingDamageMax = md._swingDamageMax;
         _swingSpeed = md._swingSpeed;
-        _duration = md._duration;
+        _durability = md._durability;
     }
     private void Update()
     {

@@ -104,12 +104,13 @@ public class LoadFile : MonoBehaviour
                 // switch 
                 // weapontype, foodtype, medicineType을 각각 검사해서 맞는 prefab을 로드
                 GameObject temp = null;
-                Debug.Log("아이템 타입 "+obj._eType + obj._name);
+                Debug.Log("아이템 타입 "+obj._eType +"/"+ obj._name);
                 switch (obj._eType)
                 {
                     case EItemType.RangedWeapon:
                         {
                             Debug.Log(((RangedWeaponData)obj)._rwType);
+                            Debug.Log(item.name);
                             if(((RangedWeaponData)obj)._rwType == item.GetComponent<RangedWeapon>()._rwType)
                             {
                                 temp = Instantiate(item);

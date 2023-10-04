@@ -33,6 +33,8 @@ public enum FoodType
     Tomato,
     Udon,
     Wasabi,
+    CannedFood,
+    Water,
 }
 
 public class Food : ItemParent, IItem

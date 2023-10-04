@@ -6,6 +6,8 @@ public enum RangedWeaponType
 {
     None,
     Pistol,
+    Rifle,
+    Shotgun,
 }
 public class RangedWeapon : ItemParent, IItem
 {
