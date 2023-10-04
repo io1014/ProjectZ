@@ -24,11 +24,19 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         myInven.SetSlotCount(slotCount);
         Debug.Log("갱신된 슬롯카운트 : "+slotCount);
 
-        if(/* sprites의 name이 pistol이면*/ true)
+        GameObject slot = itemdata.transform.GetChild(0).gameObject;
+        GameObject itemImage = slot.transform.GetChild(0).gameObject;
+        if(itemImage.GetComponent<Image>().sprite == _sprites[0])
         {
-            // 
+            myInven.SetRangedEquip(false);
+            Debug.Log($"갱신된 RangedEquip {myInven.GetRangedEquip()}");
         }
-        
+        else if(itemImage.GetComponent<Image>().sprite == _sprites[1])
+        {
+            myInven.SetMeleeEquip(false);
+            Debug.Log($"갱신된 MeleeEquip {myInven.GetMeleeEquip()}");
+        }
+
         _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);

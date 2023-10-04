@@ -167,6 +167,7 @@ MonoBehaviour:
   _itemdata:
     _name: 
     _eType: 0
+    _weight: 0
     _scale: 0
     _count: 0
 --- !u!1 &9122115746518187828

@@ -89,7 +89,9 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     public void SetSlotCount(int slotCount) => _slotCount = slotCount;
     public int GetSlotCount() => _slotCount;
     public void SetRangedEquip(bool rangedEquip) => _rangedEquip = rangedEquip;
+    public bool GetRangedEquip() => _rangedEquip;
     public void SetMeleeEquip(bool MeleeEquip) => _meleeEquip = MeleeEquip;
+    public bool GetMeleeEquip() => _meleeEquip;
     public Sprite[] GetSprites() => _sprites;
     public GameObject GetItem() => _uiItem;
     private void Start()
