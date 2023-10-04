@@ -69,8 +69,8 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     public GameObject GetItem() => _uiItem;
     private void Start()
     {
-        //RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
-        //AddInventoryItem(rw);
+        RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
+        AddInventoryItem(rw);
         //MeleeWeaponData mw = new MeleeWeaponData("BaseballBat", EItemType.MeleeWeapon, 1, 1, 1, 1, 1, 1, MeleeWeaponType.BaseballBat);
         //AddInventoryItem(mw);
         //FoodData fd= new FoodData("Bread", EItemType.Food, 0.1f, 1f, 1, 1, 1, FoodType.Bread);

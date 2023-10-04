@@ -113,6 +113,7 @@ public class LoadFile : MonoBehaviour
                             if(((RangedWeaponData)obj)._rwType == item.GetComponent<RangedWeapon>()._rwType)
                             {
                                 temp = Instantiate(item);
+                                temp.name = obj._name;
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
