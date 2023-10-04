@@ -13,6 +13,8 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     List<ItemObj> _items = new List<ItemObj>();
     List<GameObject> _itemSlots = new List<GameObject>();
     bool _isText = false;
+    bool _rangedEquip = false;
+    bool _meleeEquip = false;
     int _slotCount = 0;
 
     public void MoveItem(GameObject itemdata)
@@ -39,9 +41,26 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
                 }
                 else
                 {
-                    _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
-                    _slotCount++;
-                    Debug.Log("추가된 슬롯카운트 : "+_slotCount);
+                    if(etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
+                    {
+                        _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                        _slotCount++;
+                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
+
+                        _rangedEquip = true;
+                        _meleeEquip = false;
+                        Debug.Log("원거리 무기가 장착 되었습니다.");
+                    }
+                    else if(etype == EItemType.MeleeWeapon && !_rangedEquip && !_meleeEquip)
+                    {
+                        _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                        _slotCount++;
+                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
+
+                        _meleeEquip = true;
+                        _rangedEquip = false;
+                        Debug.Log("근거리 무기가 장착 되었습니다.");
+                    }
                 }
             }
             else if (etype == EItemType.Food || etype == EItemType.Medicine)
@@ -65,6 +84,8 @@ public class PlayerItemInventory :  GenericSingleton<PlayerItemInventory>, IItem
     public bool GetText() => _isText;
     public void SetSlotCount(int slotCount) => _slotCount = slotCount;
     public int GetSlotCount() => _slotCount;
+    public bool GetRangedEquip() => _rangedEquip;
+    public bool GetMeleeEquip() => _meleeEquip;
     public Sprite[] GetSprites() => _sprites;
     public GameObject GetItem() => _uiItem;
     private void Start()
