@@ -46,10 +46,6 @@ public class Food : ItemParent, IItem
     HeroStats _playerInfo;    // 피를 채울 플레이어의 정보
     public FoodType _fType;
 
-    private void Start()
-    {
-        Debug.Log(_name);
-    }
     public override void Init(ItemObj data)
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
@@ -65,6 +61,7 @@ public class Food : ItemParent, IItem
     public void Use()
     {
         Eating();
+        //GenericSingleton<TextMove>._instance.GetComponent<TextMove>().CreateText(gameObject.transform, _increaseHP);
         Debug.Log(_name);
     }
     public void Eating()
