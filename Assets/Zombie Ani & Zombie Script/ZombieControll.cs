@@ -21,6 +21,7 @@ public class ZombieControll : MonoBehaviour
     private GameObject bloodEffect;
     private readonly int hit = Animator.StringToHash("Hit");
     private readonly int die = Animator.StringToHash("Die");
+    bool _isAttackStart = false;
     void Start()
     {
         monsterTr = GetComponent<Transform>();
@@ -38,7 +39,7 @@ public class ZombieControll : MonoBehaviour
     void Update()   
     {
         //목적지까지 남은거리로 회전여부
-        if(agent.remainingDistance  >= 0.2f)
+        if(agent.remainingDistance  >= 0.5f)
         {
             //에이전트의 이동방향
             Vector3 direction = agent.desiredVelocity;
@@ -51,8 +52,14 @@ public class ZombieControll : MonoBehaviour
                 monsterTr.rotation = Quaternion.Slerp(monsterTr.rotation, rot, Time.deltaTime * 10);
             }
         }
+        if (state == State.Attack && _isAttackStart == false ) // attack 애니메이션이 아닐때
+        {
+            LookatRotation();
+        }
 
     }
+
+  
 
     //애니메이션 타입
     public enum State
@@ -148,6 +155,7 @@ public class ZombieControll : MonoBehaviour
                 case State.Attack:
                     //LookatRotation();
                     anim.SetBool("Attack", true);
+                    _isAttackStart = true;
                     _next = 0.3f;
                     break;
 
@@ -167,6 +175,12 @@ public class ZombieControll : MonoBehaviour
             yield return new WaitForSeconds(_next);  
         }
     }
+
+    void AttackAniEnd()
+    {
+        _isAttackStart = false;
+    }
+
     void LookatRotation()
     {
         Vector3 to = new Vector3(playerTr.position.x, 0, playerTr.position.z);
