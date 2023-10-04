@@ -15,10 +15,10 @@ public class typeingEffect : MonoBehaviour
         "찾기 위해 끝까지 생존해야 한다.\r\n\r\n \r\n당신은 좀비의 공격을 막아내야 할 뿐 아니라 " +
         "배고픔, 갈증, 피로 와도 싸워 이겨내야 한다. \r\n\r\n\r\n어김없이 찾아오는 밤에는 당신의 " +
         "시야는 좁고 어둡게 되며 손전등에 의지하여 위험을 피할 수 밖에 없다.\r\n\r\n\r\n도시는 황폐화 " +
-        "되었지만 다행히 건물 곳곳에 총, 칼과 같은 무기와 식량, 물 등 생존에 필요한 물건들을 " +
+        "되었지만 다행히 건물 곳곳에서 총, 칼과 같은 무기와 식량, 물 등 생존에 필요한 물건들을 " +
         "획득할 수 있다. \r\n\r\n\r\n도시의 건물을 수색하여 생존에 필요한 아이템을 회득하고, " +
         "몰려드는 좀비를 피하거나 물리쳐야 한다.\r\n\r\n \r\n모든 수단과 방법을 다하여 " +
-        "끝까지 살아남아야한다.\r\n\r\n\r\n\r\n행운을 빈다......\r\n";
+        "끝까지 살아남아야한다.\r\n\r\n\r\n\r\n행운을 빈다.\r\n";
 
 
 
@@ -39,7 +39,7 @@ public class typeingEffect : MonoBehaviour
     }
     IEnumerator _typing()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         for (int i = 0;i <= m_text.Length;i++)
         {
             tx.text = m_text.Substring(0, i);

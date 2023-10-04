@@ -38,4 +38,10 @@ public class IntroScript : MonoBehaviour
         SceneManager.LoadScene("IntroGameScene");
     }
 
+
+    public void StarttoGame()
+
+    {
+        SceneManager.LoadScene("Project Z map");
+    }
 }
