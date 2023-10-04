@@ -34,7 +34,8 @@ public class typeingEffect : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            Gamestart();
+            //Gamestart();
+            LoadingScene.LoadScene("Project Z Map");
         }
     }
     IEnumerator _typing()
@@ -48,8 +49,10 @@ public class typeingEffect : MonoBehaviour
         }
     }
 
+    /*
     public void Gamestart()
     {
         SceneManager.LoadScene("Project Z map");
     }
+    */
 }

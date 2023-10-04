@@ -8,10 +8,15 @@ using UnityEngine.SceneManagement;
 public class IntroScript : MonoBehaviour
 {
     [SerializeField] GameObject massage;
+
+
     public void IntroToGame()
     {
         massage.SetActive(true);
-  //    SceneManager.LoadScene("Project Z map");
+        
+
+
+        //    SceneManager.LoadScene("Project Z map");
     }
 
     public void GotoOption()
@@ -38,10 +43,4 @@ public class IntroScript : MonoBehaviour
         SceneManager.LoadScene("IntroGameScene");
     }
 
-
-    public void StarttoGame()
-
-    {
-        SceneManager.LoadScene("Project Z map");
-    }
 }

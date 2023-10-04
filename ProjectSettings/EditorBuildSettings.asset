@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToGame.unity
     guid: 7d7e74a33febd824a9b9a099dd2a2f9c
   - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: d627456fd8f910d43a60577d8e603a6d
+  - enabled: 1
     path: Assets/Scenes/Project Z map.unity
     guid: ea4c22e2c5a116a4c98fdfc3cffe5443
   - enabled: 1
