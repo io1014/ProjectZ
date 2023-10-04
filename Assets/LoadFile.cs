@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LoadFile : MonoBehaviour
@@ -191,6 +192,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
@@ -202,6 +204,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
@@ -214,6 +217,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
@@ -225,6 +229,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
