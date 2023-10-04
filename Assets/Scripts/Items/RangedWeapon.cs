@@ -28,6 +28,7 @@ public class RangedWeapon : ItemParent, IItem
     [SerializeField] MeshRenderer muzzleFlash;
     [SerializeField] AudioClip fire;
     Transform PlayerTr;
+
     
     private void Start()
     {
@@ -35,6 +36,7 @@ public class RangedWeapon : ItemParent, IItem
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
         muzzleFlash.enabled = false;
         _audio = GetComponent<AudioSource>();
+        
         
 
     }

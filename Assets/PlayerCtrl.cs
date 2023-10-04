@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    public static PlayerCtrl instance;
     Transform tr;
     Animation anim;
 
     float turnSpeed = 80f;
+    public bool _Gun = true;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         tr = GetComponent<Transform>();
@@ -18,6 +25,7 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(_Gun);
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float r = Input.GetAxis("Mouse X");
@@ -26,8 +34,10 @@ public class PlayerCtrl : MonoBehaviour
 
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
         Rotate();
-        PlayerAnim(h, v);
-    
+        if (_Gun == true)
+        {
+            PlayerAnim(h, v);
+        }    
     }
     void Rotate()
     {
