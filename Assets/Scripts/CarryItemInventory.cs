@@ -17,11 +17,18 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         //_itemSet = _item._item;
         //GameObject heroHand = GameObject.Find("Right");
         //heroHand.transform.GetChild(0);
-        int slotCount = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetSlotCount();
-        slotCount--;
-        Debug.Log("갱신된 슬롯카운트 : "+slotCount);
-        GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().SetSlotCount(slotCount);
+        PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
 
+        int slotCount = myInven.GetSlotCount();
+        slotCount--;
+        myInven.SetSlotCount(slotCount);
+        Debug.Log("갱신된 슬롯카운트 : "+slotCount);
+
+        if(/* sprites의 name이 pistol이면*/ true)
+        {
+            // 
+        }
+        
         _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
         _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
         _itemSlots.Remove(itemdata);
