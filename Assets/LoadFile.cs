@@ -145,9 +145,9 @@ public class LoadFile : MonoBehaviour
                             Debug.Log($"item type : {item.GetComponent<Food>()._fType}");
                             if (((FoodData)obj)._fType == item.GetComponent<Food>()._fType)
                             {
-                                Debug.Log($"switch in : {obj._name} + {item.name}");
+                                //Debug.Log($"switch in : {obj._name} + {item.name}");
                                 temp = Instantiate(item);
-                                Debug.Log(temp.name + temp.GetComponent<Food>()._fType + obj._name);
+                                //Debug.Log(temp.name + temp.GetComponent<Food>()._fType + obj._name);
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
