@@ -5,7 +5,6 @@ public class LoadFile : MonoBehaviour
 {
     [SerializeField] private GameObject[] _items;
     [SerializeField] private int _spawnRadius;
-    //ItemObjList _objList;
     RangedWeaponList _rangedWeaponList;
     MeleeWeaponList _meleeWeaponList;
     FoodList _foodList;
@@ -15,7 +14,6 @@ public class LoadFile : MonoBehaviour
     public GameObject[] Items { get { return _items; } }
     private void Awake()
     {
-        //_objList = new ItemObjList();
         _rangedWeaponList = new RangedWeaponList();
         _meleeWeaponList = new MeleeWeaponList();
         _foodList = new FoodList();
@@ -24,27 +22,22 @@ public class LoadFile : MonoBehaviour
     }
     void LoadData()
     {
-        //Debug.Log(Application.persistentDataPath);
         TextAsset rangedFile = Resources.Load("RangedWeapon") as TextAsset;
         TextAsset meleeFile = Resources.Load("MeleeWeapon") as TextAsset;
         TextAsset foodFile = Resources.Load("Food") as TextAsset;
         TextAsset medicineFile = Resources.Load("Medicine") as TextAsset;
-        //if (File.Exists(Application.persistentDataPath + "/itemdata.json"))
+
         string rangedJson = "";
         string meleeJson = "";
         string foodJson = "";
         string medicineJson = "";
-        //using (StreamReader inStream = new StreamReader(Application.persistentDataPath + "/itemdata.json"))
-        //{
-        //    json = inStream.ReadToEnd();
-        //}
+
         rangedJson = rangedFile.text;
         meleeJson = meleeFile.text;
         foodJson = foodFile.text;
         medicineJson = medicineFile.text;
         if (string.IsNullOrEmpty(rangedJson) == false)
         {
-            //_objList = JsonUtility.FromJson<ItemObjList>(json);
             _rangedWeaponList = JsonUtility.FromJson<RangedWeaponList>(rangedJson);
             foreach(var data in _rangedWeaponList._rangedWeapons)
             {
@@ -55,7 +48,6 @@ public class LoadFile : MonoBehaviour
         }
         if (string.IsNullOrEmpty(meleeJson) == false)
         {
-            //_objList = JsonUtility.FromJson<ItemObjList>(json);
             _meleeWeaponList = JsonUtility.FromJson<MeleeWeaponList>(meleeJson);
             foreach (var data in _meleeWeaponList._meleeWeapons)
             {
@@ -88,10 +80,6 @@ public class LoadFile : MonoBehaviour
         {
             Debug.Log("파일은 있지만 내용이 없습니다. ");
         }
-        Debug.Log("Ranged File: " + rangedFile.text);
-        Debug.Log("Melee File: " + meleeFile.text);
-        Debug.Log("Food File: " + foodFile.text);
-        Debug.Log("Medicine File: " + medicineFile.text);
         LoadingMap.instance.GetComponent<LoadingMap>().MapLoad();
     }
     public GameObject SpawnItem(ItemObj obj) // 아이템 타입 검사 후 생성한 데이터를 공유
@@ -196,8 +184,18 @@ public class LoadFile : MonoBehaviour
         {
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
+            Debug.Log(data._name);
             GameObject temp = SpawnItem(data);
+            if (temp == null) continue;
             temp.name = data._name;
+            //아니 JSON파일을 통해서 Pistol 정보가 들어올 순 있어. 그러면 일단 경로를 살펴보자.
+            //처음에 LoadData를 통해 정보가 들어오겠지.RangedWeapon에 Pistol이 있기 때문에 if 조건문에서 RangedSpawn으로 가겠지. 이 과정에서 아까 그 첫번째 로그가 찍힌거고.
+            //그럼 RangedSpawn으로 가보자._rangedWeapons 데이터는 Pistol이지? 그 정보를 가지고 SpawnItem() 으로 가.
+            //SpawnItem에서는 우리가 인스펙터에서 넣은 프리팹들이 있지. 그 중에서 Pistol은 없어.
+            //지금 비교할 아이템은 BellPeper라는 아이템이야.이 놈은 FoodType이지.즉 Pistol이랑 타입을 비교하면 false라는 거지.
+            //그러면 그 밑에 if문은 당연히 false겠지? 그럼 그 밑으로가.
+            //그러면 뭐가 나와 ? return null; 이 나와. 
+            //그래서 그런 거였구나? 그래서 null 레퍼런스가 뜨는거였어. 그러면 여기서 null을 리턴하는게 아니라 뭘 리턴해야할까?
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
         }
@@ -209,6 +207,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            if (temp == null) continue;
             temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
@@ -218,10 +217,10 @@ public class LoadFile : MonoBehaviour
     {
         foreach (var data in _foodList._foods)
         {
-            Debug.Log(data._name);
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            if (temp == null) continue;
             temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
@@ -234,6 +233,7 @@ public class LoadFile : MonoBehaviour
             Vector3 RandomPosition = Random.insideUnitSphere * _spawnRadius;
             RandomPosition.y = 0f;
             GameObject temp = SpawnItem(data);
+            if (temp == null) continue;
             temp.name = data._name;
             temp.transform.localScale = Vector3.one;
             temp.transform.position = RandomPosition;
