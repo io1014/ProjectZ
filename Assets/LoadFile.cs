@@ -131,6 +131,7 @@ public class LoadFile : MonoBehaviour
                             if (((MeleeWeaponData)obj)._mwType == item.GetComponent<MeleeWeapon>()._mwType)
                             {
                                 temp = Instantiate(item);
+                                temp.name = obj._name;
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
@@ -149,6 +150,7 @@ public class LoadFile : MonoBehaviour
                             {
                                 //Debug.Log($"switch in : {obj._name} + {item.name}");
                                 temp = Instantiate(item);
+                                temp.name = obj._name;
                                 //Debug.Log(temp.name + temp.GetComponent<Food>()._fType + obj._name);
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
@@ -165,6 +167,7 @@ public class LoadFile : MonoBehaviour
                             if (((MedicineData)obj)._mType == item.GetComponent<Medicine>()._mType)
                             {
                                 temp = Instantiate(item);
+                                temp.name = obj._name;
                                 temp.GetComponent<ItemParent>().Init(obj);
                                 temp.GetComponent<ItemType>().TypeInit(obj);
                             }
