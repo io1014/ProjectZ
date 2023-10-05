@@ -1,22 +1,32 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TextMove : GenericSingleton<TextMove>
 {
-    [SerializeField] GameObject _txt;
+    [SerializeField] Text _txt;
+    private void Start()
+    {
+        //StartCoroutine(FadeText());
+    }
     private void Update()
     {
         transform.position += Vector3.up;
     }
-    public void DestroyEvent()
+    //public void createtext(transform applypoint, float applytext)
+    //{
+    //    _txt.gameobject.setactive(true);
+    //    gameobject text = instantiate(_txt, applypoint);
+    //    _txt.getcomponent<text>().text = $"빵을 먹었습니다. 체력 {applytext} 이(가) 회복됩니다.";
+    //    invoke("textoff", 1.7f);
+    //}
+    public IEnumerator FadeText()
     {
-        Destroy(gameObject);
-    }
-    public void CreateText(Transform applyPoint, float ApplyTxt)
-    {
-        gameObject.SetActive(true);
-        GameObject text = Instantiate(_txt, applyPoint);
-        _txt.GetComponent<Text>().text = $"빵을 먹었습니다. 체력 {ApplyTxt.ToString()} 이(가) 회복됩니다.";
-        gameObject.SetActive(false);
+        yield return null;
+        _txt.color = new Color(_txt.color.r, _txt.color.g, _txt.color.b, 0f);
+        //while (_txt.color.a < 1.0f)
+        //{
+        //    _txt.color = new Color(_txt.color.r, _txt.color.g, _txt.color.b, _txt.color.a + (Time.deltaTime / 2.0f));
+        //}
     }
 }

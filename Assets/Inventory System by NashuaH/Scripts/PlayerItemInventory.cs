@@ -103,7 +103,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
         AddInventoryItem(rw);
         //MeleeWeaponData mw = new MeleeWeaponData("BaseballBat", EItemType.MeleeWeapon, 1, 1, 1, 1, 1, 1, MeleeWeaponType.BaseballBat);
         //AddInventoryItem(mw);
-        //FoodData fd= new FoodData("Bread", EItemType.Food, 0.1f, 1f, 1, 1, 1, FoodType.Bread);
+        //FoodData fd = new FoodData("Bread", EItemType.Food, 0.1f, 1f, 1, 1, 1, FoodType.Bread);
         //AddInventoryItem(fd);
         //MedicineData md = new MedicineData("Bandage", EItemType.Medicine, 0.1f, 1f, 1, 1, MedicineType.Bandage);
         //AddInventoryItem(md);

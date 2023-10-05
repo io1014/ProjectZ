@@ -28,7 +28,6 @@ public class ItemSlot : MonoBehaviour
 
         bool text = myInven.GetText();
         int slotCount = myInven.GetSlotCount();
-        Sprite[] spr = myInven.GetSprites();
         if (eType == ESlotType.myInven && text == false)
         {
             if (_img.sprite.name == "Pistol")
