@@ -6,6 +6,7 @@
       "_weight": 4.0,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 0,
       "_attackDamage": 10,
       "_range": 5.0,
       "_reloadTime": 1.5,
