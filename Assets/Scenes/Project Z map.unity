@@ -11173,6 +11173,7 @@ Animation:
   - {fileID: 7400000, guid: 6224bc0a21c1046ceb676a4246d50da8, type: 2}
   - {fileID: 7400000, guid: 52726528637b14f8586ef4583b34b790, type: 2}
   - {fileID: 7400000, guid: 9268e98fb6cf94b7680e3c72e7e3f7af, type: 2}
+  - {fileID: 7400000, guid: 539120a9d9c98f2439b684930aaf6a8b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -11194,6 +11195,7 @@ MonoBehaviour:
   _staminaSlider: {fileID: 531712102}
   Conditions: []
   bloodEnabled: 0
+  _stamina: 100
   _currentHP: 100
 --- !u!4 &928020944 stripped
 Transform:
@@ -11236,6 +11238,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &928020947
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928020939}
+  m_Enabled: 0
+  m_Avatar: {fileID: 9000000, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
+  m_Controller: {fileID: 9100000, guid: cc9b0b5000f9f454eb0edc9058089c4d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &935211201
 GameObject:
   m_ObjectHideFlags: 0

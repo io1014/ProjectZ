@@ -8,7 +8,9 @@ public class PlayerCtrl : MonoBehaviour
     public static PlayerCtrl instance;
     Transform tr;
     Animation anim;
+    Animator animator;
     float turnSpeed = 80f;
+    float stamina;
     public bool _Gun = false;
     private void Awake()
     {
@@ -18,6 +20,8 @@ public class PlayerCtrl : MonoBehaviour
     {
         tr = GetComponent<Transform>();
         anim = GetComponent<Animation>();
+        animator = GetComponent<Animator>();
+        stamina = GenericSingleton<HeroStats>._instance.GetComponent<HeroStats>()._stamina;
 
     }
     void Update()
@@ -30,8 +34,18 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
         Rotate();
+        if(_Gun == false)
+        {
+            GetComponent<Animator>().enabled = true;
+            GetComponent<Animator>().SetFloat("x", h);
+            GetComponent<Animator>().SetFloat("y", v);
+        }
         if (_Gun == true)
-        { PlayerAnim(h, v); }   
+
+        { 
+            GetComponent<Animator>().enabled = false;
+            GunPlayerAnim(h, v); 
+        }
     }
     void Rotate()
     {
@@ -43,14 +57,19 @@ public class PlayerCtrl : MonoBehaviour
             transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
         }
     }
-    void PlayerAnim(float h , float v)
+    void PlayerAnim()
+    {
+        
+    }
+
+    void GunPlayerAnim(float h , float v)
     {
         if(v >= 0.1f)
         {
             anim.CrossFade("WalkF", 0.25f);
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetKey(KeyCode.LeftControl) && stamina > 0)
             {
-                //anim.Stop("WalkF");
+                
                 anim.CrossFade("SprintF", 0.25f);
             }
         }
@@ -80,10 +99,6 @@ public class PlayerCtrl : MonoBehaviour
                 anim.Stop("WalkL");
                 anim.CrossFade("RunL", 0.25f);
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            anim.Play("IdleReloadSMG");
         }
         else if(Input.GetMouseButtonDown(0))
         {
