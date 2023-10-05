@@ -6,6 +6,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 41,
       "_increaseHP": 3.0,
       "_mType": 1
     },
@@ -15,6 +16,7 @@
       "_weight": 10.0,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 42,
       "_increaseHP": 70.0,
       "_mType": 2
     },
@@ -24,6 +26,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 43,
       "_increaseHP": 3.0,
       "_mType": 3
     }

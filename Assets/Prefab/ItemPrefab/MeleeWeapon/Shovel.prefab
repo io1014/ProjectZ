@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4541862928941642}
   - component: {fileID: 33135420599099800}
   - component: {fileID: 23572938450443180}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4280888596163192}
   - component: {fileID: 33384767835960008}
   - component: {fileID: 23311872205103168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Handle02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 2121854425595671296}
   - component: {fileID: 7278549297691216758}
   - component: {fileID: 5433834139340182994}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shovel
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 4671231896307630}
   - component: {fileID: 33803854113458708}
   - component: {fileID: 23341412951493940}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shovel_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}

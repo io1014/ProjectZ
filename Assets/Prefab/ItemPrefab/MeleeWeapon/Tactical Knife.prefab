@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4395990233762256}
   - component: {fileID: 33393485132494168}
   - component: {fileID: 23877676680618968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tactical Knife_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6081843620590878931}
   - component: {fileID: 4989430362492218027}
   - component: {fileID: 5976302870152512193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tactical Knife
   m_TagString: Weapon
   m_Icon: {fileID: 0}

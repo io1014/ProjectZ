@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4889271781999084}
   - component: {fileID: 33253556028598634}
   - component: {fileID: 23043485097184140}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Heavy Wrench_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 653971359234993946}
   - component: {fileID: -2675200655541904300}
   - component: {fileID: 2713689826813326156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HeavyWrench
   m_TagString: Weapon
   m_Icon: {fileID: 0}

@@ -10,6 +10,7 @@ public class ReadWrite : MonoBehaviour
     [SerializeField] float _weight;
     [SerializeField] float _scale;
     [SerializeField] int _count;
+    [SerializeField] int _spriteIdx;
 
     [Header("RangedWeapon")]
     [SerializeField] int _attackDamage;
@@ -78,7 +79,7 @@ public class ReadWrite : MonoBehaviour
     void RangedWeaponSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        RangedWeaponData itemData = new RangedWeaponData(_name, _type, _weight, _scale, _count, 
+        RangedWeaponData itemData = new RangedWeaponData(_name, _type, _weight, _scale, _count, _spriteIdx,
             _attackDamage, _range, _reloadTime, _bulletSpeed, _magAmmo, _rwType);
         _rangedWeaponList._rangedWeapons.Add(itemData);
         string json = JsonUtility.ToJson(_rangedWeaponList);
@@ -92,7 +93,7 @@ public class ReadWrite : MonoBehaviour
     void MeleeWeaponSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        MeleeWeaponData itemData = new MeleeWeaponData(_name, _type, _weight, _scale, _count,
+        MeleeWeaponData itemData = new MeleeWeaponData(_name, _type, _weight, _scale, _count, _spriteIdx,
             _swingDamageMin, _swingDamageMax, _swingSpeed, _durability, _mwType);
         _meleeWeaponList._meleeWeapons.Add(itemData);
         string json = JsonUtility.ToJson(_meleeWeaponList);
@@ -106,7 +107,7 @@ public class ReadWrite : MonoBehaviour
     void FoodSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        FoodData itemData = new FoodData(_name, _type, _weight, _scale, _count, _increaseHP, _increaseFull, _fType);
+        FoodData itemData = new FoodData(_name, _type, _weight, _scale, _count, _spriteIdx, _increaseHP, _increaseFull, _fType);
         _foodList._foods.Add(itemData);
         string json = JsonUtility.ToJson(_foodList);
         string path = Application.persistentDataPath + "/Food.json";
@@ -119,7 +120,7 @@ public class ReadWrite : MonoBehaviour
     void MedicineSaveData()
     {
         // 새로운 씬을 만들고 그 안에서 아이템들을 json 파일로 저장
-        MedicineData itemData = new MedicineData(_name, _type, _weight, _scale, _count, _increaseHP, _mType);
+        MedicineData itemData = new MedicineData(_name, _type, _weight, _scale, _count, _spriteIdx, _increaseHP, _mType);
         _medicineList._medicines.Add(itemData);
         string json = JsonUtility.ToJson(_medicineList);
         string path = Application.persistentDataPath + "/Medicine.json";

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6645638192002737558}
   - component: {fileID: -5435925117085712984}
   - component: {fileID: 8607137656752235443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fireaxe
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4899509429161820}
   - component: {fileID: 33598194872209348}
   - component: {fileID: 23664209686563348}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fire Axe_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}

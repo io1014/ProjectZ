@@ -5,10 +5,10 @@ using UnityEngine;
 public enum FoodType
 {
     None,
-    Bread,
     BellPeper,
     BellPeperSlice,
     Cake,
+    CheeseCake,
     Candy,
     Coffee,
     Cookie,
@@ -33,7 +33,6 @@ public enum FoodType
     Susi,
     Tomato,
     Udon,
-    Wasabi,
     CannedFood,
     Water,
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4835166953473352}
   - component: {fileID: 33327127879770774}
   - component: {fileID: 23279122491276784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -1714031090546505709}
   - component: {fileID: -1359973386435110852}
   - component: {fileID: 2235779704375887961}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hammer
   m_TagString: Weapon
   m_Icon: {fileID: 0}

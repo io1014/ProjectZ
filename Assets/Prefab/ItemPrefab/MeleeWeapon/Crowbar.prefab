@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4228862423855760}
   - component: {fileID: 33117422028006744}
   - component: {fileID: 23287552717064030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crowbar_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4485390482220258774}
   - component: {fileID: 4714248527712167594}
   - component: {fileID: -803585324268803629}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crowbar
   m_TagString: Weapon
   m_Icon: {fileID: 0}

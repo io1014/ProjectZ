@@ -16,7 +16,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     bool _rangedEquip = false;
     bool _meleeEquip = false;
     int _slotCount = 0;
-    float _maxWeight = 5f;
+    float _maxWeight = 500f;
     public float _currentWeight { get; set; }
 
     public void MoveItem(GameObject itemdata)
@@ -99,7 +99,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     public GameObject GetItem() => _uiItem;
     private void Start()
     {
-        RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
+        RangedWeaponData rw = new RangedWeaponData("Pistol", EItemType.RangedWeapon, 1.5f, 1f, 1, 1, 1, 1, 1, 1, 1, RangedWeaponType.Pistol);
         AddInventoryItem(rw);
         //MeleeWeaponData mw = new MeleeWeaponData("BaseballBat", EItemType.MeleeWeapon, 1, 1, 1, 1, 1, 1, MeleeWeaponType.BaseballBat);
         //AddInventoryItem(mw);
@@ -114,7 +114,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
         for(int i = 0; i < _items.Count; i++)
         {
             ItemObj itemdata = _items[i];
-            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.myInven);
+            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[itemdata._spriteIdx], this, ESlotType.myInven);
         }
     }
 

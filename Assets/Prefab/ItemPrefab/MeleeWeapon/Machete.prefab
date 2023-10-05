@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3877046268988288380}
   - component: {fileID: -6973556832469327777}
   - component: {fileID: -3167502384480396319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Machete
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4129750955556654}
   - component: {fileID: 33412384681513076}
   - component: {fileID: 23898980472714222}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Machete_Cloth
   m_TagString: Cloth
   m_Icon: {fileID: 0}

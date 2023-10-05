@@ -1,24 +1,15 @@
 {
   "_foods": [
     {
-      "_name": "Bread",
-      "_eType": 2,
-      "_weight": 0.30000001192092898,
-      "_scale": 1.0,
-      "_count": 1,
-      "_increaseHP": 10.0,
-      "_increaseFull": 30.0,
-      "_fType": 1
-    },
-    {
       "_name": "BellPeper",
       "_eType": 2,
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 12,
       "_increaseHP": 2.0,
       "_increaseFull": 8.0,
-      "_fType": 2
+      "_fType": 1
     },
     {
       "_name": "BellPeperSlice",
@@ -26,9 +17,10 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 12,
       "_increaseHP": 1.0,
       "_increaseFull": 4.0,
-      "_fType": 3
+      "_fType": 2
     },
     {
       "_name": "Cake",
@@ -36,6 +28,18 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 13,
+      "_increaseHP": 3.0,
+      "_increaseFull": 10.0,
+      "_fType": 3
+    },
+    {
+      "_name": "CheeseCake",
+      "_eType": 2,
+      "_weight": 0.20000000298023225,
+      "_scale": 1.0,
+      "_count": 1,
+      "_spriteIdx": 13,
       "_increaseHP": 3.0,
       "_increaseFull": 10.0,
       "_fType": 4
@@ -46,6 +50,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 14,
       "_increaseHP": 3.0,
       "_increaseFull": 10.0,
       "_fType": 5
@@ -56,6 +61,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 17,
       "_increaseHP": 2.0,
       "_increaseFull": 30.0,
       "_fType": 6
@@ -66,6 +72,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 18,
       "_increaseHP": 2.0,
       "_increaseFull": 8.0,
       "_fType": 7
@@ -76,6 +83,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 19,
       "_increaseHP": 15.0,
       "_increaseFull": 40.0,
       "_fType": 8
@@ -86,6 +94,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 20,
       "_increaseHP": 2.0,
       "_increaseFull": 8.0,
       "_fType": 9
@@ -96,6 +105,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 22,
       "_increaseHP": 2.0,
       "_increaseFull": 5.0,
       "_fType": 10
@@ -106,6 +116,7 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 23,
       "_increaseHP": 7.0,
       "_increaseFull": 20.0,
       "_fType": 11
@@ -116,6 +127,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 22,
       "_increaseHP": 10.0,
       "_increaseFull": 30.0,
       "_fType": 12
@@ -126,6 +138,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 24,
       "_increaseHP": 5.0,
       "_increaseFull": 20.0,
       "_fType": 13
@@ -136,6 +149,7 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 25,
       "_increaseHP": 10.0,
       "_increaseFull": 30.0,
       "_fType": 14
@@ -146,6 +160,7 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 28,
       "_increaseHP": 3.0,
       "_increaseFull": 10.0,
       "_fType": 15
@@ -156,6 +171,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 28,
       "_increaseHP": 2.0,
       "_increaseFull": 6.0,
       "_fType": 16
@@ -166,6 +182,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 29,
       "_increaseHP": 4.0,
       "_increaseFull": 12.0,
       "_fType": 17
@@ -176,6 +193,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 29,
       "_increaseHP": 2.0,
       "_increaseFull": 6.0,
       "_fType": 18
@@ -186,6 +204,7 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 30,
       "_increaseHP": 20.0,
       "_increaseFull": 50.0,
       "_fType": 19
@@ -196,6 +215,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 30,
       "_increaseHP": 3.0,
       "_increaseFull": 10.0,
       "_fType": 20
@@ -216,6 +236,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 32,
       "_increaseHP": 6.0,
       "_increaseFull": 20.0,
       "_fType": 22
@@ -226,6 +247,7 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 33,
       "_increaseHP": 10.0,
       "_increaseFull": 30.0,
       "_fType": 23
@@ -236,6 +258,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 34,
       "_increaseHP": 5.0,
       "_increaseFull": 15.0,
       "_fType": 24
@@ -246,6 +269,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 36,
       "_increaseHP": 2.0,
       "_increaseFull": 8.0,
       "_fType": 25
@@ -256,6 +280,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 37,
       "_increaseHP": 4.0,
       "_increaseFull": 12.0,
       "_fType": 26
@@ -266,6 +291,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 37,
       "_increaseHP": 4.0,
       "_increaseFull": 12.0,
       "_fType": 27
@@ -276,19 +302,10 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 39,
       "_increaseHP": 5.0,
       "_increaseFull": 15.0,
       "_fType": 28
-    },
-    {
-      "_name": "Wasabi",
-      "_eType": 2,
-      "_weight": 0.10000000149011612,
-      "_scale": 1.0,
-      "_count": 1,
-      "_increaseHP": 1.0,
-      "_increaseFull": 3.0,
-      "_fType": 29
     },
     {
       "_name": "CannedFood",
@@ -296,9 +313,10 @@
       "_weight": 0.30000001192092898,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 15,
       "_increaseHP": 10.0,
       "_increaseFull": 30.0,
-      "_fType": 30
+      "_fType": 29
     },
     {
       "_name": "Water",
@@ -306,9 +324,10 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 40,
       "_increaseHP": 2.0,
       "_increaseFull": 6.0,
-      "_fType": 31
+      "_fType": 30
     }
   ]
 }
