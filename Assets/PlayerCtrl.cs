@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
@@ -7,10 +8,10 @@ public class PlayerCtrl : MonoBehaviour
     public static PlayerCtrl instance;
     Transform tr;
     Animation anim;
-
+    bool shot = true;
+    bool Reload = true;
     float turnSpeed = 80f;
     public bool _Gun = false;
-
     private void Awake()
     {
         instance = this;
@@ -21,8 +22,6 @@ public class PlayerCtrl : MonoBehaviour
         anim = GetComponent<Animation>();
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         PlayerMotionBool();
@@ -30,12 +29,9 @@ public class PlayerCtrl : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float r = Input.GetAxis("Mouse X");
-
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
-
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
         Rotate();
-
         if (_Gun == true)
         { PlayerAnim(h, v); }   
     }
@@ -53,27 +49,69 @@ public class PlayerCtrl : MonoBehaviour
     {
         if(v >= 0.1f)
         {
-            anim.CrossFade("RunF", 0.25f);
+            anim.CrossFade("WalkF", 0.25f);
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                //anim.Stop("WalkF");
+                anim.CrossFade("SprintF", 0.25f);
+            }
         }
-        else if (v <= -0.1f)
+        else if(v <= -0.1f)
         {
-            anim.CrossFade("RunB", 0.25f);
+            anim.CrossFade("WalkB", 0.25f);
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                anim.Stop("WalkB");
+                anim.CrossFade("RunB", 0.25f);
+            }
         }
-        else if (h >= 0.1f)
+        else if ( h >= 0.1f)
         {
-            anim.CrossFade("RunR", 0.25f);
+            anim.CrossFade("WalkR", 0.25f);
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                anim.Stop("WalkR");
+                anim.CrossFade("RunR", 0.25f);
+            }
         }
-        else if (h <= -0.1f)
+        else if( h <= -0.1f)
         {
-            anim.CrossFade("RunL", 0.25f);
+            anim.CrossFade("WalkL", 0.25f);
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                anim.Stop("WalkL");
+                anim.CrossFade("RunL", 0.25f);
+            }
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            anim.Play("IdleReloadSMG");
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            shot = true;
+            anim.Play("IdleFireSMG");
+            if(Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                anim.Play("RunFireSMG");
+            }
+            Invoke("shooting", 0.3f);
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Reload = true;
+            anim.Play("IdleReloadSMG");
+            Invoke("Reloading", 2f);
+        }
+        else if(shot == false && Reload == false)
         {
             anim.CrossFade("Idle", 0.25f);
-        }
+        }   
     }
     void PlayerMotionBool()
     {
         _Gun = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetRangedEquip();
     }
+    void shooting() => shot = false;
+    void Reloading() => Reload = false;
 }

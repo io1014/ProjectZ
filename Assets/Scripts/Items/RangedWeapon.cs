@@ -77,7 +77,6 @@ public class RangedWeapon : ItemParent, IItem
             Reload();
         }
         mouseposition();
-        Debug.Log(mousepos);
     }
     void mouseposition() // 인벤토리를 누르면 총알이 같이나가는거 방지
     {
@@ -96,11 +95,13 @@ public class RangedWeapon : ItemParent, IItem
     }
     void Shoot()
     {
-        if (_magAmmo <= 0 && _isReloading == false)
-        {
-            // 탄환 수가 0이면 재장전
-            Reload();
-        }
+        
+        //if (_magAmmo <= 0 && _isReloading == false)
+        //{
+        //    // 탄환 수가 0이면 재장전
+        //    Reload();
+            
+        //}
 
         if (_isReloading)
         {
@@ -126,18 +127,18 @@ public class RangedWeapon : ItemParent, IItem
     IEnumerator ShowMuzzleFlash()
     {
         muzzleFlash.enabled = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         muzzleFlash.enabled = false;
     }
     void Reload()
     {
+        
         // 재장전 하는 중
         if (_isReloading || _magAmmo == 30)
         {
             Debug.Log(" 이미 장전되어있습니다. ");
             return;
         }
-
         _isReloading = true;
         Debug.Log(" 재장전 중... ");
 

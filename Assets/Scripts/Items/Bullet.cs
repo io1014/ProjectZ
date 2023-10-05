@@ -32,6 +32,13 @@ public class Bullet : MonoBehaviour
         // 원거리 무기의 사정거리값 저장
         _lifetime = range;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.CompareTag("Building"))
+        {
+            Destroy(gameObject);
+        }
+    }
     //private void OnTriggerEnter(Collider other)
     //{
     //    // 총알이 충돌했을 때의 동작
@@ -40,4 +47,4 @@ public class Bullet : MonoBehaviour
     //        other.GetComponent<WZombieControll>().GetDamage(_damage);
     //        Destroy(gameObject);
     //    }
-    }
+}
