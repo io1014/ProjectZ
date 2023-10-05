@@ -23,6 +23,7 @@ public class Teleport : MonoBehaviour
         }
         if (distH < 1f && Input.GetKeyDown(KeyCode.Space))
         {
+            GameObject.Find("Directional Light").GetComponent<DayAndNight>().enabled = true;
             TPHome();
         }
         else if(distF < 1f && Input.GetKeyDown(KeyCode.Space))
