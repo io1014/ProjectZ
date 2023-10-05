@@ -96,7 +96,7 @@ public class RangedWeapon : ItemParent, IItem
     }
     void Shoot()
     {
-        if (_magAmmo <= 0 && _isReloading == false && mousepos == true)
+        if (_magAmmo <= 0 && _isReloading == false)
         {
             // 탄환 수가 0이면 재장전
             Reload();
@@ -108,16 +108,19 @@ public class RangedWeapon : ItemParent, IItem
             Debug.Log(" 재장전 중, 발사할 수 없습니다. ");
             return;
         }
-        GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position ,Quaternion.identity);
-        _audio.PlayOneShot(fire, 1.0f);
-        bullet.transform.up = transform.forward;
+        if (mousepos == true)
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, firePos.transform.position, Quaternion.identity);
+            _audio.PlayOneShot(fire, 1.0f);
+            bullet.transform.up = transform.forward;
 
-        bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
-        bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도
-        //bullet.transform.position = transform.position;                               // 탄환에 Pistol의 위치를 할당
-        _magAmmo--;                                                                   // 탄환 감소
-        StartCoroutine(ShowMuzzleFlash());
+            bullet.GetComponent<Bullet>().SetDamage(_attackDamage);                       // Pistol의 공격력을 Bullet에 전달
+            bullet.GetComponent<Bullet>().SetRange(_range);                               // Pistol의 사정거리를 Bullet에 전달
+            bullet.GetComponent<Rigidbody>().velocity = transform.forward * _bulletSpeed; // 탄환이 앞으로 날아가는 방향과 속도
+                                                                                          //bullet.transform.position = transform.position;                               // 탄환에 Pistol의 위치를 할당
+            _magAmmo--;                                                                   // 탄환 감소
+            StartCoroutine(ShowMuzzleFlash());
+        }
         }
 
     IEnumerator ShowMuzzleFlash()

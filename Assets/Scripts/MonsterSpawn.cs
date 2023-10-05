@@ -8,7 +8,7 @@ public class MonsterSpawn : MonoBehaviour
     [SerializeField] GameObject[] Monster;
     [SerializeField] Transform[] spawnPoints;
     List<GameObject> _monsterList = new List<GameObject>();
-    float spawnCount = 50;
+    float spawnCount = 100;
     float time = 0.2f, spawntime;
 
     

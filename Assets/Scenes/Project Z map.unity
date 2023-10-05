@@ -436,6 +436,26 @@ MonoBehaviour:
   - {fileID: 712973247}
   - {fileID: 268084554}
   - {fileID: 249823336}
+  - {fileID: 935211202}
+  - {fileID: 1149726204}
+  - {fileID: 1850092461}
+  - {fileID: 304266660}
+  - {fileID: 1785935670}
+  - {fileID: 2016041024}
+  - {fileID: 163493064}
+  - {fileID: 685383287}
+  - {fileID: 34736933}
+  - {fileID: 1427630285}
+  - {fileID: 1761651858}
+  - {fileID: 1426700414}
+  - {fileID: 2127939657}
+  - {fileID: 1627101728}
+  - {fileID: 1827277815}
+  - {fileID: 183771256}
+  - {fileID: 272748087}
+  - {fileID: 433240550}
+  - {fileID: 53258910}
+  - {fileID: 112432011}
 --- !u!4 &13141249
 Transform:
   m_ObjectHideFlags: 0
@@ -2790,11 +2810,11 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &928020946
-BoxCollider:
+--- !u!136 &928020946
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2803,9 +2823,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &935211201
 GameObject:
   m_ObjectHideFlags: 0
