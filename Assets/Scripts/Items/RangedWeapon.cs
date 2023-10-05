@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+
 [Serializable]
 public enum RangedWeaponType
 {
@@ -12,7 +13,6 @@ public enum RangedWeaponType
 public class RangedWeapon : ItemParent, IItem
 {
     string _name = "";
-
     float _weight;
     int _attackDamage;
     float _range;
@@ -31,8 +31,6 @@ public class RangedWeapon : ItemParent, IItem
     [SerializeField] MeshRenderer muzzleFlash;
     [SerializeField] AudioClip fire;
     Transform PlayerTr;
-
-   
     
     private void Start()
     {
@@ -40,9 +38,6 @@ public class RangedWeapon : ItemParent, IItem
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
         muzzleFlash.enabled = false;
         _audio = GetComponent<AudioSource>();
-        
-        
-
     }
     public override void Init(ItemObj data)
     {
@@ -57,10 +52,6 @@ public class RangedWeapon : ItemParent, IItem
         _reloadTime = rd._reloadTime;
         _bulletSpeed = rd._bulletSpeed;
         _magAmmo = rd._magAmmo;
-    }
-    private void Awake()
-    {
-       // _itemObj = new ItemObj(_name, EItemType.Weapon, _weight, 1f, 1);
     }
     private void Update()
     {
@@ -95,12 +86,10 @@ public class RangedWeapon : ItemParent, IItem
     }
     void Shoot()
     {
-        
         //if (_magAmmo <= 0 && _isReloading == false)
         //{
         //    // 탄환 수가 0이면 재장전
-        //    Reload();
-            
+        //    Reload();    
         //}
 
         if (_isReloading)
@@ -122,7 +111,7 @@ public class RangedWeapon : ItemParent, IItem
             _magAmmo--;                                                                   // 탄환 감소
             StartCoroutine(ShowMuzzleFlash());
         }
-        }
+    }
 
     IEnumerator ShowMuzzleFlash()
     {
@@ -132,7 +121,6 @@ public class RangedWeapon : ItemParent, IItem
     }
     void Reload()
     {
-        
         // 재장전 하는 중
         if (_isReloading || _magAmmo == 30)
         {
@@ -141,7 +129,6 @@ public class RangedWeapon : ItemParent, IItem
         }
         _isReloading = true;
         Debug.Log(" 재장전 중... ");
-
         Invoke("FinishReloading", _reloadTime);
     }
     void FinishReloading()
