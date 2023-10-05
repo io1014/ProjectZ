@@ -1,34 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Teleport : MonoBehaviour
-{
+{  
     
-    Transform _tele2;
-    GameObject _Player;
+    public GameObject _telehome;
+    public GameObject _telefac;
+    public GameObject _televillage;
+    public GameObject _telev2;
+    public GameObject _Player;
 
-    private void Start()
+
+
+    private void Update()
     {
-        //_tele1 = GameObject.Find("Tele").GetComponent<Transform>();
-        _tele2 = GameObject.Find("Tele2").GetComponent<Transform>();
-        _Player = GameObject.Find("Player").GetComponent<GameObject>();
-    }
-
-    
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.name == "Player")
+        float distH = Vector3.Distance(_Player.transform.position, _telehome.transform.position);
+        float distF = Vector3.Distance(_Player.transform.position, _telefac.transform.position);
+        float distV = Vector3.Distance(_Player.transform.position, _televillage.transform.position);
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Collision");
-            Invoke("TP", 5f);
+            Debug.Log(distH+", "+distF+","+distV);
         }
+        if (distH < 1f && Input.GetKeyDown(KeyCode.Space))
+        {
+            TPHome();
+        }
+        else if(distF < 1f && Input.GetKeyDown(KeyCode.Space))
+        {
+            TPFactory();
+        }
+        else if( distV < 1f && Input.GetKeyDown(KeyCode.Space))
+        {
+            TPVillage();
+        }
+
     }
 
-    void TP()
+  
+
+    void TPHome()
     {
-        _Player.transform.position = _tele2.transform.position;
+ 
+            _Player.GetComponent<NavMeshAgent>().enabled = false;
+            _Player.transform.position = _telev2.transform.position;
+            _Player.GetComponent<NavMeshAgent>().enabled = true;
+
+       
     }
+
+    void TPVillage()
+    {
+        Debug.Log("input village");
+            _Player.GetComponent<NavMeshAgent>().enabled = false;
+            _Player.transform.position = _telefac.transform.position;
+            _Player.GetComponent<NavMeshAgent>().enabled = true;
+
+    }
+
+    void TPFactory()
+    {
+
+            _Player.GetComponent<NavMeshAgent>().enabled = false;
+            _Player.transform.position = _televillage.transform.position;
+        _Player.GetComponent<NavMeshAgent>().enabled = true;
+
+    }
+
+    public enum Locate
+    {
+        home,
+        village,
+        factory,
+        tele2,
+    }
+
 }
+
+
+
