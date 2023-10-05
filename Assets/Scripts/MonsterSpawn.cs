@@ -57,7 +57,7 @@ public class MonsterSpawn : MonoBehaviour
 
     void spawn()
     {
-        if (spawnCount > 0 & spawnCount <= 50 && spawntime < 0)
+        if (spawnCount > 0 & spawnCount <= 100 && spawntime < 0)
         {
             GameObject temp = Instantiate(Monster[Random.Range(0,Monster.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
             temp.transform.position += new Vector3(Random.Range(-10,10f), 0, Random.Range(-10,10f));

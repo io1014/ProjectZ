@@ -8,8 +8,6 @@ public class PlayerCtrl : MonoBehaviour
     public static PlayerCtrl instance;
     Transform tr;
     Animation anim;
-    bool shot = true;
-    bool Reload = true;
     float turnSpeed = 80f;
     public bool _Gun = false;
     private void Awake()
@@ -87,23 +85,15 @@ public class PlayerCtrl : MonoBehaviour
         {
             anim.Play("IdleReloadSMG");
         }
-        if(Input.GetMouseButtonDown(0))
+        else if(Input.GetMouseButtonDown(0))
         {
-            shot = true;
             anim.Play("IdleFireSMG");
             if(Input.GetKeyDown(KeyCode.LeftControl))
             {
                 anim.Play("RunFireSMG");
             }
-            Invoke("shooting", 0.3f);
         }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            Reload = true;
-            anim.Play("IdleReloadSMG");
-            Invoke("Reloading", 2f);
-        }
-        else if(shot == false && Reload == false)
+        else
         {
             anim.CrossFade("Idle", 0.25f);
         }   
@@ -112,6 +102,5 @@ public class PlayerCtrl : MonoBehaviour
     {
         _Gun = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetRangedEquip();
     }
-    void shooting() => shot = false;
-    void Reloading() => Reload = false;
+  
 }
