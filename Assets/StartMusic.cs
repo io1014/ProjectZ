@@ -35,7 +35,7 @@ public class StartMusic : MonoBehaviour
     }
     void start()
     {
-        _fx.clip = _clips[0];
+       // _fx.clip = _clips[0];
         _bgm.Play();
         // ±‚¡∏      backmusic.Play();
     }
