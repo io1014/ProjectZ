@@ -43,4 +43,9 @@ public class IntroScript : MonoBehaviour
         SceneManager.LoadScene("IntroGameScene");
     }
 
+    public void GotoCredit()
+
+    {
+        SceneManager.LoadScene("Credit");
+    }
 }
