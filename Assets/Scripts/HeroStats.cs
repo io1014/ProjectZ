@@ -14,7 +14,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     [SerializeField] Slider _staminaSlider;
     [SerializeField] Image[] conditions;
     public bool bloodEnabled = false;
-
+    public float hungry = 100;
     float _Maxstamina = 100;
     public float _stamina = 100;
     float _speed = 2f;
@@ -30,6 +30,7 @@ public class HeroStats : GenericSingleton<HeroStats>
         _currentHP = _MaxHP;
         HpChange();
         StaminaChange();
+       
     }
 
     void Update()
@@ -40,6 +41,7 @@ public class HeroStats : GenericSingleton<HeroStats>
         StaminaChange();
         if (bloodEnabled == true) bloodon();
         if (_currentHP <= 0) PlayerDie();
+        hungry -= 1f * Time.deltaTime;
     }
 
     void bloodon()
@@ -89,7 +91,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         //스태미너 자연회복
         if (_stamina < 100)
-            _stamina += 1f * Time.deltaTime;
+            _stamina += 2f * Time.deltaTime;
     }
     void setspeed(int speed)
     {
@@ -112,6 +114,14 @@ public class HeroStats : GenericSingleton<HeroStats>
             _currentHP -= 5;
         }
      
+    }
+    public void IncHungry(float inchungry)
+    {
+        hungry += inchungry;
+        if(hungry>= 100)
+        {
+            hungry = 100;
+        }
     }
     public void IncHp(float incHp)
     {

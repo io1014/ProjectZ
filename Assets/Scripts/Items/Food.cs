@@ -73,6 +73,7 @@ public class Food : ItemParent, IItem
     public void Eating()
     {
         _playerInfo.IncHp(_increaseHP);
+        _playerInfo.IncHungry(_increaseFull);
         Invoke("DestroyBread", 0.01f);
     }
     public void TextUp()
