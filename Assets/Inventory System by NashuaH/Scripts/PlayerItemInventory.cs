@@ -15,7 +15,8 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     bool _isText = false;
     bool _rangedEquip = false;
     bool _meleeEquip = false;
-    int _slotCount = 0;
+    public int _rangedSlotCount { get; set; }
+    public int _meleeSlotCount { get; set; }
     float _maxWeight = 500f;
     public float _currentWeight { get; set; }
 
@@ -25,18 +26,16 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
         // TrashCan의 text가 true일 경우 버리고 필드 위에 생성하는 코드 실행
 
 
-        //_itemSet = _item._item;
         if (_text.activeSelf == false)
         {
             _isText = false;
             _items.Remove(itemdata.GetComponent<ItemSlot>()._itemdata);
             _itemSlots.Remove(itemdata);
-            //_hInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
 
             EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
-            if (etype == EItemType.RangedWeapon || etype == EItemType.MeleeWeapon)
+            if (etype == EItemType.RangedWeapon)
             {
-                if (_slotCount >= 1)
+                if (_rangedSlotCount >= 1)
                 {
                     Debug.Log("return");
                     return;
@@ -46,27 +45,25 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
                     if(etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
-                        _slotCount++;
-                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _rangedEquip = true;
-                        //if (_rangedEquip == true)
-                        //{
-                        //    PlayerCtrl.instance.GetComponent<PlayerCtrl>()._Gun = true;
-                        //}
                         _meleeEquip = false;
-                        Debug.Log("원거리 무기가 장착 되었습니다.");
                     }
                     else if(etype == EItemType.MeleeWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
-                        _slotCount++;
-                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _meleeEquip = true;
                         _rangedEquip = false;
-                        Debug.Log("근거리 무기가 장착 되었습니다.");
                     }
+                }
+            }
+            else if (etype == EItemType.MeleeWeapon)
+            {
+                if (_meleeSlotCount >= 1)
+                {
+                    Debug.Log("return");
+                    return;
                 }
             }
             else if (etype == EItemType.Food || etype == EItemType.Medicine)
@@ -89,8 +86,8 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     public float GetMaxWeight() => _maxWeight;
     public void SetText(bool text) => _isText = text;
     public bool GetText() => _isText;
-    public void SetSlotCount(int slotCount) => _slotCount = slotCount;
-    public int GetSlotCount() => _slotCount;
+    //public void SetSlotCount(int slotCount) => _slotCount = slotCount;
+    //public int GetSlotCount() => _slotCount;
     public void SetRangedEquip(bool rangedEquip) => _rangedEquip = rangedEquip;
     public bool GetRangedEquip() => _rangedEquip;
     public void SetMeleeEquip(bool MeleeEquip) => _meleeEquip = MeleeEquip;

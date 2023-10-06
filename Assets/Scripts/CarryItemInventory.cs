@@ -19,10 +19,11 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         //heroHand.transform.GetChild(0);
         PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
 
-        int slotCount = myInven.GetSlotCount();
-        slotCount--;
-        myInven.SetSlotCount(slotCount);
-        Debug.Log("갱신된 슬롯카운트 : "+slotCount);
+        // 아래 주석 부분 수정해야함.
+        //int slotCount = myInven.GetSlotCount();
+        //slotCount--;
+        //myInven.SetSlotCount(slotCount);
+        //Debug.Log("갱신된 슬롯카운트 : "+slotCount);
 
         GameObject slot = itemdata.transform.GetChild(0).gameObject;
         GameObject itemImage = slot.transform.GetChild(0).gameObject;

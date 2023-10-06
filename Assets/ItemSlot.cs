@@ -28,18 +28,22 @@ public class ItemSlot : MonoBehaviour
         PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
 
         bool text = myInven.GetText();
-        int slotCount = myInven.GetSlotCount();
+        //int slotCount = myInven.GetSlotCount();
+        int rangedCount = myInven._rangedSlotCount;
+        int meleeCount = myInven._meleeSlotCount;
         Sprite[] spr = myInven.GetSprites();
-        if (eType == ESlotType.myInven && text == false)
+        if (eType == ESlotType.myInven && text == false) // 마이 인벤일 때
         {
             bool checkSpr = false;
-            for (int i = 0; i < 12; i++)
+            Sprite sprNumber = null;
+            for (int i = 0; i < 12; i++) // 장착형일 때
             {
                 Debug.Log($"for문이 {i}번째 돌아갑니다.");
-                if (_img.sprite == spr[i])
+                if (_img.sprite == spr[i]) // 해당 아이템과 인스펙터의 sprite와 같을 때
                 {
                     Debug.Log($"실제 아이템의 스프라이트 : {_img.sprite} , 비교할 스프라이트 : {spr[i]}");
                     checkSpr = true;
+                    sprNumber = spr[i];
                     Debug.Log($"if문에 들어간 bool 값은 : {checkSpr}");
                     break;
                 }
@@ -50,14 +54,26 @@ public class ItemSlot : MonoBehaviour
                 }
             }
             Debug.Log($"현재 bool 값은 : {checkSpr}");
-            if (checkSpr == true)
+            if (checkSpr == true) // 해당 아이템과 인스펙터의 sprite와 같을 때 2
             {
-                Debug.Log("CheckSprite !");
-                if (slotCount >= 1) return;
-                MakeItem();
-                slotCount++;
-                Debug.Log("갱신된 슬롯 카운트 : " + slotCount);
-                myInven.SetSlotCount(slotCount);
+                if(/*(int)sprNumber <= 2*/true) // 그 아이템이 ranged일 때
+                {
+                    Debug.Log("RangedCheckSprite !");
+                    if (rangedCount >= 1) return;
+                    rangedCount++;
+                    //myInven.SetSlotCount(slotCount);
+                    Debug.Log("추가된 슬롯 카운트 : " + rangedCount);
+                    MakeItem();
+                }
+                else if(true) // 그 아이템이 melee일 때
+                {
+                    Debug.Log("MeleeCheckSprite !");
+                    if (meleeCount >= 1) return;
+                    meleeCount++;
+                    //myInven.SetSlotCount(slotCount);
+                    Debug.Log("추가된 슬롯 카운트 : " + meleeCount);
+                    MakeItem();
+                }
             }
             else
             {
