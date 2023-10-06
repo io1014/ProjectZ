@@ -10779,7 +10779,6 @@ GameObject:
   - component: {fileID: 816771994}
   - component: {fileID: 816771993}
   - component: {fileID: 816771992}
-  - component: {fileID: 816771991}
   m_Layer: 0
   m_Name: TeleHome
   m_TagString: Untagged
@@ -10787,19 +10786,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &816771991
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816771990}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &816771992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19953,7 +19939,6 @@ GameObject:
   - component: {fileID: 1477858531}
   - component: {fileID: 1477858530}
   - component: {fileID: 1477858529}
-  - component: {fileID: 1477858528}
   m_Layer: 0
   m_Name: TeleVillage
   m_TagString: Untagged
@@ -19961,19 +19946,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1477858528
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477858527}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1477858529
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33834,7 +33806,6 @@ GameObject:
   - component: {fileID: 2069652159}
   - component: {fileID: 2069652158}
   - component: {fileID: 2069652157}
-  - component: {fileID: 2069652156}
   m_Layer: 0
   m_Name: TeleFac
   m_TagString: Untagged
@@ -33842,19 +33813,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &2069652156
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069652155}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2069652157
 MeshRenderer:
   m_ObjectHideFlags: 0
