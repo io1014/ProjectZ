@@ -239,8 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412782636554201
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412782653047136
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412782722511488
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,8 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412782772252886
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +881,7 @@ GameObject:
   - component: {fileID: 5333412782836842870}
   m_Layer: 3
   m_Name: Buliding
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -962,8 +970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412782942760716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,8 +1362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783043518298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,8 +1410,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783065401933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,8 +1458,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783109713087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,8 +1506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783316714748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,8 +1554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783386540934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,8 +1602,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783494330979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,8 +1650,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783607053797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2213,8 +2237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783828512943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2454,8 +2480,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412783939903974
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,8 +2528,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412784057265710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,8 +2675,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412784327083444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,8 +2723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412784328938921
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,8 +3115,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412784441475478
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,8 +3507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab442395bb606264f8b764525eacb01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
   _buildingType: 0
+  _items: []
+  _itemList: []
+  _far: 0
 --- !u!1 &5333412784552890396
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class PlayerCtrl : MonoBehaviour
     void Update()
     {
         PlayerMotionBool();
-        Debug.Log(_Gun);
+        //Debug.Log(_Gun);
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float r = Input.GetAxis("Mouse X");
@@ -57,20 +57,20 @@ public class PlayerCtrl : MonoBehaviour
             transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
         }
     }
-    void PlayerAnim()
-    {
-        
-    }
 
     void GunPlayerAnim(float h , float v)
     {
         if(v >= 0.1f)
         {
             anim.CrossFade("WalkF", 0.25f);
-            if (Input.GetKey(KeyCode.LeftControl) && stamina > 0)
+            if (Input.GetKey(KeyCode.LeftControl) && stamina > 1)
             {
                 
                 anim.CrossFade("SprintF", 0.25f);
+            }
+            else
+            {
+                anim.CrossFade("WalkF", 0.25f);
             }
         }
         else if(v <= -0.1f)
