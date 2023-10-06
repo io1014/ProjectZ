@@ -12,8 +12,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     [SerializeField] GameObject _player;
     [SerializeField] Slider _HPSlider;
     [SerializeField] Slider _staminaSlider;
-    [SerializeField] Image[] Conditions;
-    float blood;
+    [SerializeField] Image[] conditions;
     public bool bloodEnabled = false;
 
     float _Maxstamina = 100;
@@ -39,9 +38,20 @@ public class HeroStats : GenericSingleton<HeroStats>
         StaminaRecovery();
         HpChange();
         StaminaChange();
-        blood = Random.Range(1, 10);
+        if (bloodEnabled == true) bloodon();
+        if (_currentHP <= 0) PlayerDie();
     }
-    
+
+    void bloodon()
+    {
+        conditions[0].gameObject.SetActive(true);
+        _currentHP -= 0.5f * Time.deltaTime;
+    }
+    public void bloodoff()
+    {
+        conditions[0].gameObject.SetActive(false);
+        bloodEnabled = false;
+    }
     void HpChange()
     {
         _HPSlider.maxValue = _MaxHP;
@@ -60,7 +70,7 @@ public class HeroStats : GenericSingleton<HeroStats>
         {
             _speed = 5;
 
-            _stamina -= 20 * Time.deltaTime;
+            _stamina -= 5 * Time.deltaTime;
         }
         if (_stamina < 0)
         {
@@ -96,28 +106,12 @@ public class HeroStats : GenericSingleton<HeroStats>
     }
     private void OnTriggerEnter(Collider other) // µ¥¹ÌÁö
     {
-        if (blood < 10 && _currentHP >= 0 && other.CompareTag("Hand"))
-        {
-            _currentHP -= 10;
-
-        }
-        else if(blood == 10 && _currentHP >= 0 && other.CompareTag("Hand"))
+        if (_currentHP >= 0 && other.CompareTag("Hand"))
         {
             bloodEnabled = true;
-            _currentHP -= 10;
+            _currentHP -= 5;
         }
-        if (_currentHP <= 0)
-        {
-            PlayerDie();
-        }
-    }
-    public void bloodUUI()
-    {
-        if(bloodEnabled == true)
-        {
-            Conditions[3].gameObject.SetActive(true);
-        }
-
+     
     }
     public void IncHp(float incHp)
     {

@@ -298,9 +298,4 @@ public class LoadFile : MonoBehaviour
         }
         return result;
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, _spawnRadius);
-    }
 }

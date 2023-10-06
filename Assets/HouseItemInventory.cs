@@ -33,7 +33,7 @@ public class HouseItemInventory : GenericSingleton<HouseItemInventory>, IItemHan
         for (int i = 0; i < _itemSlots.Count; i++)
         {
             ItemObj itemdata = _items[i];
-            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.houseInven);
+            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[itemdata._spriteIdx], this, ESlotType.houseInven);
         }
     }
 

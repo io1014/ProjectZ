@@ -985,7 +985,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 891, y: 391}
-  m_SizeDelta: {x: 58, y: 70}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212476096
 MonoBehaviour:
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10eec3609e8fcd146a3c017ec7b7509b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0d56bff1062b90149b192ed1220156a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2513,6 +2513,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a84508334a03db34ea30c3908b7de878, type: 3}
   _content: {fileID: 896181904}
   _items: []
+  _itemSlots: []
   _Looted: 0
 --- !u!114 &695400836
 MonoBehaviour:
@@ -3414,6 +3415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0774ec0f46ae6418a0f92621b61c5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Gun: 0
 --- !u!111 &928020941
 Animation:
   m_ObjectHideFlags: 0
@@ -3455,6 +3457,7 @@ MonoBehaviour:
   - {fileID: 1315160347}
   - {fileID: 212476096}
   bloodEnabled: 0
+  _stamina: 100
   _currentHP: 100
 --- !u!4 &928020944 stripped
 Transform:

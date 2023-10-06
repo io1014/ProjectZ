@@ -36,6 +36,7 @@ public class Medicine : ItemParent, IItem
     {
         //Player.IncreaseHealth(1) // 플레이어의 정보가 있는 스크립트에 인자를 줘서 피를 채움
         _playerInfo.IncHp(_increaseHP);
+        _playerInfo.bloodoff();
         Invoke("DestroyBand", 0.01f);
     }
     void DestroyBand()
