@@ -28,14 +28,27 @@ public class ItemSlot : MonoBehaviour
 
         bool text = myInven.GetText();
         int slotCount = myInven.GetSlotCount();
+        Sprite[] spr = myInven.GetSprites();
         if (eType == ESlotType.myInven && text == false)
         {
-            if (_img.sprite.name == "Pistol")
+            bool checkSpr = false;
+            for (int i = 0; i < 12; i++)
+            {
+                if (_img.sprite == spr[i])
+                {
+                    checkSpr = true;
+                }
+                else
+                {
+                    checkSpr = false;
+                }
+            }
+            if (checkSpr)
             {
                 if (slotCount >= 1) return;
                 MakeItem();
                 slotCount++;
-                Debug.Log("갱신된 슬롯 카운트 : "+slotCount);
+                Debug.Log("갱신된 슬롯 카운트 : " + slotCount);
                 myInven.SetSlotCount(slotCount);
             }
             else

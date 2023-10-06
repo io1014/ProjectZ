@@ -26,15 +26,21 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
 
         GameObject slot = itemdata.transform.GetChild(0).gameObject;
         GameObject itemImage = slot.transform.GetChild(0).gameObject;
-        if(itemImage.GetComponent<Image>().sprite == _sprites[0])
+        for(int i = 0; i < 2; i++)
         {
-            myInven.SetRangedEquip(false);
-            Debug.Log($"갱신된 RangedEquip {myInven.GetRangedEquip()}");
+            if(itemImage.GetComponent<Image>().sprite == _sprites[i])
+            {
+                myInven.SetRangedEquip(false);
+                Debug.Log($"갱신된 RangedEquip {myInven.GetRangedEquip()}");
+            }
         }
-        else if(itemImage.GetComponent<Image>().sprite == _sprites[1])
+        for(int i = 3; i < 12; i++)
         {
-            myInven.SetMeleeEquip(false);
-            Debug.Log($"갱신된 MeleeEquip {myInven.GetMeleeEquip()}");
+            if(itemImage.GetComponent<Image>().sprite == _sprites[i])
+            {
+                myInven.SetMeleeEquip(false);
+                Debug.Log($"갱신된 MeleeEquip {myInven.GetMeleeEquip()}");
+            }
         }
 
         _pInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
@@ -50,7 +56,7 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         for (int i = 0; i < _items.Count; i++)
         {
             ItemObj itemdata = _items[i];
-            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[(int)itemdata._eType], this, ESlotType.CarryInven);
+            _itemSlots[i].GetComponent<ItemSlot>().Init(_items[i], _sprites[itemdata._spriteIdx], this, ESlotType.CarryInven);
         }
     }
 
