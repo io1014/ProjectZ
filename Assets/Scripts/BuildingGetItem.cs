@@ -14,9 +14,9 @@ public class BuildingGetItem : MonoBehaviour
     bool _rooted = false;
     bool _add = false;
     float _inject;
-   public GameObject[] _items;
+    public GameObject[] _items;
     public List<GameObject> _itemList = new List<GameObject>();
-   public bool _far = false;
+    public bool _far = false;
 
 
     private void Awake()
@@ -28,7 +28,12 @@ public class BuildingGetItem : MonoBehaviour
     {
         _heroStats = new HeroStats();
         _items = GameObject.Find("LoadFile").GetComponent<LoadFile>().Items;
-        Factory();  
+        
+        Factory();
+        Hospital();
+        FireDepartment();
+        Store();
+        House();
     }
 
 
@@ -44,7 +49,7 @@ public class BuildingGetItem : MonoBehaviour
         float dist = Vector3.Distance(_player.transform.position, transform.position);
         if (_isContacted==false&& dist <= 2f && Input.GetKeyDown(KeyCode.G))
         {
-            // 사운드 추가 필요
+            StartMusic.instance.DoorOpen();
             GenericSingleton<HouseItemInventory>._instance.gameObject.SetActive(true);
             GenericSingleton<HouseItemInventory>._instance.gameObject.GetComponent<Animator>().SetBool("Open", true);
             _isContacted = true;
@@ -93,22 +98,25 @@ public class BuildingGetItem : MonoBehaviour
     }
 
     void Factory()
-    {
-         
-        
+    { 
         if(_add == false)
         {
              Building FI = Building.Factory;      //FI = Factory Item
             _itemList = new List<GameObject>();
             if (FI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+                int randomItemCount = UnityEngine.Random.Range(2, 3);       // 랜덤한 카운트를 센다
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
-                    int randomItem = UnityEngine.Random.Range(0, _items.Length);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    int randomItem = UnityEngine.Random.Range(0, 52);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
                     _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다  
                 }
-                // ui 추가 
+                int randomWeaponCount = UnityEngine.Random.Range(1, 5);
+                for(int i = 0; i < randomWeaponCount; i++)
+                {
+                    int randomItem = UnityEngine.Random.Range(53, 62);
+                    _itemList.Add(_items[randomItem]);
+                }
                 _add = true;
             }
         }
@@ -117,56 +125,65 @@ public class BuildingGetItem : MonoBehaviour
 
     void Store()
     {
-       
-        _itemList = new List<GameObject>();
-        Building SI = Building.Store;
-
-
-        if (SI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+       if(_add == false)
         {
-            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
-            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+            Building SI = Building.Store;
+            _itemList = new List<GameObject>();
+            if (SI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+                for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+                {
+                    int randomItem = UnityEngine.Random.Range(1, 52);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                }
+                _add = true;
             }
-            // ui 추가 
         }
-
-
     }
 
     void Hospital()
     {
-        _itemList = new List<GameObject>();
-        Building HSI = Building.Hospital;
-        if (HSI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+        if (_add == false)
         {
-            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
-            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+            _itemList = new List<GameObject>();
+            Building HSI = Building.Hospital;
+            if (HSI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItemCount = UnityEngine.Random.Range(2, 15);       // 랜덤한 카운트를 센다
+                for (int i = 1; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+                {
+                    int randomItem = UnityEngine.Random.Range(i, 52);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                }
+                _itemList.Add(_items[2]);
+                _itemList.Add(_items[2]);
+                _itemList.Add(_items[2]);
+                _add = true;
             }
-            // ui 추가 
         }
+        
 
     }
 
 
     void House()
     {
-        _itemList = new List<GameObject>();
-        Building HI = Building.House;
-        if (HI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+        if(_add == false)
         {
-            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
-            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+            _itemList = new List<GameObject>();
+            Building HI = Building.House;
+            if (HI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+                for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+                {
+                    int randomItem = UnityEngine.Random.Range(i, 54);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                }
+                _add = true;
             }
-            // ui 추가 
+
         }
 
     }
@@ -174,18 +191,25 @@ public class BuildingGetItem : MonoBehaviour
 
     void FireDepartment()
     {
-        _itemList = new List<GameObject>();
-        Building FaI = Building.FireDepartment;
-        if (FaI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
+        if (_add == false)
         {
-            int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
-            for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+            _itemList = new List<GameObject>();
+            Building FaI = Building.FireDepartment;
+            if (FaI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItem = UnityEngine.Random.Range(0, _itemList.Count);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
-                _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                int randomItemCount = UnityEngine.Random.Range(2, 6);       // 랜덤한 카운트를 센다
+                for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
+                {
+                    int randomItem = UnityEngine.Random.Range(i, 52);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
+                }
+                _itemList.Add(_items[55]);
+                _itemList.Add(_items[56]);
+                _itemList.Add(_items[57]);
+                _add = true;
             }
-            // ui 추가 
         }
+       
     }
 
 
