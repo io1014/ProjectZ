@@ -40,7 +40,7 @@ public class RainDay : MonoBehaviour
                 case Weather.rain:
                     _currentWeather = Weather.rain;
                     _rain.Play();
-                    _light.color = Color.black;
+                    _light.color = Color.white;
                     break;
             }
         }
