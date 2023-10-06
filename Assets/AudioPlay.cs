@@ -7,6 +7,7 @@ public class AudioPlay : MonoBehaviour
 
     private AudioSource audioSource;
     private GameObject[] musics;
+    [SerializeField] AudioClip[] audioClips;
 
     private void Awake()
     {
