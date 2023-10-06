@@ -24,6 +24,7 @@ public class ItemSlot : MonoBehaviour
 
     public void ONButton()
     {
+        Debug.Log("아이템 버튼 클릭");
         PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
 
         bool text = myInven.GetText();
@@ -34,17 +35,24 @@ public class ItemSlot : MonoBehaviour
             bool checkSpr = false;
             for (int i = 0; i < 12; i++)
             {
+                Debug.Log($"for문이 {i}번째 돌아갑니다.");
                 if (_img.sprite == spr[i])
                 {
+                    Debug.Log($"실제 아이템의 스프라이트 : {_img.sprite} , 비교할 스프라이트 : {spr[i]}");
                     checkSpr = true;
+                    Debug.Log($"if문에 들어간 bool 값은 : {checkSpr}");
+                    break;
                 }
                 else
                 {
                     checkSpr = false;
+                    Debug.Log($"else에 들어간 bool 값은 : {checkSpr}");
                 }
             }
-            if (checkSpr)
+            Debug.Log($"현재 bool 값은 : {checkSpr}");
+            if (checkSpr == true)
             {
+                Debug.Log("CheckSprite !");
                 if (slotCount >= 1) return;
                 MakeItem();
                 slotCount++;
@@ -53,6 +61,7 @@ public class ItemSlot : MonoBehaviour
             }
             else
             {
+                Debug.Log("No CheckSprite !");
                 MakeItem();
             }
         }
