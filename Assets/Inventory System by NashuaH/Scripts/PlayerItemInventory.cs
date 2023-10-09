@@ -42,7 +42,6 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
                 }
                 else
                 {
-                    PlayerCtrl playerCtrl = GetComponent<PlayerCtrl>();
                     if (etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
@@ -51,7 +50,6 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
 
                         _rangedEquip = true;
                         _meleeEquip = false;
-                        playerCtrl._Gun = _rangedEquip;
                         Debug.Log("원거리 무기가 장착 되었습니다.");
                     }
                     else if (etype == EItemType.MeleeWeapon && !_rangedEquip && !_meleeEquip)
@@ -62,7 +60,6 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
 
                         _meleeEquip = true;
                         _rangedEquip = false;
-                        playerCtrl._Gun = _meleeEquip;
                         Debug.Log("근거리 무기가 장착 되었습니다.");
                     }
                 }

@@ -180,9 +180,10 @@ GameObject:
   - component: {fileID: 2121854425595671296}
   - component: {fileID: 7278549297691216758}
   - component: {fileID: 5433834139340182994}
+  - component: {fileID: 670962332793856206}
   m_Layer: 7
   m_Name: Shovel
-  m_TagString: Weapon
+  m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,6 +297,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!65 &670962332793856206
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748948433981954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.5, z: 0.7}
+  m_Center: {x: 0, y: 2, z: 0.023036819}
 --- !u!1 &1876132570985376
 GameObject:
   m_ObjectHideFlags: 0

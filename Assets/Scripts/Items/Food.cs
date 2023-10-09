@@ -1,5 +1,4 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 [Serializable]
 public enum FoodType
@@ -43,14 +42,11 @@ public class Food : ItemParent, IItem
     float _weight;            // 무게
     float _increaseHP;        // 체력 회복 지수
     float _increaseFull;      // 배부름 지수
-    TextMove _txtMove;
     HeroStats _playerInfo;    // 피를 채울 플레이어의 정보
     public FoodType _fType;
+    [SerializeField] GameObject _useText;
+    [SerializeField] Transform _textPoint;
 
-    private void Start()
-    {
-        
-    }
     public override void Init(ItemObj data)
     {
         _playerInfo = GameObject.FindGameObjectWithTag("Hero").GetComponent<HeroStats>();
@@ -66,8 +62,6 @@ public class Food : ItemParent, IItem
     public void Use()
     {
         Eating();
-        
-        //StartCoroutine(GenericSingleton<TextMove>._instance.GetComponent<TextMove>().MoveTextUp());
         Debug.Log(_name);
     }
     public void Eating()
@@ -75,6 +69,10 @@ public class Food : ItemParent, IItem
         _playerInfo.IncHp(_increaseHP);
         _playerInfo.IncHungry(_increaseFull);
         Invoke("DestroyBread", 0.01f);
+
+        //GameObject temp = Instantiate(_useText);
+        //_useText.transform.position = _textPoint.position;
+        //_useText.GetComponent<TextUsing>()._eatFood = _increaseHP;
     }
     void DestroyBread()
     {

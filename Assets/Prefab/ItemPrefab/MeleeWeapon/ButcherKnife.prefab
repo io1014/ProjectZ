@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 2750516792325483324}
   - component: {fileID: -1749579472103362484}
   - component: {fileID: 851189566721538259}
+  - component: {fileID: 5390447826015350347}
   m_Layer: 7
   m_Name: ButcherKnife
-  m_TagString: Weapon
+  m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!65 &5390447826015350347
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977814841911302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.24, y: 1.79, z: 0.94}
+  m_Center: {x: 0.041845128, y: 0.85, z: -0.000000020489097}

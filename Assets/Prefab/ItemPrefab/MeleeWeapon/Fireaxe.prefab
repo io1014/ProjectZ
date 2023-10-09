@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -6645638192002737558}
   - component: {fileID: -5435925117085712984}
   - component: {fileID: 8607137656752235443}
+  - component: {fileID: 4307069737558981952}
   m_Layer: 7
   m_Name: Fireaxe
-  m_TagString: Weapon
+  m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,6 +129,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!65 &4307069737558981952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006260708352458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2, z: 1}
+  m_Center: {x: -0.01, y: 2, z: 0}
 --- !u!1 &1861249993895170
 GameObject:
   m_ObjectHideFlags: 0

@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 6081843620590878931}
   - component: {fileID: 4989430362492218027}
   - component: {fileID: 5976302870152512193}
+  - component: {fileID: 4376620565810159928}
   m_Layer: 7
   m_Name: Tactical Knife
-  m_TagString: Weapon
+  m_TagString: MeleeWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,3 +212,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!65 &4376620565810159928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762973041994130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.3, z: 0.5}
+  m_Center: {x: 0.04079578, y: 1, z: 0}

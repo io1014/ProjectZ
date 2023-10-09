@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fType: 22
+  _useText: {fileID: 1574649697574267871, guid: c35015f5c1753af46b542ad2a23bc875, type: 3}
 --- !u!114 &-4798528327761853577
 MonoBehaviour:
   m_ObjectHideFlags: 0
