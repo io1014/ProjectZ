@@ -2358,6 +2358,7 @@ MonoBehaviour:
   - {fileID: 1762973041994130, guid: ce8f93e6d9865a647b0000504724edb5, type: 3}
   - {fileID: 9205087497003642489, guid: d77b90abf1dad0c44b6e4857815ee5c4, type: 3}
   - {fileID: 6639245508002578564, guid: 4b46fd8c6cc75dd4eb1b6ddbfc597c86, type: 3}
+  - {fileID: 9205087497003642489, guid: d77b90abf1dad0c44b6e4857815ee5c4, type: 3}
   _spawnRadius: 55
 --- !u!1 &1087644473
 GameObject:

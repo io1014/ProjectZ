@@ -226,6 +226,7 @@
       "_weight": 0.10000000149011612,
       "_scale": 1.0,
       "_count": 1,
+      "_spriteIdx": 31,
       "_increaseHP": 2.0,
       "_increaseFull": 5.0,
       "_fType": 21
@@ -291,7 +292,7 @@
       "_weight": 0.20000000298023225,
       "_scale": 1.0,
       "_count": 1,
-      "_spriteIdx": 37,
+      "_spriteIdx": 38,
       "_increaseHP": 4.0,
       "_increaseFull": 12.0,
       "_fType": 27

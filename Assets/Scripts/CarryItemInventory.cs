@@ -62,6 +62,7 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
 
     public void AddInventoryItem(ItemObj item)
     {
+        Debug.Log($"들어온 아이템의 이름은 : {item._name}");
         GameObject temp = Instantiate(_carryItem, _content);
         _items.Add(item);
         _itemSlots.Add(temp);
