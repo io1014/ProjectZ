@@ -11,7 +11,7 @@ public class PlayerCtrl : MonoBehaviour
     Animator animator;
     float turnSpeed = 80f;
     float stamina;
-    public bool _Gun = false;
+    public bool _Gun = true;
     private void Awake()
     {
         instance = this;
@@ -26,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     void Update()
     {
-        PlayerMotionBool();
+        //PlayerMotionBool();
         //Debug.Log(_Gun);
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -34,17 +34,16 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         tr.Translate(moveDir.normalized * GetComponent<HeroStats>().getspeed() * Time.deltaTime);
         Rotate();
-        if(_Gun == false)
+        if (_Gun == false)
         {
             GetComponent<Animator>().enabled = true;
-            GetComponent<Animator>().SetFloat("x", h);
+            //GetComponent<Animator>().SetFloat("x", h);
             GetComponent<Animator>().SetFloat("y", v);
         }
         if (_Gun == true)
-
-        { 
+        {
             GetComponent<Animator>().enabled = false;
-            GunPlayerAnim(h, v); 
+            GunPlayerAnim(v,h);
         }
     }
     void Rotate()
@@ -57,15 +56,14 @@ public class PlayerCtrl : MonoBehaviour
             transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
         }
     }
-
-    void GunPlayerAnim(float h , float v)
+    void GunPlayerAnim(float h,float v)
     {
-        if(v >= 0.1f)
+        if (v >= 0.1f)
         {
             anim.CrossFade("WalkF", 0.25f);
             if (Input.GetKey(KeyCode.LeftControl) && stamina > 1)
             {
-                
+
                 anim.CrossFade("SprintF", 0.25f);
             }
             else
@@ -73,7 +71,7 @@ public class PlayerCtrl : MonoBehaviour
                 anim.CrossFade("WalkF", 0.25f);
             }
         }
-        else if(v <= -0.1f)
+        else if (v <= -0.1f)
         {
             anim.CrossFade("WalkB", 0.25f);
             if (Input.GetKey(KeyCode.LeftControl))
@@ -82,7 +80,7 @@ public class PlayerCtrl : MonoBehaviour
                 anim.CrossFade("RunB", 0.25f);
             }
         }
-        else if ( h >= 0.1f)
+        if (h >= 0.1f)
         {
             anim.CrossFade("WalkR", 0.25f);
             if (Input.GetKey(KeyCode.LeftControl))
@@ -91,7 +89,7 @@ public class PlayerCtrl : MonoBehaviour
                 anim.CrossFade("RunR", 0.25f);
             }
         }
-        else if( h <= -0.1f)
+        else if (h <= -0.1f)
         {
             anim.CrossFade("WalkL", 0.25f);
             if (Input.GetKey(KeyCode.LeftControl))
@@ -100,10 +98,10 @@ public class PlayerCtrl : MonoBehaviour
                 anim.CrossFade("RunL", 0.25f);
             }
         }
-        else if(Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
         {
             anim.Play("IdleFireSMG");
-            if(Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.LeftControl))
             {
                 anim.Play("RunFireSMG");
             }
@@ -111,11 +109,13 @@ public class PlayerCtrl : MonoBehaviour
         else
         {
             anim.CrossFade("Idle", 0.25f);
-        }   
+        }
     }
+
     void PlayerMotionBool()
     {
         _Gun = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetRangedEquip();
     }
-  
+
 }
+

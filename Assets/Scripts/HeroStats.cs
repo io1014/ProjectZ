@@ -48,6 +48,7 @@ public class HeroStats : GenericSingleton<HeroStats>
     {
         conditions[0].gameObject.SetActive(true);
         _currentHP -= 0.5f * Time.deltaTime;
+        if (_currentHP <= 0) PlayerDie();
     }
     public void bloodoff()
     {

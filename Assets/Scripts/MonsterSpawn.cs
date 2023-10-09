@@ -8,7 +8,7 @@ public class MonsterSpawn : MonoBehaviour
     [SerializeField] GameObject[] Monster;
     [SerializeField] Transform[] spawnPoints;
     List<GameObject> _monsterList = new List<GameObject>();
-    float spawnCount = 100;
+    float spawnCount = 200;
     float time = 0.2f, spawntime;
 
     
@@ -57,7 +57,7 @@ public class MonsterSpawn : MonoBehaviour
 
     void spawn()
     {
-        if (spawnCount > 0 & spawnCount <= 100 && spawntime < 0)
+        if (spawnCount > 0 & spawnCount <= 200 && spawntime < 0)
         {
             GameObject temp = Instantiate(Monster[Random.Range(0,Monster.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
             temp.transform.position += new Vector3(Random.Range(-10,10f), 0, Random.Range(-10,10f));
