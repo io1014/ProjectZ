@@ -37,6 +37,6 @@ public class TextMove : GenericSingleton<TextMove>
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        Destroy(_txtTrans.gameObject);
+        _txtTrans.gameObject.SetActive(false);
     }
 }

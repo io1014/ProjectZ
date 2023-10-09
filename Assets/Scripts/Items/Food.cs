@@ -49,7 +49,7 @@ public class Food : ItemParent, IItem
 
     private void Start()
     {
-        _txtMove = GenericSingleton<TextMove>._instance.GetComponent<TextMove>();
+        
     }
     public override void Init(ItemObj data)
     {
@@ -66,7 +66,8 @@ public class Food : ItemParent, IItem
     public void Use()
     {
         Eating();
-        StartCoroutine(_txtMove.MoveTextUp());
+        
+        //StartCoroutine(GenericSingleton<TextMove>._instance.GetComponent<TextMove>().MoveTextUp());
         Debug.Log(_name);
     }
     public void Eating()
