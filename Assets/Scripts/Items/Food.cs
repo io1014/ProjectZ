@@ -45,7 +45,6 @@ public class Food : ItemParent, IItem
     HeroStats _playerInfo;    // 피를 채울 플레이어의 정보
     public FoodType _fType;
     [SerializeField] GameObject _useText;
-    [SerializeField] Transform _textPoint;
 
     public override void Init(ItemObj data)
     {
@@ -62,17 +61,23 @@ public class Food : ItemParent, IItem
     public void Use()
     {
         Eating();
+        string foodName = _name;
+        string foodInc = _increaseHP.ToString();
+        string eatText = $"{foodName}을 먹어 체력이 {foodInc}만큼 회복되었습니다.";
+        _useText.GetComponent<TextUsing>().SetText(eatText);
         Debug.Log(_name);
     }
     public void Eating()
     {
         _playerInfo.IncHp(_increaseHP);
         _playerInfo.IncHungry(_increaseFull);
-        Invoke("DestroyBread", 0.01f);
 
-        //GameObject temp = Instantiate(_useText);
-        //_useText.transform.position = _textPoint.position;
-        //_useText.GetComponent<TextUsing>()._eatFood = _increaseHP;
+        _useText.GetComponent<TextUsing>().SetFood(_increaseHP);
+        GameObject temp = Instantiate(_useText);
+        GameObject textPoint = GameObject.Find("TextPoint");
+        temp.transform.position = textPoint.transform.position;
+        Debug.Log($"회복한 양은 {_increaseHP}");
+        Invoke("DestroyBread", 0.01f);
     }
     void DestroyBread()
     {

@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fType: 3
-  _useText: {fileID: 1574649697574267871, guid: c35015f5c1753af46b542ad2a23bc875, type: 3}
+  _moveSpeed: 1.7
+  _alphaSpeed: 3
+  _destroyTime: 3
+  _useText: {fileID: 6226475396080494875, guid: 2ccad4083dda6284a96f64de4a4e1760, type: 3}
 --- !u!114 &-1921909001420326311
 MonoBehaviour:
   m_ObjectHideFlags: 0
