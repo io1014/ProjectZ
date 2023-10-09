@@ -11985,6 +11985,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Gun: 0
+  _Weapon: 0
+  Attackon: 0
 --- !u!111 &928020941
 Animation:
   m_ObjectHideFlags: 0
@@ -32651,7 +32653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497f59f7780961349ab0a3e0de4d953d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _realTime: 60
+  _realTime: 15
   _nightFog: 0.1
   _nightFogCalc: 0.2
   _beingNight: {fileID: 1971879721}

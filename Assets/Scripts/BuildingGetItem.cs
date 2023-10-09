@@ -47,7 +47,7 @@ public class BuildingGetItem : MonoBehaviour
     {
         GameObject _player = GameObject.FindGameObjectWithTag("Hero");
         float dist = Vector3.Distance(_player.transform.position, transform.position);
-        if (_isContacted==false&& dist <= 2f && Input.GetKeyDown(KeyCode.G))
+        if (_isContacted==false&& dist <= 1f && Input.GetKeyDown(KeyCode.G))
         {
             StartMusic.instance.DoorOpen();
             GenericSingleton<HouseItemInventory>._instance.gameObject.SetActive(true);
@@ -59,10 +59,10 @@ public class BuildingGetItem : MonoBehaviour
             switch (_buildingType)
             {
                 //case Building.Factory: Factory(); break;
-                case Building.Hospital: Hospital(); break;
-                case Building.FireDepartment: FireDepartment(); break;
-                case Building.Store: Store(); break;
-                case Building.House: House(); break;
+                //case Building.Hospital: Hospital(); break;
+                //case Building.FireDepartment: FireDepartment(); break;
+                //case Building.Store: Store(); break;
+                //case Building.House: House(); break;
                 default: break;
 
             }
@@ -84,13 +84,10 @@ public class BuildingGetItem : MonoBehaviour
 
         else if (_isContacted == true && dist >2f ) 
         {
-            
-            _isContacted = false;
             GameObject.Find("InventoryInHouse").GetComponent<Animator>().SetBool("Open", false);
             CancelInvoke("GetInject");
+            _isContacted = false;
             _far = true;
-
-
         }
        
 
@@ -105,7 +102,7 @@ public class BuildingGetItem : MonoBehaviour
             _itemList = new List<GameObject>();
             if (FI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItemCount = UnityEngine.Random.Range(2, 3);       // 랜덤한 카운트를 센다
+                int randomItemCount = UnityEngine.Random.Range(3, 5);       // 랜덤한 카운트를 센다
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
                     int randomItem = UnityEngine.Random.Range(0, 52);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
@@ -175,10 +172,16 @@ public class BuildingGetItem : MonoBehaviour
             Building HI = Building.House;
             if (HI == _buildingType)              // 만약 각 건물에 설정한 type이랑 함수에 enum이 같으면 
             {
-                int randomItemCount = UnityEngine.Random.Range(2, 9);       // 랜덤한 카운트를 센다
+                
+                int gunrandom = UnityEngine.Random.Range(1, 10);
+                if (gunrandom < 7)
+                {
+                    _itemList.Add(_items[0]);
+                }
+                int randomItemCount = UnityEngine.Random.Range(4, 9);       // 랜덤한 카운트를 센다
                 for (int i = 0; i < randomItemCount; i++)       // 랜덤한 카운트 만큼 반복한다
                 {
-                    int randomItem = UnityEngine.Random.Range(i, 54);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
+                    int randomItem = UnityEngine.Random.Range(1, 54);    // 0에서 아이템 리스트에 카운트만큼 순서를 뽑는다
                     _itemList.Add(_items[randomItem]);                    // 그 순서를 정하여 아이템 리스트에 추가한다 
                 }
                 _add = true;
