@@ -41,9 +41,22 @@ public class HeroStats : GenericSingleton<HeroStats>
         StaminaChange();
         if (bloodEnabled == true) bloodon();
         if (_currentHP <= 0) PlayerDie();
+        if (hungry < 0) hungry = 0;
         hungry -= 1f * Time.deltaTime;
+        if (hungry <= 50) hungryon();
+        else hungryoff();
     }
 
+    void hungryon()
+    {
+        conditions[1].gameObject.SetActive(true);
+        _currentHP -=0.5f * Time.deltaTime;
+        if(_currentHP <= 0) PlayerDie();
+    }
+    void hungryoff()
+    {
+        conditions[1].gameObject.SetActive(false);
+    }
     void bloodon()
     {
         conditions[0].gameObject.SetActive(true);

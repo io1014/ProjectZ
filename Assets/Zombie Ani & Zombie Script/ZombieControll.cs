@@ -153,7 +153,6 @@ public class ZombieControll : MonoBehaviour
                     break;
                 
                 case State.Attack:
-                    //LookatRotation();
                     anim.SetBool("Attack", true);
                     _isAttackStart = true;
                     _next = 0.3f;
@@ -185,6 +184,8 @@ public class ZombieControll : MonoBehaviour
     {
         Vector3 to = new Vector3(playerTr.position.x, 0, playerTr.position.z);
         Vector3 from = new Vector3(transform.position.x, 0, transform.position.z);
+
+        monsterTr.rotation = Quaternion.LookRotation(to - from);
     }
 
 }
