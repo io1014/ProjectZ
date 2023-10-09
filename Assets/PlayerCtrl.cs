@@ -12,6 +12,10 @@ public class PlayerCtrl : MonoBehaviour
     float turnSpeed = 80f;
     float stamina;
     public bool _Gun = true;
+    public bool _Weapon = false;
+    public bool Attackon = false;
+    bool mousepos = true;
+    float temp = 1;
     private void Awake()
     {
         instance = this;
@@ -22,12 +26,14 @@ public class PlayerCtrl : MonoBehaviour
         anim = GetComponent<Animation>();
         animator = GetComponent<Animator>();
         stamina = GenericSingleton<HeroStats>._instance.GetComponent<HeroStats>()._stamina;
+        
 
     }
     void Update()
     {
+        Debug.Log(_Weapon);
         PlayerMotionBool();
-        //Debug.Log(_Gun);
+        mouseposition();
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float r = Input.GetAxis("Mouse X");
@@ -44,6 +50,34 @@ public class PlayerCtrl : MonoBehaviour
         {
             GetComponent<Animator>().enabled = false;
             GunPlayerAnim(v,h);
+        }
+        if(Input.GetMouseButtonDown(0))
+        {
+            if(mousepos == true && _Weapon == true)
+            {
+                Attack();
+            }
+          
+        }
+       
+    }
+    void AttackEnd()
+    {
+        animator.SetLayerWeight(1, 0);
+    }
+    void Attack()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.2f)
+        {
+            if(temp >= 0)
+            {
+                temp -= Time.deltaTime;
+            }
+            animator.SetLayerWeight(1, temp);
+        }
+        if(temp < 0)
+        {
+            temp = 1;
         }
     }
     void Rotate()
@@ -115,6 +149,21 @@ public class PlayerCtrl : MonoBehaviour
     void PlayerMotionBool()
     {
         _Gun = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetRangedEquip();
+        _Weapon = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>().GetMeleeEquip();
+    }
+    void mouseposition() // 인벤토리를 누르면 총알이 같이나가는거 방지
+    {
+        Vector3 mpos = Input.mousePosition;
+        Vector3 cpoint = Camera.main.ScreenToWorldPoint(mpos);
+
+        if (cpoint.y > 77.35)
+        {
+            mousepos = false;
+        }
+        else
+        {
+            mousepos = true;
+        }
     }
 
 }

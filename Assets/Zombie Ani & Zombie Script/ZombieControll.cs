@@ -39,12 +39,12 @@ public class ZombieControll : MonoBehaviour
     void Update()   
     {
         //목적지까지 남은거리로 회전여부
-        if(agent.remainingDistance  >= 0.5f)
+        if (agent.remainingDistance >= 0.5f)
         {
             //에이전트의 이동방향
             Vector3 direction = agent.desiredVelocity;
 
-            if(direction.sqrMagnitude >= 0.1f * 0.1f)
+            if (direction.sqrMagnitude >= 0.1f * 0.1f)
             {
                 //회전각도
                 Quaternion rot = Quaternion.LookRotation(direction);
@@ -98,7 +98,7 @@ public class ZombieControll : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Bullet"))
+        if(collision.collider.CompareTag("Bullet")) 
         {
             Hp -= collision.collider.GetComponent<Bullet>().getDamage();
             Destroy(collision.gameObject);
@@ -113,6 +113,23 @@ public class ZombieControll : MonoBehaviour
             ShowBloodEffect(pos, rot);
 
             if(Hp <= 0)
+            {
+                if (Hp <= 0)
+                {
+                    state = State.Die;
+                }
+            }
+        }
+        else if (collision.collider.CompareTag("MeleeWeapon"))
+        {
+            Hp -= collision.collider.GetComponent<MeleeWeapon>().getDamage();
+            anim.SetTrigger(hit);
+            //해당 충돌 발생 지점 체크
+            Vector3 pos = collision.GetContact(0).point;
+            //해당 충돌 발생지점 반대방향으로 바라보게 설정
+            Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
+            ShowBloodEffect(pos, rot);
+            if (Hp <= 0)
             {
                 if (Hp <= 0)
                 {
@@ -161,7 +178,6 @@ public class ZombieControll : MonoBehaviour
                 case State.Die:
                     isDie = true;
                     agent.isStopped = true;
-
                     anim.SetTrigger(die);
                     GetComponent<CapsuleCollider>().enabled = false;
 
@@ -184,9 +200,9 @@ public class ZombieControll : MonoBehaviour
     {
         Vector3 to = new Vector3(playerTr.position.x, 0, playerTr.position.z);
         Vector3 from = new Vector3(transform.position.x, 0, transform.position.z);
-        Vector3 dir = to - from;
+        Vector3 dir = to -from;
 
-        monsterTr.transform.rotation = Quaternion.Lerp(monsterTr.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10);
+        monsterTr.transform.rotation = Quaternion.LookRotation(dir);
     }
 
 }
