@@ -42,20 +42,29 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
                 }
                 else
                 {
-                    _slotCount++;
-                    if(etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
+                    if (etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                        _slotCount++;
+                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _rangedEquip = true;
+                        //if (_rangedEquip == true)
+                        //{
+                        //    PlayerCtrl.instance.GetComponent<PlayerCtrl>()._Gun = true;
+                        //}
                         _meleeEquip = false;
+                        Debug.Log("원거리 무기가 장착 되었습니다.");
                     }
-                    else if(etype == EItemType.MeleeWeapon && !_rangedEquip && !_meleeEquip)
+                    else if (etype == EItemType.MeleeWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
+                        _slotCount++;
+                        Debug.Log("추가된 슬롯카운트 : " + _slotCount);
 
                         _meleeEquip = true;
                         _rangedEquip = false;
+                        Debug.Log("근거리 무기가 장착 되었습니다.");
                     }
                 }
             }

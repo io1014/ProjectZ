@@ -19,7 +19,6 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
         //heroHand.transform.GetChild(0);
         PlayerItemInventory myInven = GenericSingleton<PlayerItemInventory>._instance.GetComponent<PlayerItemInventory>();
 
-        // 아래 주석 부분 수정해야함.
         int slotCount = myInven.GetSlotCount();
         slotCount--;
         myInven.SetSlotCount(slotCount);
@@ -27,17 +26,17 @@ public class CarryItemInventory : GenericSingleton<CarryItemInventory>, IItemHan
 
         GameObject slot = itemdata.transform.GetChild(0).gameObject;
         GameObject itemImage = slot.transform.GetChild(0).gameObject;
-        for(int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
         {
-            if(itemImage.GetComponent<Image>().sprite == _sprites[i])
+            if (itemImage.GetComponent<Image>().sprite == _sprites[i])
             {
                 myInven.SetRangedEquip(false);
                 Debug.Log($"갱신된 RangedEquip {myInven.GetRangedEquip()}");
             }
         }
-        for(int i = 3; i < 12; i++)
+        for (int i = 3; i < 12; i++)
         {
-            if(itemImage.GetComponent<Image>().sprite == _sprites[i])
+            if (itemImage.GetComponent<Image>().sprite == _sprites[i])
             {
                 myInven.SetMeleeEquip(false);
                 Debug.Log($"갱신된 MeleeEquip {myInven.GetMeleeEquip()}");

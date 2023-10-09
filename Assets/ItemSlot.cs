@@ -30,26 +30,39 @@ public class ItemSlot : MonoBehaviour
         bool text = myInven.GetText();
         int slotCount = myInven.GetSlotCount();
         Sprite[] spr = myInven.GetSprites();
-        if (eType == ESlotType.myInven && text == false) // 마이 인벤일 때
+        if (eType == ESlotType.myInven && text == false)
         {
-            for(int i = 0; i < 12; i++)
+            bool checkSpr = false;
+            for (int i = 0; i < 12; i++)
             {
-                Debug.Log($"{i}번째 스프라이트입니다.");
-                if (spr[i] == _img.sprite)
+                Debug.Log($"for문이 {i}번째 돌아갑니다.");
+                if (_img.sprite == spr[i])
                 {
-                    if (slotCount >= 1)
-                    {
-                        Debug.Log("ItemSlot return");
-                        return;
-                    }
-                    Debug.Log("CheckSprite !");
-                    MakeItem();
+                    Debug.Log($"실제 아이템의 스프라이트 : {_img.sprite} , 비교할 스프라이트 : {spr[i]}");
+                    checkSpr = true;
+                    Debug.Log($"if문에 들어간 bool 값은 : {checkSpr}");
+                    break;
                 }
                 else
                 {
-                    Debug.Log("No CheckSprite !");
-                    MakeItem();
+                    checkSpr = false;
+                    Debug.Log($"else에 들어간 bool 값은 : {checkSpr}");
                 }
+            }
+            Debug.Log($"현재 bool 값은 : {checkSpr}");
+            if (checkSpr == true)
+            {
+                Debug.Log("CheckSprite !");
+                if (slotCount >= 1) return;
+                MakeItem();
+                slotCount++;
+                Debug.Log("갱신된 슬롯 카운트 : " + slotCount);
+                myInven.SetSlotCount(slotCount);
+            }
+            else
+            {
+                Debug.Log("No CheckSprite !");
+                MakeItem();
             }
         }
         else if (eType == ESlotType.myInven && text == true)
