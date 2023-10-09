@@ -26,7 +26,7 @@ public class PlayerCtrl : MonoBehaviour
     }
     void Update()
     {
-        //PlayerMotionBool();
+        PlayerMotionBool();
         //Debug.Log(_Gun);
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
@@ -37,7 +37,7 @@ public class PlayerCtrl : MonoBehaviour
         if (_Gun == false)
         {
             GetComponent<Animator>().enabled = true;
-            //GetComponent<Animator>().SetFloat("x", h);
+            GetComponent<Animator>().SetFloat("x", h);
             GetComponent<Animator>().SetFloat("y", v);
         }
         if (_Gun == true)

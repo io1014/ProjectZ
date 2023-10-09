@@ -184,8 +184,9 @@ public class ZombieControll : MonoBehaviour
     {
         Vector3 to = new Vector3(playerTr.position.x, 0, playerTr.position.z);
         Vector3 from = new Vector3(transform.position.x, 0, transform.position.z);
+        Vector3 dir = to - from;
 
-        monsterTr.rotation = Quaternion.LookRotation(to - from);
+        monsterTr.transform.rotation = Quaternion.Lerp(monsterTr.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10);
     }
 
 }
