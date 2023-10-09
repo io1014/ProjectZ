@@ -28,6 +28,7 @@ public class MeleeWeapon : ItemParent, IItem
     int _durability;
     bool _isEquipped = false;
     [SerializeField] BoxCollider meleeArea;
+    [SerializeField] Transform holder;
     public MeleeWeaponType _mwType;
     public override void Init(ItemObj data)
     {
@@ -47,6 +48,7 @@ public class MeleeWeapon : ItemParent, IItem
         {
 
         }
+       
     }
     void Attack()
     {

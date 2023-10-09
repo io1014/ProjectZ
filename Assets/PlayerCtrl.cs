@@ -15,7 +15,6 @@ public class PlayerCtrl : MonoBehaviour
     public bool _Weapon = false;
     public bool Attackon = false;
     bool mousepos = true;
-    float temp = 1;
     private void Awake()
     {
         instance = this;
@@ -32,9 +31,9 @@ public class PlayerCtrl : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(_Weapon);
         PlayerMotionBool();
         mouseposition();
+        Attack();
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         float r = Input.GetAxis("Mouse X");
@@ -52,37 +51,17 @@ public class PlayerCtrl : MonoBehaviour
             GetComponent<Animator>().enabled = false;
             GunPlayerAnim(v,h);
         }
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(mousepos == true && _Weapon == true)
-            {
-                Attack();
-            }
-          
-        }
-       
-    }
-    void AttackEnd()
-    {
-        //animator.SetLayerWeight(1, 0);
-        //GetComponent<Animator>().SetBool("Attack", false);
+        Debug.Log(v);
     }
     void Attack()
     {
-        animator.SetTrigger("Attack");
-        //GetComponent<Animator>().SetBool("Attack", true);
-        //if (animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.2f)
-        //{
-        //    if(temp >= 0)
-        //    {
-        //        temp -= Time.deltaTime;
-        //    }
-        //    animator.SetLayerWeight(1, temp);
-        //}
-        //if(temp < 0)
-        //{
-        //    temp = 1;
-        //}
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (mousepos == true && _Weapon == true)
+            {
+                animator.SetTrigger("Attack");
+            }
+        }
     }
     void Rotate()
     {
@@ -94,31 +73,17 @@ public class PlayerCtrl : MonoBehaviour
             transform.LookAt(new Vector3(hit.point.x, transform.position.y, hit.point.z));
         }
     }
-    void GunPlayerAnim(float h,float v)
+    void GunPlayerAnim(float v , float h)
     {
-        if (v >= 0.1f)
+        if (v>=0.1f)
         {
-            anim.CrossFade("WalkF", 0.25f);
-            if (Input.GetKey(KeyCode.LeftControl) && stamina > 1)
-            {
-
-                anim.CrossFade("SprintF", 0.25f);
-            }
-            else
-            {
-                anim.CrossFade("WalkF", 0.25f);
-            }
+          anim.CrossFade("RunF",0.25f);
         }
         else if (v <= -0.1f)
         {
-            anim.CrossFade("WalkB", 0.25f);
-            if (Input.GetKey(KeyCode.LeftControl))
-            {
-                anim.Stop("WalkB");
-                anim.CrossFade("RunB", 0.25f);
-            }
+            anim.CrossFade("RunB", 0.25f);
         }
-        if (h >= 0.1f)
+        else if (h >= 0.1f)
         {
             anim.CrossFade("WalkR", 0.25f);
             if (Input.GetKey(KeyCode.LeftControl))
@@ -160,7 +125,7 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 mpos = Input.mousePosition;
         Vector3 cpoint = Camera.main.ScreenToWorldPoint(mpos);
 
-        if (cpoint.y > 77.35)
+        if (cpoint.y > 76.35)
         {
             mousepos = false;
         }

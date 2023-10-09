@@ -69,7 +69,6 @@ public class ZombieControll : MonoBehaviour
         Attack,
         Die,
     }
-
     //좀비 상태 체크
     IEnumerator CheckZombieState()
     {
@@ -138,6 +137,7 @@ public class ZombieControll : MonoBehaviour
             }
         }
     }
+
     void ShowBloodEffect(Vector3 pos, Quaternion rot)
     {
         GameObject blood = Instantiate<GameObject>(bloodEffect, pos, rot, monsterTr);
