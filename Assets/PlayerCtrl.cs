@@ -27,6 +27,7 @@ public class PlayerCtrl : MonoBehaviour
         animator = GetComponent<Animator>();
         stamina = GenericSingleton<HeroStats>._instance.GetComponent<HeroStats>()._stamina;
         
+        
 
     }
     void Update()
@@ -63,22 +64,25 @@ public class PlayerCtrl : MonoBehaviour
     }
     void AttackEnd()
     {
-        animator.SetLayerWeight(1, 0);
+        //animator.SetLayerWeight(1, 0);
+        //GetComponent<Animator>().SetBool("Attack", false);
     }
     void Attack()
     {
-        if (animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.2f)
-        {
-            if(temp >= 0)
-            {
-                temp -= Time.deltaTime;
-            }
-            animator.SetLayerWeight(1, temp);
-        }
-        if(temp < 0)
-        {
-            temp = 1;
-        }
+        animator.SetTrigger("Attack");
+        //GetComponent<Animator>().SetBool("Attack", true);
+        //if (animator.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.2f)
+        //{
+        //    if(temp >= 0)
+        //    {
+        //        temp -= Time.deltaTime;
+        //    }
+        //    animator.SetLayerWeight(1, temp);
+        //}
+        //if(temp < 0)
+        //{
+        //    temp = 1;
+        //}
     }
     void Rotate()
     {

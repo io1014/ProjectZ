@@ -68,7 +68,7 @@ public class MeleeWeapon : ItemParent, IItem
         yield return new WaitForSeconds(0.3f);
         meleeArea.enabled = false;
     }
-    public void SetDamage(int damage)
+    public void SetDamage(float damage)
     {
         // 원거리 무기의 damage값 저장
         _swingDamageMax = damage;
