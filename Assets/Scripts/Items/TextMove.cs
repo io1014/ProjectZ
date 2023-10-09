@@ -6,48 +6,37 @@ public class TextMove : GenericSingleton<TextMove>
     [SerializeField] Transform _camTarget;
     [SerializeField] Transform _txtTrans;
 
-    bool _isTextOn = false;
-    float _textOnInterval = 1.0f;
+    //private void Update()
+    //{
+    //    TextOn();
+    //}
+    //void TextOn()
+    //{
+    //    _txtTrans.transform.position += Vector3.up * Time.deltaTime;
+    //    _txtTrans.LookAt(_camTarget);
+    //    Invoke("DestroyText", 1.0f);
+    //}
+    //void DestroyText()
+    //{
+    //    Destroy(_txtTrans.gameObject);
+    //}
+    private void Start()
+    {
+        StartCoroutine(MoveTextUp());
+    }
+    public IEnumerator MoveTextUp()
+    {
+        float elapsedTime = 0;
+        Vector3 initialPos = _txtTrans.position;
+        Vector3 targetPos = initialPos + Vector3.up;
 
-    private void Update()
-    {
-        if(Input.GetMouseButton(0))
+        while(elapsedTime < 1.0f)
         {
-            _txtTrans.gameObject.SetActive(true);
-            StartTextOnCoroutine();
+            _txtTrans.position = Vector3.Lerp(initialPos, targetPos, elapsedTime / 1.0f);
+            _txtTrans.LookAt(_camTarget);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        if(Input.GetMouseButtonDown(1))
-        {
-            _txtTrans.gameObject.SetActive(false);
-            _txtTrans.position = gameObject.transform.position;
-            StopTextOnCoroutine();
-        }
-    }
-    private void StartTextOnCoroutine()
-    {
-        if (!_isTextOn)
-        {
-            StartCoroutine(TextOnCoroutine());
-        }
-    }
-    private IEnumerator TextOnCoroutine()
-    {
-        _isTextOn = true; // TextOn 실행 중 플래그 설정
-        while (_txtTrans.gameObject.activeSelf)
-        {
-            TextOn(); // TextOn 메서드 호출
-            yield return new WaitForSeconds(_textOnInterval); // 일정 간격 대기
-        }
-        _isTextOn = false; // TextOn 실행 종료 플래그 설정
-    }
-    private void StopTextOnCoroutine()
-    {
-        StopAllCoroutines();
-        _isTextOn = false; // TextOn 실행 종료 플래그 설정
-    }
-    void TextOn()
-    {
-        _txtTrans.transform.position += Vector3.up * Time.deltaTime;
-        _txtTrans.LookAt(_camTarget);
+        Destroy(_txtTrans.gameObject);
     }
 }

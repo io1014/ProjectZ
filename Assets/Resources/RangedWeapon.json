@@ -4,7 +4,7 @@
       "_name": "Pistol",
       "_eType": 0,
       "_weight": 4.0,
-      "_scale": 1.0,
+      "_scale": 0.3,
       "_count": 1,
       "_spriteIdx": 0,
       "_attackDamage": 10,

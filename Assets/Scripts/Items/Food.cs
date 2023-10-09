@@ -49,8 +49,7 @@ public class Food : ItemParent, IItem
 
     private void Start()
     {
-        //TextMove tm = GenericSingleton<TextMove>._instance.GetComponent<TextMove>();
-        //Debug.Log(tm.name);
+        _txtMove = GenericSingleton<TextMove>._instance.GetComponent<TextMove>();
     }
     public override void Init(ItemObj data)
     {
@@ -67,7 +66,7 @@ public class Food : ItemParent, IItem
     public void Use()
     {
         Eating();
-        TextUp();
+        StartCoroutine(_txtMove.MoveTextUp());
         Debug.Log(_name);
     }
     public void Eating()
@@ -75,11 +74,6 @@ public class Food : ItemParent, IItem
         _playerInfo.IncHp(_increaseHP);
         _playerInfo.IncHungry(_increaseFull);
         Invoke("DestroyBread", 0.01f);
-    }
-    public void TextUp()
-    {
-        GameObject temp = GameObject.Find("TextPoint");
-        
     }
     void DestroyBread()
     {
