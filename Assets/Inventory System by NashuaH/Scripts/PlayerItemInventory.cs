@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,8 +16,7 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     bool _isText = false;
     bool _rangedEquip = false;
     bool _meleeEquip = false;
-    public int _rangedSlotCount { get; set; }
-    public int _meleeSlotCount { get; set; }
+    int _slotCount = 0;
     float _maxWeight = 500f;
     public float _currentWeight { get; set; }
 
@@ -33,15 +33,16 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
             _itemSlots.Remove(itemdata);
 
             EItemType etype = itemdata.GetComponent<ItemSlot>()._itemdata._eType;
-            if (etype == EItemType.RangedWeapon)
+            if (etype == EItemType.RangedWeapon || etype == EItemType.MeleeWeapon)
             {
-                if (_rangedSlotCount >= 1)
+                if (_slotCount >= 1)
                 {
                     Debug.Log("return");
                     return;
                 }
                 else
                 {
+                    _slotCount++;
                     if(etype == EItemType.RangedWeapon && !_rangedEquip && !_meleeEquip)
                     {
                         _carryInven.AddInventoryItem(itemdata.GetComponent<ItemSlot>()._itemdata);
@@ -56,14 +57,6 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
                         _meleeEquip = true;
                         _rangedEquip = false;
                     }
-                }
-            }
-            else if (etype == EItemType.MeleeWeapon)
-            {
-                if (_meleeSlotCount >= 1)
-                {
-                    Debug.Log("return");
-                    return;
                 }
             }
             else if (etype == EItemType.Food || etype == EItemType.Medicine)
@@ -86,8 +79,8 @@ public class PlayerItemInventory : GenericSingleton<PlayerItemInventory>, IItemH
     public float GetMaxWeight() => _maxWeight;
     public void SetText(bool text) => _isText = text;
     public bool GetText() => _isText;
-    //public void SetSlotCount(int slotCount) => _slotCount = slotCount;
-    //public int GetSlotCount() => _slotCount;
+    public void SetSlotCount(int slotCount) => _slotCount = slotCount;
+    public int GetSlotCount() => _slotCount;
     public void SetRangedEquip(bool rangedEquip) => _rangedEquip = rangedEquip;
     public bool GetRangedEquip() => _rangedEquip;
     public void SetMeleeEquip(bool MeleeEquip) => _meleeEquip = MeleeEquip;
