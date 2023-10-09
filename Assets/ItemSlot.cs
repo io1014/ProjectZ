@@ -32,19 +32,24 @@ public class ItemSlot : MonoBehaviour
         Sprite[] spr = myInven.GetSprites();
         if (eType == ESlotType.myInven && text == false) // 마이 인벤일 때
         {
-            if (slotCount >= 1)
+            for(int i = 0; i < 12; i++)
             {
-                Debug.Log("ItemSlot return");
-                return;
-            }
-
-            else
-            {
-                //slotCount++;
-                myInven.SetSlotCount(slotCount);
-                Debug.Log("추가된 슬롯 카운트 : " + slotCount);
-                Debug.Log("No CheckSprite !");
-                MakeItem();
+                Debug.Log($"{i}번째 스프라이트입니다.");
+                if (spr[i] == _img.sprite)
+                {
+                    if (slotCount >= 1)
+                    {
+                        Debug.Log("ItemSlot return");
+                        return;
+                    }
+                    Debug.Log("CheckSprite !");
+                    MakeItem();
+                }
+                else
+                {
+                    Debug.Log("No CheckSprite !");
+                    MakeItem();
+                }
             }
         }
         else if (eType == ESlotType.myInven && text == true)
